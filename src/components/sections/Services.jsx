@@ -14,7 +14,7 @@ const ServicesSection = () => {
             </div>
 
             {/* services */}
-            <section className="mil-p-90-30">
+            <section id="services" className="mil-p-90-30">
                 <div className="row justify-content-between align-items-center">
                     {Data.items.map((item, key) => (
                         <div key={`services-item-${key}`} className="col-lg-4">

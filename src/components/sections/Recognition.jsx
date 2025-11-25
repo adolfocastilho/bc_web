@@ -27,7 +27,7 @@ const RecognitionSection = () => {
             </div>
 
             {/* DESKTOP VERSION (3 Columns) - Hidden on mobile */}
-            <section className="mil-p-90-30 d-none d-lg-block">
+            <section id="recognition" className="mil-p-90-30 d-none d-lg-block">
                 <div className="row justify-content-between align-items-center">
                     <Swiper
                         {...sliderProps.milReviewsSlider}
@@ -88,8 +88,8 @@ const RecognitionSection = () => {
                                         </div>
                                     </div>
                                     <h5 className="mil-up mil-mb-15">{item.title}</h5>
-                                    <p className="mil-up mil-mb-15 text-muted" style={{ fontSize: '14px', fontWeight: 500 }}>
-                                        {item.location} <span style={{ marginLeft: '8px', fontSize: '16px' }}>{item.flag}</span>
+                                    <p className="mil-up mil-mb-15" style={{ fontSize: '14px', fontWeight: 500 }}>
+                                        <span className="text-muted">{item.location}</span> <span style={{ marginLeft: '8px', fontSize: '16px', opacity: 1 }}>{item.flag}</span>
                                     </p>
                                     <p className="mil-up mil-mb-30">{item.text}</p>
                                 </div>
@@ -102,7 +102,7 @@ const RecognitionSection = () => {
 
 
             {/* MOBILE VERSION (Reviews Style) - Hidden on desktop */}
-            <section className="mil-p-90-90 d-lg-none">
+            <section id="recognition" className="mil-p-90-90 d-lg-none">
                 <div className="row justify-content-center mil-reviews-slider-frame">
                     <div className="col-lg-8">
                         <Swiper
@@ -165,8 +165,8 @@ const RecognitionSection = () => {
 
                                             <div className="mil-name">
                                                 <h4 className="mil-up mil-mb-5">{item.title}</h4>
-                                                <p className="mil-upper mil-up" style={{ fontSize: '14px', opacity: 0.7 }}>
-                                                    {item.location} <span style={{ marginLeft: '8px', fontSize: '18px' }}>{item.flag}</span>
+                                                <p className="mil-upper mil-up" style={{ fontSize: '14px' }}>
+                                                    <span style={{ opacity: 0.7 }}>{item.location}</span> <span style={{ marginLeft: '8px', fontSize: '18px', opacity: 1 }}>{item.flag}</span>
                                                 </p>
                                             </div>
                                         </div>

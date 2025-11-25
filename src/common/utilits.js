@@ -1,20 +1,22 @@
 export const anchorSscroll = () => {
-    // anchor scroll
-    const links = document.querySelectorAll('a[href^="#"]');
+  // anchor scroll
+  const links = document.querySelectorAll('a[href^="#"]');
 
-    links.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        event.preventDefault();
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      event.preventDefault();
 
-        var target = document.querySelector(link.getAttribute('href'));
+      var target = document.querySelector(link.getAttribute('href'));
+      if (target) {
         var offset = 90;
-  
+
         window.scrollTo({
-            top: target.offsetTop - offset,
-            behavior: "smooth"
+          top: target.offsetTop - offset,
+          behavior: "smooth"
         });
-      });
+      }
     });
+  });
 };
 
 export const accordion = () => {

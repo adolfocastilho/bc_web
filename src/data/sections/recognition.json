@@ -3,59 +3,66 @@
     "subtitle": "O que dizem sobre nós",
     "items": [
         {
-            "title": "Mirthis Siqueira",
-            "location": "Orlando - Florida - USA",
-            "flag": "🇺🇸",
-            "videoId": "UUjmXZi5KjU",
-            "text": "Identidade visual e site profissional para atuação internacional, com foco em credibilidade e novos pacientes.",
-            "link": "#"
-        },
-        {
             "title": "Dr. Gregory Markarian",
             "location": "Chicago - Illinois - USA",
+            "countryCode": "us",
             "flag": "🇺🇸",
             "videoId": "UUjmXZi5KjU",
             "text": "Posicionamento digital estratégico para cirurgião plástico, elevando a percepção de valor e autoridade.",
             "link": "#"
         },
         {
+            "title": "Marcelino da Silva",
+            "location": "San Diego - Califórnia - USA",
+            "countryCode": "us",
+            "flag": "🇺🇸",
+            "videoId": "gPtSRmFbw9M",
+            "text": "Depoimento sobre o processo de criação e os resultados alcançados com a BeCHANGE.",
+            "link": "#"
+        },
+        {
+            "title": "Gregoire Gaumont",
+            "location": "Le Mans - França",
+            "countryCode": "fr",
+            "flag": "🇫🇷",
+            "videoId": "MZYHltDmm8A",
+            "text": "Depoimento sobre o processo de criação e os resultados alcançados com a BeCHANGE.",
+            "link": "#"
+        },
+        {
             "title": "Lorena Paim",
-            "location": "Gold Coast - Australia",
+            "location": "Melbourne - Vitória - Austrália",
+            "countryCode": "au",
             "flag": "🇦🇺",
-            "videoId": "UUjmXZi5KjU",
+            "videoId": "DSGkNs_ngnU",
             "text": "Branding completo para marca de moda na Austrália, conectando essência brasileira com mercado global.",
             "link": "#"
         },
         {
-            "title": "Cliente 4",
-            "location": "Lisboa - Portugal",
-            "flag": "🇵🇹",
-            "videoId": "UUjmXZi5KjU",
-            "text": "Descrição curta do projeto e resultado alcançado para este cliente.",
+            "title": "Mirthis Siqueira",
+            "location": "San Diego - Califórnia - USA",
+            "countryCode": "us",
+            "flag": "🇺🇸",
+            "videoId": "D79eqK9Jt1c",
+            "text": "Identidade visual e site profissional para atuação internacional, com foco em credibilidade e novos pacientes.",
             "link": "#"
         },
         {
-            "title": "Cliente 5",
-            "location": "São Paulo - Brasil",
-            "flag": "🇧🇷",
-            "videoId": "UUjmXZi5KjU",
-            "text": "Descrição curta do projeto e resultado alcançado para este cliente.",
+            "title": "Amanda",
+            "location": "Naples - Flórida - USA",
+            "countryCode": "us",
+            "flag": "🇺🇸",
+            "videoId": "Sy5LaxD5WEs",
+            "text": "Depoimento sobre o processo de criação e os resultados alcançados com a BeCHANGE.",
             "link": "#"
         },
         {
-            "title": "Cliente 6",
-            "location": "Londres - UK",
-            "flag": "🇬🇧",
-            "videoId": "UUjmXZi5KjU",
-            "text": "Descrição curta do projeto e resultado alcançado para este cliente.",
-            "link": "#"
-        },
-        {
-            "title": "Cliente 7",
-            "location": "Paris - França",
-            "flag": "🇫🇷",
-            "videoId": "UUjmXZi5KjU",
-            "text": "Descrição curta do projeto e resultado alcançado para este cliente.",
+            "title": "Estelita",
+            "location": "New York City - New York - USA",
+            "countryCode": "us",
+            "flag": "🇺🇸",
+            "videoId": "mf_5wKJwDpc",
+            "text": "Depoimento sobre o processo de criação e os resultados alcançados com a BeCHANGE.",
             "link": "#"
         }
     ]
