@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "value": 22,
+            "label": "anos",
+            "sub": "de design e web"
+        },
+        {
+            "value": 500,
+            "prefix": "+",
+            "label": "projetos",
+            "sub": "entregues"
+        },
+        {
+            "value": 8,
+            "label": "países",
+            "sub": "atendidos"
+        }
+    ]
+}

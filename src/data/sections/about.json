@@ -1,0 +1,12 @@
+{
+    "avatar": {
+        "image": "/img/person/avatar.jpg",
+        "alt": "avatar"
+    },
+    "title": "Design estratégico que transforma presença em receita",
+    "description": "Adolfo Castilho é a força criativa e estratégica por trás da BeCHANGE. Há mais de 22 anos transforma ideias em identidades visuais, sites e experiências digitais que geram negócio. Lidera pessoalmente cada projeto, garantindo visão refinada, foco em resultado financeiro e atendimento direto. Desde 2013, à frente da BeCHANGE, acompanha brasileiros que abriram ou expandiram empresas em diversos países, levando design estratégico e presença digital profissional para novos mercados. Sua atuação une sensibilidade estética à inteligência de mercado, ajudando marcas a transformar presença em percepção de valor, demanda e receita.",
+    "signature": {
+        "image": "/img/person/sign.png",
+        "alt": "signature"
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "title": "Depoimentos",
+    "subtitle": "O que dizem sobre nós",
+    "items": [
+        {
+            "title": "Mirthis Siqueira",
+            "location": "Orlando - Florida - USA",
+            "flag": "🇺🇸",
+            "videoId": "UUjmXZi5KjU",
+            "text": "Identidade visual e site profissional para atuação internacional, com foco em credibilidade e novos pacientes.",
+            "link": "#"
+        },
+        {
+            "title": "Dr. Gregory Markarian",
+            "location": "Chicago - Illinois - USA",
+            "flag": "🇺🇸",
+            "videoId": "UUjmXZi5KjU",
+            "text": "Posicionamento digital estratégico para cirurgião plástico, elevando a percepção de valor e autoridade.",
+            "link": "#"
+        },
+        {
+            "title": "Lorena Paim",
+            "location": "Gold Coast - Australia",
+            "flag": "🇦🇺",
+            "videoId": "UUjmXZi5KjU",
+            "text": "Branding completo para marca de moda na Austrália, conectando essência brasileira com mercado global.",
+            "link": "#"
+        },
+        {
+            "title": "Cliente 4",
+            "location": "Lisboa - Portugal",
+            "flag": "🇵🇹",
+            "videoId": "UUjmXZi5KjU",
+            "text": "Descrição curta do projeto e resultado alcançado para este cliente.",
+            "link": "#"
+        },
+        {
+            "title": "Cliente 5",
+            "location": "São Paulo - Brasil",
+            "flag": "🇧🇷",
+            "videoId": "UUjmXZi5KjU",
+            "text": "Descrição curta do projeto e resultado alcançado para este cliente.",
+            "link": "#"
+        },
+        {
+            "title": "Cliente 6",
+            "location": "Londres - UK",
+            "flag": "🇬🇧",
+            "videoId": "UUjmXZi5KjU",
+            "text": "Descrição curta do projeto e resultado alcançado para este cliente.",
+            "link": "#"
+        },
+        {
+            "title": "Cliente 7",
+            "location": "Paris - França",
+            "flag": "🇫🇷",
+            "videoId": "UUjmXZi5KjU",
+            "text": "Descrição curta do projeto e resultado alcançado para este cliente.",
+            "link": "#"
+        }
+    ]
+}
