@@ -51,21 +51,19 @@ const ServicesSection = () => {
                                     >
                                         {item.images.map((img, i) => (
                                             <SwiperSlide key={`service-img-${key}-${i}`}>
-                                                <img src={img} alt={`${item.title} ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                <Link href={item.link} style={{ display: 'block', width: '100%', height: '100%' }}>
+                                                    <img src={img} alt={`${item.title} ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                </Link>
                                             </SwiperSlide>
                                         ))}
                                     </Swiper>
                                 </div>
-                                <h5 className="mil-up mil-mb-30">{item.title}</h5>
-                                <p className="mil-up mil-mb-30">{item.text}</p>
-                                <div className="mil-up">
-                                    <Link href={item.link} className="mil-link mil-icon-link">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-right">
-                                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                                            <polyline points="12 5 19 12 12 19"></polyline>
-                                        </svg>
+                                <h5 className="mil-up mil-mb-30">
+                                    <Link href={item.link} style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        {item.title}
                                     </Link>
-                                </div>
+                                </h5>
+                                <p className="mil-up mil-mb-30">{item.text}</p>
                             </div>
                         </div>
                     ))}

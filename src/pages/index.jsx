@@ -4,11 +4,12 @@ import dynamic from "next/dynamic";
 
 import { getSortedPostsData } from "@library/posts";
 
-import HeroOneSection from "@components/sections/HeroOne"
+import HeroOneSection from "@components/sections/HeroOne";
 import AboutSection from "@components/sections/About";
 import ServicesSection from "@components/sections/Services";
 import RecognitionSection from "@components/sections/Recognition";
 import PortfolioSection from "@components/sections/Portfolio";
+import ContactSection from "@/src/components/sections/Contact";
 import CallToActionSection from "@components/sections/CallToAction";
 
 const Home1 = (props) => {
@@ -22,6 +23,7 @@ const Home1 = (props) => {
       <ServicesSection />
       <RecognitionSection />
       <PortfolioSection />
+      <ContactSection />
       <CallToActionSection />
     </Layouts>
   );

@@ -1,6 +1,7 @@
 import Data from "@data/sections/recognition.json";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { sliderProps } from "@/src/common/sliderProps";
 import { Pagination, Autoplay } from "swiper";
@@ -10,6 +11,12 @@ import "swiper/css/pagination";
 const RecognitionSection = () => {
     // State to track which video is active in the modal
     const [activeVideo, setActiveVideo] = useState(null);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+        return () => setMounted(false);
+    }, []);
 
     const handlePlay = (videoId) => {
         setActiveVideo(videoId);
@@ -196,42 +203,39 @@ const RecognitionSection = () => {
 
                 </div>
             </section>
-            {/* Video Modal */}
-            {activeVideo && (
-                <div style={{
-                    position: 'fixed',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: 'rgba(0,0,0,0.9)',
-                    zIndex: 9999,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '20px'
-                }} onClick={handleClose}>
+            {/* Video Modal via Portal */}
+            {mounted && activeVideo && createPortal(
+                <div
+                    style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100vw',
+                        height: '100vh',
+                        backgroundColor: 'rgba(0, 0, 0, 0.95)',
+                        zIndex: 999999,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        padding: '40px',
+                        boxSizing: 'border-box',
+                        cursor: 'zoom-out'
+                    }}
+                    onClick={handleClose}
+                >
                     <div style={{
                         position: 'relative',
                         width: '100%',
                         maxWidth: '900px',
                         aspectRatio: '16/9',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
                         backgroundColor: '#000',
-                        borderRadius: '10px',
-                        overflow: 'hidden',
-                        boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+                        borderRadius: '4px',
+                        boxShadow: '0 0 30px rgba(0,0,0,0.8)',
+                        overflow: 'hidden'
                     }} onClick={(e) => e.stopPropagation()}>
-                        <button onClick={handleClose} style={{
-                            position: 'absolute',
-                            top: '-40px',
-                            right: '0',
-                            background: 'none',
-                            border: 'none',
-                            color: 'white',
-                            fontSize: '30px',
-                            cursor: 'pointer',
-                            padding: '5px'
-                        }}>&times;</button>
                         <iframe
                             src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
                             title="YouTube video player"
@@ -244,7 +248,32 @@ const RecognitionSection = () => {
                             allowFullScreen
                         ></iframe>
                     </div>
-                </div>
+                    <button
+                        onClick={handleClose}
+                        style={{
+                            position: 'absolute',
+                            top: '30px',
+                            right: '30px',
+                            background: '#fff',
+                            borderRadius: '50%',
+                            width: '50px',
+                            height: '50px',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            border: 'none',
+                            color: '#000',
+                            fontSize: '30px',
+                            lineHeight: '1',
+                            cursor: 'pointer',
+                            padding: 0,
+                            zIndex: 100000
+                        }}
+                    >
+                        &times;
+                    </button>
+                </div>,
+                document.body
             )}
         </>
     );
