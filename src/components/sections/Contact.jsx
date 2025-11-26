@@ -3,25 +3,25 @@ import appData from "@data/app.json";
 
 const ContactSection = () => {
     return (
-        <section id="contact" className="mil-p-0-0">
+        <section id="contact" className="mil-p-0-0 mil-mt-90">
             <div className="mil-section-title mil-up">
                 <div className="mil-divider" />
                 <h3>Vamos Conversar</h3>
             </div>
-            <p className="mil-up mil-p-0-10" style={{ maxWidth: '800px', margin: '30px auto 60px', textAlign: 'center' }}>Se você enxerga potencial de crescimento, mas não quer decisões no improviso, este é o ponto de partida. Envie uma mensagem objetiva e eu retorno com um olhar técnico sobre o cenário da sua marca.</p>
+            <p className="mil-up mil-p-0-10" style={{ maxWidth: '800px', margin: '30px auto 30px', textAlign: 'center' }}>Se você enxerga potencial de crescimento, mas não quer decisões no improviso, este é o ponto de partida. Envie uma mensagem objetiva e eu retorno com um olhar técnico sobre o cenário da sua marca.</p>
 
             {/* info */}
-            <div className="mil-p-90-0">
+            <div className="mil-p-0-60">
                 <div className="row justify-content-center">
                     <div className="col-lg-8">
                         <ul className="mil-puplication-details mil-up mil-mb-90">
                             <li>
-                                <span className="mil-upper mil-accent">Cel: </span>&nbsp;&nbsp;
-                                <a href="https://wa.me/5561996090943" target="_blank" rel="noopener noreferrer" className="mil-upper mil-dark">+55 (61) 99609-0943</a>
-                            </li>
-                            <li>
                                 <span className="mil-upper mil-accent">EMAIL: </span>&nbsp;&nbsp;
                                 <span className="mil-upper mil-dark">adolfo@bechange.com.br</span>
+                            </li>
+                            <li>
+                                <span className="mil-upper mil-accent">Cel: </span>&nbsp;&nbsp;
+                                <a href="https://wa.me/5561996090943" target="_blank" rel="noopener noreferrer" className="mil-upper mil-dark">+55 (61) 99609-0943</a>
                             </li>
                         </ul>
                     </div>

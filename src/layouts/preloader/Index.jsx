@@ -26,7 +26,7 @@ const CursorModule = () => {
                         <div className="mil-circ-3"></div>
                         <div className="mil-circ-4"></div>
                     </div>
-                    <div className="mil-upper">Loading</div>
+                    <div className="mil-upper">Carregando</div>
                 </div>
             </div>
             {/* preloader end */}

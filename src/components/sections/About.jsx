@@ -10,7 +10,7 @@ const AboutSection = () => {
                         <img src={Data.avatar.image} alt={Data.avatar.alt} />
                     </div>
                     <div className="row justify-content-center">
-                        <div className="col-lg-8">
+                        <div className="col-lg-10">
                             <div className="mil-center">
                                 <h2 className="mil-up mil-mb-30" dangerouslySetInnerHTML={{ __html: Data.title }} />
                                 <div className="mil-quote mil-up mil-mb-30"><i className="fas fa-quote-left" /></div>
