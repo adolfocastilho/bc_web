@@ -1,6 +1,10 @@
 {
     "image": "/img/hero/1.jpg",
-    "subtitle": "22 anos de criatividade",
+    "subtitle": "22 ANOS DE CRIATIVIDADE",
     "title": "Seja a Mudança",
-    "description": "Estúdio de design focado em sites e identidade visual"
+    "typedStrings": [
+        "BeCHANGE",
+        "Seja a Mudança"
+    ],
+    "description": "Estúdio de Design Especialista em Sites e Identidade Visual"
 }

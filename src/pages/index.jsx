@@ -10,7 +10,6 @@ import ServicesSection from "@components/sections/Services";
 import RecognitionSection from "@components/sections/Recognition";
 import PortfolioSection from "@components/sections/Portfolio";
 import ContactSection from "@/src/components/sections/Contact";
-import CallToActionSection from "@components/sections/CallToAction";
 
 const Home1 = (props) => {
   return (
@@ -24,7 +23,6 @@ const Home1 = (props) => {
       <RecognitionSection />
       <PortfolioSection />
       <ContactSection />
-      <CallToActionSection />
     </Layouts>
   );
 };

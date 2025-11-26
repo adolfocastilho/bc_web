@@ -7,14 +7,15 @@ import "swiper/css/effect-fade";
 
 const ServicesSection = () => {
     return (
-        <>
+        <section id="services">
             <div className="mil-section-title mil-up">
                 <div className="mil-divider"></div>
                 <h3>{Data.title}</h3>
             </div>
+            <p className="mil-up mil-p-0-10" style={{ maxWidth: '800px', margin: '30px auto 60px', textAlign: 'center' }}>{Data.description}</p>
 
             {/* services */}
-            <section id="services" className="mil-p-90-30">
+            <div className="mil-p-90-30" style={{ paddingTop: '0' }}>
                 <div className="row justify-content-between align-items-center">
                     {Data.items.map((item, key) => (
                         <div key={`services-item-${key}`} className="col-lg-4">
@@ -68,9 +69,9 @@ const ServicesSection = () => {
                         </div>
                     ))}
                 </div>
-            </section>
+            </div>
             {/* services end */}
-        </>
+        </section>
     );
 };
 

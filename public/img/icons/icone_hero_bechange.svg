@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 180 250">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#radial-gradient);
+      }
+
+      .st1 {
+        fill: url(#radial-gradient1);
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="17.7" cy="190.4" fx="17.7" fy="190.4" r="98.6" gradientUnits="userSpaceOnUse">
+      <stop offset=".6" stop-color="#324394"/>
+      <stop offset=".7" stop-color="#30418f"/>
+      <stop offset=".8" stop-color="#2d3b82"/>
+      <stop offset=".9" stop-color="#26326c"/>
+      <stop offset="1" stop-color="#1f2750"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient1" cx="48" cy="127.1" fx="48" fy="127.1" r="194.9" gradientTransform="translate(95.9 246.8) rotate(-180) scale(1 .9)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fcf4af"/>
+      <stop offset="0" stop-color="#fcf4af"/>
+      <stop offset="0" stop-color="#fbf29d"/>
+      <stop offset="0" stop-color="#faed6e"/>
+      <stop offset=".1" stop-color="#faeb59"/>
+      <stop offset=".4" stop-color="#fbd525"/>
+      <stop offset=".5" stop-color="#fdca09"/>
+      <stop offset=".6" stop-color="#f5a21b"/>
+      <stop offset=".7" stop-color="#f39323"/>
+      <stop offset=".8" stop-color="#f39721"/>
+      <stop offset=".8" stop-color="#f5a31d"/>
+      <stop offset=".9" stop-color="#f9b815"/>
+      <stop offset=".9" stop-color="#fbc013"/>
+      <stop offset=".9" stop-color="#fac218"/>
+      <stop offset="1" stop-color="#fad948"/>
+      <stop offset="1" stop-color="#fae765"/>
+      <stop offset="1" stop-color="#faed71"/>
+    </radialGradient>
+  </defs>
+  <path id="SVGID" class="st0" d="M68.9,137.4C3,178.5-9.6,229.5,38.7,239.3c5.3.8,10.8,1.2,16.3,1.2,61.8,0,111.8-51.8,111.8-115.8S130.6,24.7,81.8,12.3c-3.4-.8-6.9-1.4-10.4-1.9,65.7,9.3,66.4,84.2-2.4,127"/>
+  <path id="SVGID1" data-name="SVGID" class="st1" d="M58.6,9.4h-.3c-1.9,0-3.7,0-5.5.2-1,0-2.1.2-3.1.2-.9,0-1.9.1-2.8.3-.3,0-.6,0-.9.1C-9,17,2,70.1,70.4,112.6c68.7,42.7,68.1,117.2,2.4,126.5,54-7,96.1-53.7,97.7-110.9h0v-.3h0c0-.2,0-.3,0-.3h0v-.3c0,0,0,0,0-.1v-.2s0,0,0-.1v-.2h0v-.3c0,0,0-.1,0-.2v-.7c0,0,0-.1,0-.2v-.3h0c0-30-11.1-57.3-29.3-77.8h0s0-.1-.1-.2c0,0,0,0-.1-.1,0,0,0,0,0,0,0,0,0-.1-.2-.2h0C120.3,23.7,91.1,9.4,58.7,9.4h-.1Z"/>
+</svg>

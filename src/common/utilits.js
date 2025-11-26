@@ -1,22 +1,5 @@
 export const anchorSscroll = () => {
-  // anchor scroll
-  const links = document.querySelectorAll('a[href^="#"]');
-
-  links.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      event.preventDefault();
-
-      var target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        var offset = 90;
-
-        window.scrollTo({
-          top: target.offsetTop - offset,
-          behavior: "smooth"
-        });
-      }
-    });
-  });
+  // anchor scroll - DISABLED to use native CSS scroll-behavior and scroll-margin-top
 };
 
 export const accordion = () => {

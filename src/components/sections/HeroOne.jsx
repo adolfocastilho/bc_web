@@ -1,28 +1,71 @@
 import Data from "@data/sections/hero-1.json";
+import { useEffect, useRef, useState } from "react";
+import Typed from 'typed.js';
 
 const HeroOne = () => {
+    const el = useRef(null);
+    const [rotation, setRotation] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setRotation(window.scrollY * 0.8);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const typed = new Typed(el.current, {
+            strings: Data.typedStrings,
+            typeSpeed: 150, // Was 100
+            backSpeed: 80,  // Was 50
+            backDelay: 2000,
+            loop: true,
+            showCursor: true
+        });
+
+        return () => {
+            typed.destroy();
+        };
+    }, []);
+
     return (
         <>
             {/* banner */}
             <section className="mil-side-banner mil-center">
                 <div className="mil-banner-top mil-up"></div>
                 <div className="mil-banner-title">
+                    <img src="/img/icons/icone_hero_bechange.svg" alt="BeCHANGE" className="mil-up mil-mb-30 mil-hero-icon" />
                     <div className="mil-upper mil-dark mil-up mil-mb-30">{Data.subtitle}</div>
-                    <h1 className="mil-up mil-mb-30" dangerouslySetInnerHTML={{__html : Data.title}} />
+                    <h1 className="mil-up mil-mb-30" style={{ minHeight: '1.2em' }}>
+                        <span ref={el} />
+                    </h1>
                     <p className="mil-upper mil-dark mil-up">{Data.description}</p>
                 </div>
                 <div className="mil-up mil-oval-frame">
                     <div className="mil-circle-text">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enableBackground="new 0 0 300 300" xmlSpace="preserve" className="mil-ct-svg mil-rotate" data-value="360">
+                        <svg
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                            x="0px"
+                            y="0px"
+                            viewBox="0 0 300 300"
+                            enableBackground="new 0 0 300 300"
+                            xmlSpace="preserve"
+                            className="mil-ct-svg"
+                            style={{ transform: `scale(2) rotate(${rotation}deg)` }}
+                        >
                             <defs>
                                 <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
                             </defs>
                             <circle cx="150" cy="100" r="75" fill="none" />
                             <g>
                                 <use xlinkHref="#circlePath" fill="none" />
-                                <text style={{"letterSpacing": "6.5px"}}>
+                                <text style={{ "letterSpacing": "3px" }}>
                                     {/* circle text */}
-                                    <textPath xlinkHref="#circlePath">Scroll down - Scroll down - </textPath>
+                                    <textPath xlinkHref="#circlePath">Deslize para baixo - Deslize para baixo - </textPath>
                                 </text>
                             </g>
                         </svg>

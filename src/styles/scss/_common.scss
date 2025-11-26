@@ -21,6 +21,7 @@ body {
     color: $dt-50;
     line-height: 170%;
     overscroll-behavior: none;
+    scroll-behavior: smooth;
     background-color: $gs-1;
 
     @media screen and (max-width: 768px) {
@@ -222,6 +223,7 @@ a {
     font-weight: 600;
     letter-spacing: 2px;
 }
+
 /* -------------------------------------------
 
 button
@@ -255,6 +257,7 @@ button
         transform: scale(1.03);
     }
 }
+
 /* -------------------------------------------
 
 link
@@ -314,6 +317,7 @@ link
         }
     }
 }
+
 /* -------------------------------------------
 
 divider
@@ -347,11 +351,16 @@ divider
         border-radius: 50%;
     }
 }
+
 /* -------------------------------------------
 
 section title
 
 ------------------------------------------- */
+section {
+    scroll-margin-top: 140px;
+}
+
 .mil-section-title {
     position: relative;
     height: 30px;
@@ -381,6 +390,7 @@ section title
         }
     }
 }
+
 /* -------------------------------------------
 
 spaces
@@ -451,7 +461,20 @@ spaces
     ul {
         margin-left: 1em;
     }
-    p, ul, blockquote, ol, h1, h2, h3, h4, h5, h6, iframe, table, object {
+
+    p,
+    ul,
+    blockquote,
+    ol,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    iframe,
+    table,
+    object {
         margin-bottom: 30px;
 
         &:last-child {

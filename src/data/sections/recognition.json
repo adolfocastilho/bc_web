@@ -1,6 +1,7 @@
 {
     "title": "Depoimentos",
     "subtitle": "O que dizem sobre nós",
+    "description": "Empresas que buscaram um parceiro estratégico, não apenas um designer. Aqui você vê como projetos bem conduzidos geram confiança, previsibilidade e novos convites à mesa.",
     "items": [
         {
             "title": "Dr. Gregory Markarian",
@@ -48,7 +49,7 @@
             "link": "#"
         },
         {
-            "title": "Amanda",
+            "title": "Amanda Ferreira",
             "location": "Naples - Flórida - USA",
             "countryCode": "us",
             "flag": "🇺🇸",
@@ -57,7 +58,7 @@
             "link": "#"
         },
         {
-            "title": "Estelita",
+            "title": "Estelita Gomes",
             "location": "New York City - New York - USA",
             "countryCode": "us",
             "flag": "🇺🇸",
