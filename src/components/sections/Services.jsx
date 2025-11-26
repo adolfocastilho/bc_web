@@ -12,7 +12,7 @@ const ServicesSection = () => {
                 <div className="mil-divider"></div>
                 <h3>{Data.title}</h3>
             </div>
-            <p className="mil-up mil-p-0-10" style={{ maxWidth: '800px', margin: '30px auto 60px', textAlign: 'center' }}>{Data.description}</p>
+            <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
 
             {/* services */}
             <div className="mil-p-90-30" style={{ paddingTop: '0' }}>

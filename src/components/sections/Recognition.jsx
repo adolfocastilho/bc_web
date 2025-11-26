@@ -1,7 +1,7 @@
 import Data from "@data/sections/recognition.json";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
+import Modal from "@components/common/Modal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { sliderProps } from "@/src/common/sliderProps";
 import { Pagination, Autoplay } from "swiper";
@@ -9,7 +9,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const RecognitionSection = () => {
-    // State to track which video is active in the modal
     const [activeVideo, setActiveVideo] = useState(null);
     const [mounted, setMounted] = useState(false);
 
@@ -33,7 +32,7 @@ const RecognitionSection = () => {
                     <div className="mil-divider"></div>
                     <h3>{Data.title}</h3>
                 </div>
-                <p className="mil-up mil-p-0-10" style={{ maxWidth: '800px', margin: '30px auto 60px', textAlign: 'center' }}>{Data.description}</p>
+                <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
 
                 {/* DESKTOP VERSION (3 Columns) - Hidden on mobile */}
                 <div className="mil-p-90-30 d-none d-lg-block" style={{ paddingTop: '0' }}>
@@ -55,42 +54,12 @@ const RecognitionSection = () => {
                             {Data.items.map((item, key) => (
                                 <SwiperSlide key={`recognition-desktop-${key}`}>
                                     <div className="mil-icon-box mil-center mil-mb-60">
-                                        <div className="mil-service-slider mil-mb-30" style={{
-                                            width: '100%',
-                                            borderRadius: '20px',
-                                            overflow: 'hidden',
-                                            position: 'relative',
-                                            paddingBottom: '56.25%', // 16:9 aspect ratio
-                                            height: 0,
-                                            cursor: 'pointer'
-                                        }} onClick={() => handlePlay(item.videoId)}>
+                                        <div className="mil-video-thumbnail" onClick={() => handlePlay(item.videoId)}>
                                             <img
                                                 src={`https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`}
                                                 alt={item.title}
-                                                style={{
-                                                    position: 'absolute',
-                                                    top: 0,
-                                                    left: 0,
-                                                    width: '100%',
-                                                    height: '100%',
-                                                    objectFit: 'cover'
-                                                }}
                                             />
-                                            <div style={{
-                                                position: 'absolute',
-                                                top: '50%',
-                                                left: '50%',
-                                                transform: 'translate(-50%, -50%)',
-                                                width: '60px',
-                                                height: '60px',
-                                                backgroundColor: 'rgba(0,0,0,0.7)',
-                                                borderRadius: '50%',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                zIndex: 2,
-                                                transition: 'transform 0.3s ease'
-                                            }} className="mil-play-button">
+                                            <div className="mil-play-button">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                                     <polygon points="5 3 19 12 5 21 5 3"></polygon>
                                                 </svg>
@@ -126,46 +95,17 @@ const RecognitionSection = () => {
                                     <SwiperSlide className="swiper-slide" key={`recognition-mobile-${key}`}>
                                         <div className="mil-review mil-center" data-swiper-parallax-opacity="0" data-swiper-parallax="-90" data-swiper-parallax-scale=".8">
                                             <div className="mil-review-top" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-
                                                 {/* Video Thumbnail */}
-                                                <div className="mil-video-container mil-up mil-mb-30" style={{
-                                                    width: '100%',
-                                                    maxWidth: '600px',
-                                                    borderRadius: '20px',
-                                                    overflow: 'hidden',
-                                                    position: 'relative',
-                                                    paddingBottom: '56.25%', // 16:9 aspect ratio based on width
-                                                    height: 0,
-                                                    cursor: 'pointer',
-                                                    boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
-                                                }} onClick={() => handlePlay(item.videoId)}>
+                                                <div
+                                                    className="mil-video-thumbnail mil-up mil-mb-30"
+                                                    style={{ maxWidth: '600px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
+                                                    onClick={() => handlePlay(item.videoId)}
+                                                >
                                                     <img
                                                         src={`https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`}
                                                         alt={item.title}
-                                                        style={{
-                                                            position: 'absolute',
-                                                            top: 0,
-                                                            left: 0,
-                                                            width: '100%',
-                                                            height: '100%',
-                                                            objectFit: 'cover'
-                                                        }}
                                                     />
-                                                    <div style={{
-                                                        position: 'absolute',
-                                                        top: '50%',
-                                                        left: '50%',
-                                                        transform: 'translate(-50%, -50%)',
-                                                        width: '70px',
-                                                        height: '70px',
-                                                        backgroundColor: 'rgba(0,0,0,0.7)',
-                                                        borderRadius: '50%',
-                                                        display: 'flex',
-                                                        alignItems: 'center',
-                                                        justifyContent: 'center',
-                                                        zIndex: 2,
-                                                        transition: 'transform 0.3s ease'
-                                                    }} className="mil-play-button">
+                                                    <div className="mil-play-button mil-play-button-large">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                                             <polygon points="5 3 19 12 5 21 5 3"></polygon>
                                                         </svg>
@@ -206,78 +146,21 @@ const RecognitionSection = () => {
                     </div>
                 </div>
             </section>
-            {/* Video Modal via Portal */}
-            {mounted && activeVideo && createPortal(
-                <div
-                    style={{
-                        position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        width: '100vw',
-                        height: '100vh',
-                        backgroundColor: 'rgba(0, 0, 0, 0.95)',
-                        zIndex: 999999,
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        padding: '40px',
-                        boxSizing: 'border-box',
-                        cursor: 'zoom-out'
-                    }}
-                    onClick={handleClose}
-                >
-                    <div style={{
-                        position: 'relative',
-                        width: '100%',
-                        maxWidth: '900px',
-                        aspectRatio: '16/9',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        backgroundColor: '#000',
-                        borderRadius: '4px',
-                        boxShadow: '0 0 30px rgba(0,0,0,0.8)',
-                        overflow: 'hidden'
-                    }} onClick={(e) => e.stopPropagation()}>
-                        <iframe
-                            src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
-                            title="YouTube video player"
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                border: 0
-                            }}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
-                    </div>
-                    <button
-                        onClick={handleClose}
-                        style={{
-                            position: 'absolute',
-                            top: '30px',
-                            right: '30px',
-                            background: '#fff',
-                            borderRadius: '50%',
-                            width: '50px',
-                            height: '50px',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            border: 'none',
-                            color: '#000',
-                            fontSize: '30px',
-                            lineHeight: '1',
-                            cursor: 'pointer',
-                            padding: 0,
-                            zIndex: 100000
-                        }}
-                    >
-                        &times;
-                    </button>
-                </div>,
-                document.body
-            )}
+
+            {/* Video Modal */}
+            <Modal
+                isOpen={!!activeVideo}
+                onClose={handleClose}
+                variant="video"
+                mounted={mounted}
+            >
+                <iframe
+                    src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
+            </Modal>
         </>
     );
 };

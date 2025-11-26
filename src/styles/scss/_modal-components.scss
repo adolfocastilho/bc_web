@@ -1,0 +1,174 @@
+/* Modal Overlay Styles */
+.mil-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
+    cursor: zoom-out;
+}
+
+/* Modal Content Container */
+.mil-modal-content {
+    position: relative;
+    cursor: default;
+}
+
+/* Image Lightbox Variant */
+.mil-modal-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 4px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* Video Player Variant */
+.mil-modal-video {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+/* Close Button */
+.mil-modal-close {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #000;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    z-index: 100000;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+
+    &:focus {
+        outline: 2px solid $accent;
+        outline-offset: 2px;
+    }
+}
+
+.mil-modal-image .mil-modal-close {
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+}
+
+.mil-modal-video .mil-modal-close {
+    top: 30px;
+    right: 30px;
+}
+
+/* Section Description Styles */
+.mil-section-description {
+    max-width: 800px;
+    margin: 30px auto 60px;
+    text-align: center;
+}
+
+/* Video Thumbnail Styles */
+.mil-video-thumbnail {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 56.25%; // 16:9 aspect ratio
+    height: 0;
+    cursor: pointer;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Play Button Overlay */
+.mil-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+    svg {
+        width: 24px;
+        height: 24px;
+        fill: white;
+        stroke: white;
+    }
+
+    &:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+}
+
+/* Larger play button for mobile */
+.mil-play-button-large {
+    width: 70px;
+    height: 70px;
+
+    svg {
+        width: 28px;
+        height: 28px;
+    }
+}

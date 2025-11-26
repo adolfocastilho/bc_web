@@ -1,15 +1,22 @@
+/**
+ * Anchor scroll function - DISABLED
+ * Native CSS scroll-behavior and scroll-margin-top are used instead
+ */
 export const anchorSscroll = () => {
-  // anchor scroll - DISABLED to use native CSS scroll-behavior and scroll-margin-top
+  // Disabled to use native CSS scroll-behavior and scroll-margin-top
 };
 
+/**
+ * Accordion toggle functionality
+ * Handles click events on accordion menu items to expand/collapse panels
+ */
 export const accordion = () => {
-  var acc = document.getElementsByClassName("mil-accordion-menu");
-  var i;
+  const acc = document.getElementsByClassName("mil-accordion-menu");
 
-  for (i = 0; i < acc.length; i++) {
+  for (let i = 0; i < acc.length; i++) {
     acc[i].onclick = function () {
       this.classList.toggle("mil-active");
-      var panel = this.nextElementSibling;
+      const panel = this.nextElementSibling;
       if (panel.style.height) {
         panel.style.height = null;
       } else {

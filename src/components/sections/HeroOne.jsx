@@ -1,6 +1,7 @@
 import Data from "@data/sections/hero-1.json";
 import { useEffect, useRef, useState } from "react";
 import Typed from 'typed.js';
+import { ANIMATION } from "@common/constants";
 
 const HeroOne = () => {
     const el = useRef(null);
@@ -8,7 +9,7 @@ const HeroOne = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setRotation(window.scrollY * 0.8);
+            setRotation(window.scrollY * ANIMATION.SCROLL_ROTATION_SPEED);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -18,9 +19,9 @@ const HeroOne = () => {
     useEffect(() => {
         const typed = new Typed(el.current, {
             strings: Data.typedStrings,
-            typeSpeed: 150, // Was 100
-            backSpeed: 80,  // Was 50
-            backDelay: 2000,
+            typeSpeed: ANIMATION.TYPE_SPEED,
+            backSpeed: ANIMATION.BACKSPACE_SPEED,
+            backDelay: ANIMATION.BACKSPACE_DELAY,
             loop: true,
             showCursor: true
         });

@@ -5,24 +5,8 @@ import { Autoplay, EffectFade } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
-
-// Custom hook for media query
-const useMediaQuery = (query) => {
-    const [matches, setMatches] = useState(false);
-
-    useEffect(() => {
-        const media = window.matchMedia(query);
-        if (media.matches !== matches) {
-            setMatches(media.matches);
-        }
-        const listener = () => setMatches(media.matches);
-        media.addListener(listener);
-        return () => media.removeListener(listener);
-    }, [matches, query]);
-
-    return matches;
-};
+import Modal from "@components/common/Modal";
+import { useMediaQuery } from "@common/hooks/useMediaQuery";
 
 const PortfolioSection = () => {
     const isDesktop = useMediaQuery("(min-width: 992px)");
@@ -53,7 +37,7 @@ const PortfolioSection = () => {
                     <div className="mil-divider"></div>
                     <h3>{Data.title}</h3>
                 </div>
-                <p className="mil-up mil-p-0-10" style={{ maxWidth: '800px', margin: '30px auto 60px', textAlign: 'center' }}>{Data.description}</p>
+                <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
 
                 {/* portfolio grid */}
                 <div className="mil-p-90-30" style={{ paddingTop: '0' }}>
@@ -64,16 +48,16 @@ const PortfolioSection = () => {
 
                             if (isDesktop) {
                                 // Desktop: 4 columns
-                                if (key === 0) borderRadius = '20px 0 0 0'; // Top-left
-                                else if (key === 3) borderRadius = '0 20px 0 0'; // Top-right
-                                else if (key === total - 4) borderRadius = '0 0 0 20px'; // Bottom-left
-                                else if (key === total - 1) borderRadius = '0 0 20px 0'; // Bottom-right
+                                if (key === 0) borderRadius = '20px 0 0 0';
+                                else if (key === 3) borderRadius = '0 20px 0 0';
+                                else if (key === total - 4) borderRadius = '0 0 0 20px';
+                                else if (key === total - 1) borderRadius = '0 0 20px 0';
                             } else {
                                 // Mobile/Tablet: 2 columns
-                                if (key === 0) borderRadius = '20px 0 0 0'; // Top-left
-                                else if (key === 1) borderRadius = '0 20px 0 0'; // Top-right
-                                else if (key === total - 2) borderRadius = '0 0 0 20px'; // Bottom-left
-                                else if (key === total - 1) borderRadius = '0 0 20px 0'; // Bottom-right
+                                if (key === 0) borderRadius = '20px 0 0 0';
+                                else if (key === 1) borderRadius = '0 20px 0 0';
+                                else if (key === total - 2) borderRadius = '0 0 0 20px';
+                                else if (key === total - 1) borderRadius = '0 0 20px 0';
                             }
 
                             return (
@@ -94,9 +78,8 @@ const PortfolioSection = () => {
                                                     disableOnInteraction: false,
                                                 }}
                                                 effect={"fade"}
-                                                style={{ width: '100%', aspectRatio: '1/1' }} // Enforce a square aspect ratio
+                                                style={{ width: '100%', aspectRatio: '1/1' }}
                                                 onSwiper={(swiper) => {
-                                                    // Use setTimeout(0) to ensure we stop autoplay AFTER initialization
                                                     setTimeout(() => {
                                                         if (swiper.autoplay) {
                                                             swiper.autoplay.stop();
@@ -104,7 +87,7 @@ const PortfolioSection = () => {
                                                                 if (swiper.autoplay) {
                                                                     swiper.autoplay.start();
                                                                 }
-                                                            }, Math.random() * 3000); // Random start time for shuffled effect
+                                                            }, Math.random() * 3000);
                                                         }
                                                     }, 0);
                                                 }}
@@ -127,84 +110,23 @@ const PortfolioSection = () => {
                             );
                         })}
                     </div>
-                </div >
-            </section >
-            {/* portfolio grid end */}
+                </div>
+            </section>
 
-            {/* Lightbox Modal via Portal */}
-            {
-                mounted && lightboxOpen && createPortal(
-                    <div
-                        style={{
-                            position: 'fixed',
-                            top: 0,
-                            left: 0,
-                            width: '100vw',
-                            height: '100vh',
-                            backgroundColor: 'rgba(0, 0, 0, 0.95)',
-                            zIndex: 999999,
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            padding: '40px',
-                            boxSizing: 'border-box',
-                            cursor: 'zoom-out'
-                        }}
-                        onClick={closeLightbox}
-                    >
-                        <div style={{
-                            position: 'relative',
-                            width: '100%',
-                            height: '100%',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}>
-                            <img
-                                src={selectedImage}
-                                alt="Full size"
-                                style={{
-                                    maxWidth: '100%',
-                                    maxHeight: '100%',
-                                    width: 'auto',
-                                    height: 'auto',
-                                    objectFit: 'contain',
-                                    borderRadius: '4px',
-                                    boxShadow: '0 0 30px rgba(0,0,0,0.8)'
-                                }}
-                            />
-                            <button
-                                onClick={closeLightbox}
-                                style={{
-                                    position: 'absolute',
-                                    top: '0',
-                                    right: '0',
-                                    background: 'rgba(0,0,0,0.5)',
-                                    borderRadius: '50%',
-                                    width: '40px',
-                                    height: '40px',
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    border: '2px solid #fff',
-                                    color: '#fff',
-                                    fontSize: '24px',
-                                    lineHeight: '1',
-                                    cursor: 'pointer',
-                                    padding: 0,
-                                    zIndex: 100000
-                                }}
-                            >
-                                &times;
-                            </button>
-                        </div>
-                    </div>,
-                    document.body
-                )
-            }
+            {/* Lightbox Modal */}
+            <Modal
+                isOpen={lightboxOpen}
+                onClose={closeLightbox}
+                variant="image"
+                mounted={mounted}
+            >
+                <img
+                    src={selectedImage}
+                    alt="Full size"
+                />
+            </Modal>
         </>
     );
 };
 
 export default PortfolioSection;
-
