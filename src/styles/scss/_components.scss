@@ -944,6 +944,64 @@ about
     width: 140px;
 }
 
+.mil-logos-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+
+    .mil-logo-item {
+        width: 105px;
+        height: 105px;
+        background-color: $light;
+        border: solid 1px $gs-10;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        overflow: hidden;
+        transition: $t-md;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        flex-wrap: nowrap;
+        gap: 10px;
+        margin-left: -20px;
+        margin-right: -20px;
+        justify-content: center;
+
+        .mil-logo-item {
+            width: 64px;
+            height: 64px;
+            padding: 5px;
+            flex-shrink: 0;
+        }
+    }
+}
+
+#about {
+    @media screen and (max-width: 768px) {
+        .col-lg-10 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+
 /* -------------------------------------------
 
 circle text
@@ -1153,6 +1211,7 @@ blog
         & p {
             text-overflow: ellipsis;
             display: -webkit-box;
+            line-clamp: 2;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
@@ -1892,8 +1951,8 @@ textarea {
     font-weight: 500;
     font-family: $font-1;
     color: $dark;
-    border: none;
-    border-bottom: solid 1px $dt-10;
+    color: $dark;
+    border: solid 1px $dt-10;
     margin-bottom: 30px;
 
     &:focus {
@@ -2262,4 +2321,109 @@ html.is-animating {
             padding-right: 10px;
         }
     }
+}
+
+/* -------------------------------------------
+
+international section
+
+------------------------------------------- */
+.foreign-section {
+    max-width: 1100px;
+    margin: 0 auto 90px;
+    background: $light;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 20px 24px;
+
+    @media (max-width: 800px) {
+        padding: 18px 16px;
+    }
+}
+
+.foreign-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.foreign-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: $dark;
+}
+
+.foreign-subtitle {
+    font-size: 13px;
+    color: $gs-60;
+    max-width: 420px;
+}
+
+.mil-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 30px;
+    background-color: $gs-5;
+    color: $accent;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: solid 1px $gs-10;
+}
+
+.mil-mr-15 {
+    margin-right: 15px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .mil-badge {
+        margin-bottom: 10px;
+    }
+}
+
+.foreign-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+
+    @media (max-width: 800px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.foreign-card {
+    padding: 12px 12px 10px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #fafbff;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        border-color: rgba(72, 80, 168, 0.3);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+}
+
+.foreign-card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: $dark;
+    margin-bottom: 4px;
+}
+
+.foreign-card-text {
+    font-size: 12px;
+    color: $gs-60;
+    line-height: 1.5;
 }

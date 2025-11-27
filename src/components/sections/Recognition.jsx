@@ -48,7 +48,6 @@ const RecognitionSection = () => {
                                 disableOnInteraction: false,
                                 pauseOnMouseEnter: true
                             }}
-                            pagination={{ clickable: true, dynamicBullets: true }}
                             className="mil-services-slider"
                         >
                             {Data.items.map((item, key) => (

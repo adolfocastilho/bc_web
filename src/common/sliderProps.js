@@ -42,13 +42,15 @@ export const sliderProps = {
     spaceBetween: 30,
     speed: 800,
     parallax: true,
+    allowTouchMove: true,
+    grabCursor: true,
     navigation: {
-        nextEl: '.mil-reviews-next',
-        prevEl: '.mil-reviews-prev',
+      nextEl: '.mil-reviews-next',
+      prevEl: '.mil-reviews-prev',
     },
     pagination: {
-        el: '.swiper-reviews-pagination',
-        clickable: true,
+      el: '.swiper-reviews-pagination',
+      clickable: true,
     },
   },
   milPortfolioCarousel: {
@@ -56,20 +58,20 @@ export const sliderProps = {
     speed: 800,
     parallax: true,
     mousewheel: {
-        enable: true
+      enable: true
     },
     navigation: {
-        nextEl: '.mil-portfolio-next',
-        prevEl: '.mil-portfolio-prev',
+      nextEl: '.mil-portfolio-next',
+      prevEl: '.mil-portfolio-prev',
     },
     pagination: {
-        el: '.mil-portfolio-pagination',
-        type: 'fraction',
+      el: '.mil-portfolio-pagination',
+      type: 'fraction',
     },
     breakpoints: {
-        1200: {
-            spaceBetween: 90,
-        },
+      1200: {
+        spaceBetween: 90,
+      },
     },
   }
 };

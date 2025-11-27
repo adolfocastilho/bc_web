@@ -64,7 +64,13 @@ const DefaultHeader = ({ extraClass }) => {
             <ul>
               {navItems.map((item, key) => (
                 <li className={item.classes} key={`header-menu-item-${key}`}>
-                  <a href={item.link}>{item.label}</a>
+                  <a href={item.link} onClick={() => {
+                    if (window.innerWidth <= 768) {
+                      setTimeout(() => {
+                        setToggle(false);
+                      }, 2000);
+                    }
+                  }}>{item.label}</a>
                   {item.children != 0 &&
                     <ul>
                       {item.children.map((subitem, key2) => (

@@ -1,12 +1,30 @@
 {
     "avatar": {
-        "image": "/img/person/avatar.jpg",
+        "image": "/img/person/avatar_adolfo.webp",
         "alt": "avatar"
     },
     "title": "Design estratégico que transforma presença em receita",
-    "description": "Adolfo Castilho é a força criativa e estratégica por trás da BeCHANGE. Há mais de 22 anos transforma ideias em identidades visuais, sites e experiências digitais que geram negócio. Lidera pessoalmente cada projeto, garantindo visão refinada, foco em resultado financeiro e atendimento direto. Desde 2013, à frente da BeCHANGE, acompanha brasileiros que abriram ou expandiram empresas em diversos países, levando design estratégico e presença digital profissional para novos mercados. Sua atuação une sensibilidade estética à inteligência de mercado, ajudando marcas a transformar presença em percepção de valor, demanda e receita.",
+    "description": "Adolfo Castilho é a força criativa e estratégica por trás da BeCHANGE. Há mais de 22 anos transforma ideias em identidades visuais, sites e experiências digitais que geram negócio. Lidera pessoalmente cada projeto, garantindo visão refinada, foco em resultado financeiro e atendimento direto. Desde 2013, à frente da BeCHANGE, acompanha clientes que abriram ou expandiram empresas no Brasil e em diversos países, levando design estratégico e presença digital profissional para novos mercados. A BeCHANGE conta com selos e credenciais como Adegraf, ADG, ABCOM e registro DUNS, reforçando a seriedade da operação e a segurança para quem escolhe trabalhar com a agência.",
     "signature": {
         "image": "/img/person/sign.png",
         "alt": "signature"
-    }
+    },
+    "logos": [
+        {
+            "image": "/img/logos/adegraf.png",
+            "alt": "Adegraf"
+        },
+        {
+            "image": "/img/logos/duns.png",
+            "alt": "DUNS"
+        },
+        {
+            "image": "/img/logos/adg.png",
+            "alt": "ADG"
+        },
+        {
+            "image": "/img/logos/abcom.png",
+            "alt": "ABCOM"
+        }
+    ]
 }

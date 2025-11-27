@@ -15,7 +15,13 @@ const AboutSection = () => {
                                 <h2 className="mil-up mil-mb-30" dangerouslySetInnerHTML={{ __html: Data.title }} />
                                 <div className="mil-quote mil-up mil-mb-30"><i className="fas fa-quote-left" /></div>
                                 <p className="mil-up mil-mb-30">{Data.description}</p>
-                                <img src={Data.signature.image} alt={Data.signature.alt} className="mil-up mil-sign" />
+                                <div className="mil-logos-wrapper mil-up mil-mb-30">
+                                    {Data.logos.map((logo, index) => (
+                                        <div className="mil-logo-item" key={index}>
+                                            <img src={logo.image} alt={logo.alt} />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>

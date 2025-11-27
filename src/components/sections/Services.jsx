@@ -64,7 +64,8 @@ const ServicesSection = () => {
                                         {item.title}
                                     </Link>
                                 </h5>
-                                <p className="mil-up mil-mb-30">{item.text}</p>
+                                <p className="mil-up mil-mb-5">{item.text}</p>
+                                <Link href={item.link} className="mil-up mil-mb-30" style={{ display: "block", fontWeight: "bold", color: "inherit" }}>Saiba mais...</Link>
                             </div>
                         </div>
                     ))}
