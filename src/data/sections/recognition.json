@@ -1,7 +1,7 @@
 {
     "title": "Depoimentos",
     "subtitle": "O que dizem sobre nós",
-    "description": "Clientes em diferentes países que buscaram um parceiro estratégico, não apenas um designer. Aqui você vê como projetos bem conduzidos geram resultados consistentes, relações duradouras e novas oportunidades.",
+    "description": "Clientes em diferentes países que buscaram um parceiro estratégico, não apenas um designer ou programador. Aqui você vê como projetos bem conduzidos geram resultados, relações duradouras e abrem portas para novos mercados.",
     "items": [
         {
             "title": "Dr. Gregory Markarian",
@@ -9,7 +9,7 @@
             "countryCode": "us",
             "flag": "🇺🇸",
             "videoId": "UUjmXZi5KjU",
-            "text": "Posicionamento digital estratégico para cirurgião plástico, elevando a percepção de valor e autoridade.",
+            "text": "Identidade visual, website e embalagens para empresas de produtos médicos e clínica ortopédica, elevando autoridade no setor de saúde.",
             "link": "#"
         },
         {
@@ -18,7 +18,7 @@
             "countryCode": "us",
             "flag": "🇺🇸",
             "videoId": "gPtSRmFbw9M",
-            "text": "Depoimento sobre o processo de criação e os resultados alcançados com a BeCHANGE.",
+            "text": "Website profissional para empresa de restauração arquitetônica, destacando expertise em tetos, lareiras e detalhes históricos de casas.",
             "link": "#"
         },
         {
@@ -27,7 +27,7 @@
             "countryCode": "fr",
             "flag": "🇫🇷",
             "videoId": "MZYHltDmm8A",
-            "text": "Depoimento sobre o processo de criação e os resultados alcançados com a BeCHANGE.",
+            "text": "Identidade visual e website estratégico para chef de cozinha francesa, elevando presença digital e autoridade gastronômica internacional.",
             "link": "#"
         },
         {
@@ -36,7 +36,7 @@
             "countryCode": "au",
             "flag": "🇦🇺",
             "videoId": "DSGkNs_ngnU",
-            "text": "Branding completo para marca de moda na Austrália, conectando essência brasileira com mercado global.",
+            "text": "Identidade visual completa para clínica veterinária e materiais impressos (flyers), transmitindo cuidado profissional e confiança animal.",
             "link": "#"
         },
         {
@@ -45,7 +45,7 @@
             "countryCode": "us",
             "flag": "🇺🇸",
             "videoId": "D79eqK9Jt1c",
-            "text": "Identidade visual e site profissional para atuação internacional, com foco em credibilidade e novos pacientes.",
+            "text": "Identidade visual sofisticada para grife de moda praia feminina, comunicando elegância, exclusividade e essência brasileira premium.",
             "link": "#"
         },
         {
@@ -54,7 +54,7 @@
             "countryCode": "us",
             "flag": "🇺🇸",
             "videoId": "Sy5LaxD5WEs",
-            "text": "Depoimento sobre o processo de criação e os resultados alcançados com a BeCHANGE.",
+            "text": "Identidade visual estratégica para personal trainer, transmitindo energia, disciplina, profissionalismo e resultados reais de transformação.",
             "link": "#"
         },
         {
@@ -63,7 +63,7 @@
             "countryCode": "us",
             "flag": "🇺🇸",
             "videoId": "mf_5wKJwDpc",
-            "text": "Depoimento sobre o processo de criação e os resultados alcançados com a BeCHANGE.",
+            "text": "Website profissional para empresa de manutenção e limpeza comercial, transmitindo confiabilidade, organização e seriedade operacional.",
             "link": "#"
         }
     ]

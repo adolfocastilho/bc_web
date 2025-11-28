@@ -23,31 +23,35 @@ const ServicesSection = () => {
                                 <div className="mil-service-slider mil-mb-30" style={{
                                     width: '100%',
                                     borderRadius: '20px',
-                                    overflow: 'hidden'
+                                    overflow: 'hidden',
+                                    border: 'solid 1px rgba(0, 0, 0, 0.05)'
                                 }}>
                                     <Swiper
                                         modules={[Autoplay, EffectFade]}
                                         spaceBetween={0}
                                         slidesPerView={1}
                                         loop={true}
-                                        autoplay={{
-                                            delay: 3000,
-                                            disableOnInteraction: false,
-                                        }}
+                                        autoplay={false} // Disable default autoplay to handle it manually
                                         effect={"fade"}
-                                        style={{ width: '100%', aspectRatio: '4/3' }} // Enforce a rectangular aspect ratio
+                                        style={{ width: '100%', aspectRatio: '1/1' }} // Enforce a square aspect ratio
                                         onSwiper={(swiper) => {
-                                            // Use setTimeout(0) to ensure we stop autoplay AFTER initialization
+                                            // Manually configure and start autoplay with a random delay
+                                            const randomDelay = Math.floor(Math.random() * 2500);
+
+                                            // Ensure autoplay params are set
+                                            if (!swiper.params.autoplay) {
+                                                swiper.params.autoplay = {};
+                                            }
+                                            Object.assign(swiper.params.autoplay, {
+                                                delay: 3000,
+                                                disableOnInteraction: false,
+                                            });
+
                                             setTimeout(() => {
                                                 if (swiper.autoplay) {
-                                                    swiper.autoplay.stop();
-                                                    setTimeout(() => {
-                                                        if (swiper.autoplay) {
-                                                            swiper.autoplay.start();
-                                                        }
-                                                    }, key * 1000);
+                                                    swiper.autoplay.start();
                                                 }
-                                            }, 0);
+                                            }, randomDelay);
                                         }}
                                     >
                                         {item.images.map((img, i) => (

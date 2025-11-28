@@ -9,27 +9,15 @@ const ContactSection = () => {
                 <h3>Vamos Conversar</h3>
             </div>
             <p className="mil-up mil-p-0-10" style={{ maxWidth: '800px', margin: '30px auto 30px', textAlign: 'center' }}>
-                Se você enxerga potencial de crescimento, mas busca passos calculados, este é o ponto de partida.<br />
-                Solicite uma Reunião de Avaliação de 60 min (Cortesia).
+                Se você enxerga potencial de crescimento mas sabe que sua presença digital atual não sustenta esse próximo passo, seja pela marca que não transmite autoridade, pelo site que não converte, ou pela estrutura despreparada para tráfego pago, este é o ponto de partida. Solicite uma Reunião de Avaliação Estratégica de 60 minutos (cortesia). Vamos analisar sua situação atual, identificar o que está impedindo vendas e desenhar um plano técnico e financeiramente viável para escalar com solidez.
             </p>
-
-            {/* info */}
-            <div className="mil-p-0-60">
-                <div className="row justify-content-center">
-                    <div className="col-lg-8">
-                        <ul className="mil-puplication-details mil-up" style={{ marginBottom: '-10px' }}>
-                            <li>
-                                <span className="mil-upper mil-accent">Cel: </span>&nbsp;&nbsp;
-                                <a href="https://wa.me/5561996090943" target="_blank" rel="noopener noreferrer" className="mil-upper mil-dark">+55 (61) 99609-0943</a>
-                            </li>
-                            <li>
-                                <span className="mil-upper mil-accent">EMAIL: </span>&nbsp;&nbsp;
-                                <span className="mil-upper mil-dark">contato@bechange.com.br</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div className="mil-center mil-up mil-mb-60">
+                <a href="#contactForm" className="mil-btn mil-sm-btn mil-rounded">
+                    <span>Solicitar Análise Gratuita</span>
+                </a>
             </div>
+
+
 
             {/* contact form */}
             <div className="mil-p-0-60">
@@ -123,12 +111,15 @@ const ContactSection = () => {
                                     value={values.message}
                                 />
                             </div>
-                            <div className="col-lg-8">
-                                <p className="mil-up mil-mb-30"><span className="mil-accent">*</span> We promise not to disclose your personal information to third parties.</p>
+                            <div className="col-lg-8 mil-mb-order-2">
+                                <p className="mil-up mil-mb-30 mil-text-center-mobile">
+                                    <span className="mil-accent">*</span> Seus dados estão protegidos pela BeChange. Respeitamos a LGPD.<br />
+                                    contato@bechange.com.br
+                                </p>
                             </div>
-                            <div className="col-lg-4">
+                            <div className="col-lg-4 mil-mb-order-1">
                                 <div className="mil-adaptive-right mil-up mil-mb-30">
-                                    <button type="submit" className="mil-btn mil-sm-btn">
+                                    <button type="submit" className="mil-btn mil-sm-btn mil-rounded">
                                         <span>Enviar mensagem</span>
                                     </button>
                                 </div>

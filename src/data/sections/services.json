@@ -1,25 +1,31 @@
 {
     "title": "Serviços",
-    "description": "Uma estrutura completa para posicionar sua marca com consistência e sofisticação. Cada projeto é desenhado estrategicamente para aumentar o valor percebido da sua marca e do seu negócio.",
+    "description": "Uma estrutura completa para posicionar sua marca com consistência, sofisticação e resultado mensurável. Cada projeto é desenhado para aumentar o valor percebido da sua marca, gerar autoridade no mercado e transformar presença digital em ferramenta de vendas.",
     "items": [
         {
             "title": "Identidade Visual Estratégica",
             "images": [
-                "/img/services/identidade-1.jpg",
-                "/img/services/identidade-2.jpg",
-                "/img/services/identidade-3.jpg"
+                "/img/portfolio/identidade/1.webp",
+                "/img/portfolio/identidade/2.webp",
+                "/img/portfolio/identidade/3.webp",
+                "/img/portfolio/identidade/4.webp",
+                "/img/portfolio/identidade/5.webp",
+                "/img/portfolio/identidade/6.webp",
+                "/img/portfolio/identidade/7.webp",
+                "/img/portfolio/identidade/8.webp"
             ],
-            "text": "Criação de identidade visual completa: logotipo, paleta, tipografia, grafismos proprietários e guia de uso. Manual prático para aplicar em site, redes sociais, materiais digitais, impressos, apresentações, comunicação diária e campanhas da marca.",
+            "text": "Criação de identidade visual completa: logotipo, paleta de cores, tipografia, grafismos proprietários e manual de uso. Sistema visual pensado para aplicar em site, redes sociais, materiais digitais, impressos, apresentações e toda comunicação da marca. Marcas fortes cobram mais e atraem clientes melhores.",
             "link": "/services/service-1"
         },
         {
             "title": "Sites Institucionais e Landing Pages",
             "images": [
-                "/img/services/sites-1.jpg",
-                "/img/services/sites-2.jpg",
-                "/img/services/sites-3.jpg"
+                "/img/portfolio/sites/1.webp",
+                "/img/portfolio/sites/2.webp",
+                "/img/portfolio/sites/3.webp",
+                "/img/portfolio/sites/4.webp"
             ],
-            "text": "Desenvolvimento de sites e landing pages focados em conversão e autoridade. Layout responsivo, SEO on page, acessibilidade, páginas legais LGPD e integrações para captar leads, vender online e fortalecer presença digital profissional.",
+            "text": "Desenvolvimento de sites e landing pages focados em conversão e autoridade. Layout responsivo, velocidade otimizada, SEO on page, acessibilidade, páginas legais LGPD e integrações para captar leads, vender online e fortalecer presença digital profissional. Cada site pensado para sustentar tráfego pago.",
             "link": "/services/service-2"
         },
         {
@@ -29,37 +35,38 @@
                 "/img/services/sites-2.jpg",
                 "/img/services/sites-3.jpg"
             ],
-            "text": "Edição de vídeos institucionais e curtos com motion design, ritmo ajustado e narrativa clara. Entregas prontas para sites, apresentações, campanhas, YouTube, Reels e anúncios que precisam comunicar rápido, emocionar e gerar resultado.",
+            "text": "Edição de vídeos institucionais, publicitários, reels e conteúdo curto com motion design, ritmo ajustado e narrativa clara. Entregas prontas para sites, apresentações, campanhas online, YouTube, Instagram e anúncios que precisam comunicar rápido, emocionar e gerar resultado real e audiência imediata qualificada.",
             "link": "/services/service-3"
         },
         {
             "title": "Agentes de IA e Chatbots",
             "images": [
-                "/img/services/sistemas-1.jpg",
-                "/img/services/sistemas-2.jpg",
-                "/img/services/sistemas-3.jpg"
+                "/img/portfolio/agente/1.webp",
+                "/img/portfolio/agente/2.webp"
             ],
-            "text": "Criação de agentes de IA e chatbots para site ou WhatsApp com linguagem humanizada. Atendem dúvidas, captam leads, registram contatos, automatizam respostas frequentes e conectam formulários, agendas e fluxos simples do negócio.",
+            "text": "Criação de agentes de IA e chatbots para site ou WhatsApp com linguagem humanizada. Atendem dúvidas, captam leads, registram contatos, automatizam respostas frequentes e conectam formulários, agendas e fluxos simples do negócio. Tecnologia aplicada para reduzir custos operacionais.",
             "link": "/services/service-4"
         },
         {
             "title": "Sistemas, Apps Web e Manutenção",
             "images": [
-                "/img/services/sistemas-1.jpg",
-                "/img/services/sistemas-2.jpg",
-                "/img/services/sistemas-3.jpg"
+                "/img/portfolio/sistemas/1.webp",
+                "/img/portfolio/sistemas/2.webp",
+                "/img/portfolio/sistemas/3.webp",
+                "/img/portfolio/sistemas/4.webp"
             ],
-            "text": "Desenvolvimento de aplicações web sob medida para orçamentos, reservas, áreas do cliente e dashboards. Manutenção com atualizações, monitoramento, backups e suporte contínuo, mantendo seguro, estável e rápido.",
+            "text": "Desenvolvimento de sistemas e aplicativos web sob medida para orçamentos, reservas, áreas do cliente, e CRM. Manutenção com atualizações de segurança, monitoramento de performance, gerenciamento de hospedagem, backups automáticos e suporte contínuo. Tudo sempre seguro, estável e rápido.",
             "link": "/services/service-5"
         },
         {
-            "title": "Design de Embalagens",
+            "title": "Tráfego Pago e Performance",
             "images": [
-                "/img/services/identidade-1.jpg",
-                "/img/services/identidade-2.jpg",
-                "/img/services/identidade-3.jpg"
+                "/img/portfolio/trafego/1.webp",
+                "/img/portfolio/trafego/2.webp",
+                "/img/portfolio/trafego/3.webp",
+                "/img/portfolio/trafego/4.webp"
             ],
-            "text": "Criação de embalagens e rótulos alinhados à identidade visual, posicionamento e prateleira. Layouts pensados para destaque, leitura clara das informações obrigatórias, storytelling da marca e percepção de valor no ponto de venda.",
+            "text": "Gestão de tráfego pago e anúncios para Google, Instagram e Facebook alinhados à estratégia digital e ao posicionamento da marca. Campanhas pensadas para conversão, leitura clara das métricas principais, otimização constante do orçamento e resultados em vendas online. Design e mídia trabalhando juntos.",
             "link": "/services/service-6"
         }
     ]

@@ -22,6 +22,11 @@ const AboutSection = () => {
                                         </div>
                                     ))}
                                 </div>
+                                <div className="mil-up mil-mb-30 mil-mt-60">
+                                    <a href="#portfolio" className="mil-btn mil-sm-btn mil-rounded">
+                                        <span>Conheça Nosso Trabalho</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -53,7 +53,7 @@ const RecognitionSection = () => {
                             {Data.items.map((item, key) => (
                                 <SwiperSlide key={`recognition-desktop-${key}`}>
                                     <div className="mil-icon-box mil-center mil-mb-60">
-                                        <div className="mil-video-thumbnail" onClick={() => handlePlay(item.videoId)}>
+                                        <div className="mil-video-thumbnail" style={{ marginBottom: '30px' }} onClick={() => handlePlay(item.videoId)}>
                                             <img
                                                 src={`https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`}
                                                 alt={item.title}
@@ -64,11 +64,11 @@ const RecognitionSection = () => {
                                                 </svg>
                                             </div>
                                         </div>
-                                        <h5 className="mil-up mil-mb-15">{item.title} <span style={{ marginLeft: '8px', fontSize: '16px', opacity: 1 }}>{item.flag}</span></h5>
+                                        <h5 className="mil-up mil-mb-5">{item.title} <span style={{ marginLeft: '8px', fontSize: '16px', opacity: 1 }}>{item.flag}</span></h5>
                                         <p className="mil-up mil-mb-15" style={{ fontSize: '14px', fontWeight: 500 }}>
                                             <span className="text-muted">{item.location}</span>
                                         </p>
-                                        {/* <p className="mil-up mil-mb-30">{item.text}</p> */}
+                                        <p className="mil-up mil-mb-30" style={{ marginTop: '15px', fontSize: '14px' }}>{item.text}</p>
                                     </div>
                                 </SwiperSlide>
                             ))}
@@ -96,8 +96,8 @@ const RecognitionSection = () => {
                                             <div className="mil-review-top" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                                 {/* Video Thumbnail */}
                                                 <div
-                                                    className="mil-video-thumbnail mil-up mil-mb-30"
-                                                    style={{ maxWidth: '600px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
+                                                    className="mil-video-thumbnail mil-up"
+                                                    style={{ maxWidth: '600px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', marginBottom: '60px' }}
                                                     onClick={() => handlePlay(item.videoId)}
                                                 >
                                                     <img
@@ -112,13 +112,13 @@ const RecognitionSection = () => {
                                                 </div>
 
                                                 <div className="mil-name">
-                                                    <h4 className="mil-up mil-mb-5">{item.title} <span style={{ marginLeft: '8px', fontSize: '18px', opacity: 1 }}>{item.flag}</span></h4>
+                                                    <h4 className="mil-up" style={{ marginBottom: 0 }}>{item.title} <span style={{ marginLeft: '8px', fontSize: '18px', opacity: 1 }}>{item.flag}</span></h4>
                                                     <p className="mil-upper mil-up" style={{ fontSize: '14px' }}>
                                                         <span style={{ opacity: 0.7 }}>{item.location}</span>
                                                     </p>
                                                 </div>
                                             </div>
-                                            {/* <p className="mil-up" style={{ maxWidth: '600px', margin: '0 auto' }}>{item.text}</p> */}
+                                            <p className="mil-up" style={{ maxWidth: '600px', margin: '20px auto 0', fontSize: '14px' }}>{item.text}</p>
                                         </div>
                                     </SwiperSlide>
                                 ))}
@@ -158,6 +158,7 @@ const RecognitionSection = () => {
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    loading="lazy"
                 ></iframe>
             </Modal>
         </>
