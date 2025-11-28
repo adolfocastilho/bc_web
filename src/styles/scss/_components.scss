@@ -128,7 +128,9 @@ frame
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: $panel-color;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: solid 1px $panel-border-color;
     pointer-events: all;
 
@@ -432,7 +434,9 @@ frame
         transform: translateY(10px);
         box-shadow: 0px 0px 40px 0px rgba(18, 24, 32, 0.1);
         width: 100%;
-        background-color: $dark;
+        background-color: rgba(32, 33, 36, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         transition: $t-md;
 
         &.mil-active {
@@ -834,7 +838,7 @@ content banner
             & h1 {
                 @media screen and (max-width: 768px) {
                     white-space: nowrap;
-                    letter-spacing: -2px;
+                    letter-spacing: -1px;
                     font-size: 46px;
                 }
             }

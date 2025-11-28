@@ -7,7 +7,7 @@ const AboutSection = () => {
             <section id="about" className="mil-p-0-90">
                 <div className="container">
                     <div className="mil-oval-frame-2 mil-mb-90">
-                        <img src={Data.avatar.image} alt={Data.avatar.alt} />
+                        <img src={Data.avatar.image} alt={Data.avatar.alt} width={1536} height={1536} />
                     </div>
                     <div className="row justify-content-center">
                         <div className="col-lg-10">
@@ -18,13 +18,13 @@ const AboutSection = () => {
                                 <div className="mil-logos-wrapper mil-up mil-mb-30">
                                     {Data.logos.map((logo, index) => (
                                         <div className="mil-logo-item" key={index}>
-                                            <img src={logo.image} alt={logo.alt} />
+                                            <img src={logo.image} alt={logo.alt} width={400} height={400} />
                                         </div>
                                     ))}
                                 </div>
                                 <div className="mil-up mil-mb-30 mil-mt-60">
                                     <a href="#portfolio" className="mil-btn mil-sm-btn mil-rounded">
-                                        <span>Conheça Nosso Trabalho</span>
+                                        <span>Ver Portfólio</span>
                                     </a>
                                 </div>
                             </div>

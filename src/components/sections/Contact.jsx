@@ -1,19 +1,24 @@
 import { Formik } from 'formik';
 import appData from "@data/app.json";
+import { useRouter } from 'next/router';
 
 const ContactSection = () => {
+    const router = useRouter();
+
     return (
         <section id="contact" className="mil-p-0-0 mil-mt-90">
-            <div className="mil-section-title mil-up">
-                <div className="mil-divider" />
-                <h3>Vamos Conversar</h3>
+            <div className="mil-center mil-mb-60">
+                <div className="mil-section-title mil-up mil-mb-30">
+                    <div className="mil-divider" />
+                    <h3>Vamos conversar</h3>
+                </div>
+                <p className="mil-up mil-p-0-10" style={{ maxWidth: '800px', margin: '30px auto 30px', textAlign: 'center' }}>
+                    Se você enxerga potencial de crescimento mas sabe que sua presença digital atual não sustenta esse próximo passo, seja pela marca que não transmite autoridade, pelo site que não converte, ou pela estrutura despreparada para tráfego pago, este é o ponto de partida. Solicite uma Reunião de Avaliação Estratégica de 60 minutos (cortesia). Vamos analisar sua situação atual, identificar o que está impedindo vendas e desenhar um plano técnico e financeiramente viável para escalar com solidez.
+                </p>
             </div>
-            <p className="mil-up mil-p-0-10" style={{ maxWidth: '800px', margin: '30px auto 30px', textAlign: 'center' }}>
-                Se você enxerga potencial de crescimento mas sabe que sua presença digital atual não sustenta esse próximo passo, seja pela marca que não transmite autoridade, pelo site que não converte, ou pela estrutura despreparada para tráfego pago, este é o ponto de partida. Solicite uma Reunião de Avaliação Estratégica de 60 minutos (cortesia). Vamos analisar sua situação atual, identificar o que está impedindo vendas e desenhar um plano técnico e financeiramente viável para escalar com solidez.
-            </p>
             <div className="mil-center mil-up mil-mb-60">
                 <a href="#contactForm" className="mil-btn mil-sm-btn mil-rounded">
-                    <span>Solicitar Análise Gratuita</span>
+                    <span>Agendar Reunião Estratégica</span>
                 </a>
             </div>
 
@@ -51,8 +56,8 @@ const ContactSection = () => {
                             }
                         }).then(response => {
                             if (response.ok) {
-                                status.innerHTML = "Thanks for your submission!";
-                                form.reset()
+                                form.reset();
+                                router.push('/obrigado'); // Redirect to Thank You page
                             } else {
                                 response.json().then(data => {
                                     if (Object.hasOwn(data, 'errors')) {
@@ -120,7 +125,7 @@ const ContactSection = () => {
                             <div className="col-lg-4 mil-mb-order-1">
                                 <div className="mil-adaptive-right mil-up mil-mb-30">
                                     <button type="submit" className="mil-btn mil-sm-btn mil-rounded">
-                                        <span>Enviar mensagem</span>
+                                        <span>Enviar Mensagem</span>
                                     </button>
                                 </div>
                             </div>

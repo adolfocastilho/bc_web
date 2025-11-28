@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="pt-BR">
         <Head>
           {/* meta begin */}
           <meta charSet="UTF-8" />
@@ -13,7 +13,7 @@ class MyDocument extends Document {
           {/* public assets begin */}
           <link rel="stylesheet" href="/css/plugins/bootstrap-grid.css" />
           <link rel="stylesheet" href="/css/plugins/font-awesome.min.css" />
-          <link rel="stylesheet" href="/css/plugins/swiper.min.css" />  
+          <link rel="stylesheet" href="/css/plugins/swiper.min.css" />
           {/* public assets end */}
         </Head>
         <body>
