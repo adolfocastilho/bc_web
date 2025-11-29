@@ -21,7 +21,8 @@ const PortfolioSection = () => {
     }, []);
 
     const openLightbox = (imgSrc) => {
-        setSelectedImage(imgSrc);
+        const fullImgSrc = imgSrc.replace('/thumb/', '/full/');
+        setSelectedImage(fullImgSrc);
         setLightboxOpen(true);
     };
 

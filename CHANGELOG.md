@@ -5,6 +5,7 @@
 ### Finalizado
 - **Limpeza:** Removidos todos os arquivos de template não utilizados (`home-2`, `projects`, etc.).
 - **Build:** Gerada versão final estática na pasta `out`.
+- **Performance:** Implementada estratégia de imagens Thumb/Full (carregamento rápido + lightbox HD).
 - **Formulário:** Configurado envio para `contato@bechange.com.br` via Formspree.
 
 ## [Versão Builder] - 2025-11-28
