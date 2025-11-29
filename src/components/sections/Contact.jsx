@@ -17,7 +17,7 @@ const ContactSection = () => {
                 </p>
             </div>
             <div className="mil-center mil-up mil-mb-60">
-                <a href="#contactForm" className="mil-btn mil-sm-btn mil-rounded">
+                <a href="https://wa.me/5561996090943?text=Ol%C3%A1%2C%20Adolfo.%20Acessei%20o%20site%20da%20BeChange%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer" className="mil-btn mil-sm-btn mil-rounded">
                     <span>Agendar Reunião Estratégica</span>
                 </a>
             </div>

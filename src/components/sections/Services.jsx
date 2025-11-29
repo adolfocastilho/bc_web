@@ -57,7 +57,18 @@ const ServicesSection = () => {
                                         {item.images.map((img, i) => (
                                             <SwiperSlide key={`service-img-${key}-${i}`}>
                                                 <Link href={item.link} style={{ display: 'block', width: '100%', height: '100%' }}>
-                                                    <img src={img} alt={`${item.title} ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                    {img.endsWith('.mp4') ? (
+                                                        <video
+                                                            src={img}
+                                                            autoPlay
+                                                            loop
+                                                            muted
+                                                            playsInline
+                                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                                        />
+                                                    ) : (
+                                                        <img src={img} alt={`${item.title} ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                    )}
                                                 </Link>
                                             </SwiperSlide>
                                         ))}
