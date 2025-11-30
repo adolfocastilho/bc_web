@@ -222,6 +222,10 @@ a {
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 2px;
+
+    @media screen and (max-width: 992px) {
+        letter-spacing: 1px;
+    }
 }
 
 /* -------------------------------------------

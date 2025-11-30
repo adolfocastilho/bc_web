@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const portfolioPath = path.join(process.cwd(), 'src/data/sections/portfolio.json');
-const imagesDir = path.join(process.cwd(), 'public/img/portfolio');
+const imagesDir = path.join(process.cwd(), 'public/img/portfolio/thumb');
 
 // Read current portfolio data to keep titles/text
 const portfolioData = JSON.parse(fs.readFileSync(portfolioPath, 'utf8'));
@@ -36,7 +36,7 @@ portfolioData.items.forEach((item, index) => {
     const start = index * imagesPerItem;
     const end = start + imagesPerItem;
     // Slice the images for this item
-    const itemImages = allFiles.slice(start, end).map(img => `/img/portfolio/${img}`);
+    const itemImages = allFiles.slice(start, end).map(img => `/img/portfolio/thumb/${img}`);
 
     // Update the item with new images. 
     // If we have fewer images than items (unlikely but possible), some might be empty, 

@@ -1,6 +1,6 @@
 {
     "avatar": {
-        "image": "/img/person/avatar_adolfo.webp",
+        "image": "/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
         "alt": "avatar"
     },
     "title": "Agência especialista em Identidade Visual e Sites de Alta Performance.",
@@ -11,19 +11,19 @@
     },
     "logos": [
         {
-            "image": "/img/logos/adegraf.png",
+            "image": "/img/logos/adegraf.webp",
             "alt": "Adegraf"
         },
         {
-            "image": "/img/logos/duns.png",
+            "image": "/img/logos/duns.webp",
             "alt": "DUNS"
         },
         {
-            "image": "/img/logos/adg.png",
+            "image": "/img/logos/adg.webp",
             "alt": "ADG"
         },
         {
-            "image": "/img/logos/abcom.png",
+            "image": "/img/logos/abcom.webp",
             "alt": "ABCOM"
         }
     ]

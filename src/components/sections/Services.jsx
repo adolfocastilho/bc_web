@@ -43,7 +43,7 @@ const ServicesSection = () => {
                                                 swiper.params.autoplay = {};
                                             }
                                             Object.assign(swiper.params.autoplay, {
-                                                delay: 3000,
+                                                delay: 2000,
                                                 disableOnInteraction: false,
                                             });
 
@@ -56,10 +56,12 @@ const ServicesSection = () => {
                                     >
                                         {item.images.map((img, i) => (
                                             <SwiperSlide key={`service-img-${key}-${i}`}>
-                                                <Link href={item.link} style={{ display: 'block', width: '100%', height: '100%' }}>
+                                                <div style={{ display: 'block', width: '100%', height: '100%', cursor: 'default' }}>
                                                     {img.endsWith('.mp4') ? (
                                                         <video
                                                             src={img}
+                                                            poster="/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo1.webp" // Placeholder poster using an existing thumb
+                                                            preload="none"
                                                             autoPlay
                                                             loop
                                                             muted
@@ -67,20 +69,25 @@ const ServicesSection = () => {
                                                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                                         />
                                                     ) : (
-                                                        <img src={img} alt={`${item.title} ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                        <img
+                                                            src={img}
+                                                            loading="lazy"
+                                                            alt={`${item.title} ${i + 1}`}
+                                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                                        />
                                                     )}
-                                                </Link>
+                                                </div>
                                             </SwiperSlide>
                                         ))}
                                     </Swiper>
                                 </div>
                                 <h5 className="mil-up mil-mb-30">
-                                    <Link href={item.link} style={{ color: 'inherit', textDecoration: 'none' }}>
+                                    <span style={{ color: 'inherit', textDecoration: 'none', cursor: 'default' }}>
                                         {item.title}
-                                    </Link>
+                                    </span>
                                 </h5>
                                 <p className="mil-up mil-mb-5">{item.text}</p>
-                                <Link href={item.link} className="mil-up mil-mb-30" style={{ display: "block", fontWeight: "bold", color: "inherit" }}>{item.linkText || "Saiba mais..."}</Link>
+                                <span className="mil-up mil-mb-30" style={{ display: "block", fontWeight: "bold", color: "inherit", cursor: 'default' }}>{item.linkText || "Saiba mais..."}</span>
                             </div>
                         </div>
                     ))}

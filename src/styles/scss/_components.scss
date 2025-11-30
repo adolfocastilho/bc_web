@@ -434,7 +434,7 @@ frame
         transform: translateY(10px);
         box-shadow: 0px 0px 40px 0px rgba(18, 24, 32, 0.1);
         width: 100%;
-        background-color: rgba(32, 33, 36, 0.85);
+        background-color: rgba(32, 33, 36, 0.95);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         transition: $t-md;
@@ -460,7 +460,7 @@ frame
                     text-align: center;
                     width: 100%;
                     margin: 0;
-                    margin-bottom: 15px;
+                    margin-bottom: 30px;
                     flex-direction: column;
 
                     &:last-child {
@@ -471,6 +471,7 @@ frame
                         color: $light;
                         position: relative;
                         padding: 0 15px;
+                        font-size: 16px;
 
                         &:hover {
                             color: $light;
@@ -989,8 +990,8 @@ about
         justify-content: center;
 
         .mil-logo-item {
-            width: 64px;
-            height: 64px;
+            width: 80px;
+            height: 80px;
             padding: 5px;
             flex-shrink: 0;
         }
@@ -2161,6 +2162,8 @@ footer {
 
     @media screen and (max-width: 1200px) {
         padding: 0 30px;
+        margin-left: -30px;
+        width: calc(100% + 60px);
     }
 
     @media screen and (max-width: 768px) {

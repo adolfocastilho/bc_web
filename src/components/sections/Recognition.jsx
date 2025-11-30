@@ -103,6 +103,7 @@ const RecognitionSection = () => {
                                                     <img
                                                         src={`https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`}
                                                         alt={item.title}
+                                                        loading="lazy"
                                                     />
                                                     <div className="mil-play-button mil-play-button-large">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

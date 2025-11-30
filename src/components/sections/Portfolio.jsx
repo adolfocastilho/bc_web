@@ -45,16 +45,32 @@ const PortfolioSection = () => {
                     <div className="row g-0 align-items-center">
                         {Data.items.map((item, key) => {
                             let borderRadius = '0';
-                            const total = Data.items.length;
+                            // Calculate effective index for desktop (ignoring mobileOnly items)
+                            // This is a simplified approach assuming mobileOnly items are at the end.
+                            // If mobileOnly items are interspersed, this logic would need to be more complex.
 
                             if (isDesktop) {
                                 // Desktop: 4 columns
-                                if (key === 0) borderRadius = '20px 0 0 0';
-                                else if (key === 3) borderRadius = '0 20px 0 0';
-                                else if (key === total - 4) borderRadius = '0 0 0 20px';
-                                else if (key === total - 1) borderRadius = '0 0 20px 0';
+                                // If item is mobileOnly, it will be hidden, so borderRadius doesn't matter much visually,
+                                // but we need to ensure the visible items get the correct radius.
+
+                                // We need to know the total VISIBLE items to calculate the last row correctly.
+                                const visibleItems = Data.items.filter(i => !i.mobileOnly);
+                                const totalVisible = visibleItems.length;
+
+                                // Find the index of this item in the visible list
+                                const visibleIndex = visibleItems.indexOf(item);
+
+                                if (visibleIndex !== -1) {
+                                    if (visibleIndex === 0) borderRadius = '20px 0 0 0';
+                                    else if (visibleIndex === 3) borderRadius = '0 20px 0 0';
+                                    else if (visibleIndex === totalVisible - 4) borderRadius = '0 0 0 20px';
+                                    else if (visibleIndex === totalVisible - 1) borderRadius = '0 0 20px 0';
+                                }
                             } else {
                                 // Mobile/Tablet: 2 columns
+                                // Use original key and total
+                                const total = Data.items.length;
                                 if (key === 0) borderRadius = '20px 0 0 0';
                                 else if (key === 1) borderRadius = '0 20px 0 0';
                                 else if (key === total - 2) borderRadius = '0 0 0 20px';
@@ -62,7 +78,7 @@ const PortfolioSection = () => {
                             }
 
                             return (
-                                <div key={`portfolio-item-${key}`} className="col-6 col-lg-3" style={{ padding: 0 }}>
+                                <div key={`portfolio-item-${key}`} className={`col-6 col-lg-3 ${item.mobileOnly ? 'd-lg-none' : ''}`} style={{ padding: 0 }}>
                                     <div className="mil-icon-box mil-center">
                                         <div className="mil-service-slider" style={{
                                             width: '100%',

@@ -19,7 +19,7 @@ const Home1 = (props) => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "BeCHANGE",
-    "image": "https://bechange.com.br/img/person/avatar_adolfo.webp",
+    "image": "https://bechange.com.br/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
     "description": "Agência especialista em Identidade Visual e Sites de Alta Performance.",
     "url": "https://bechange.com.br",
     "sameAs": [
@@ -54,7 +54,7 @@ const Home1 = (props) => {
   return (
     <Layouts
       rightPanelBackground={"/img/person/bg-1.jpg"}
-      rightPanelImg={"/img/person/adolfo.webp"}
+      rightPanelImg={"/img/person/adolfo-castilho-garcia-bechange.webp"}
     >
       <Head>
         <meta name="description" content="Agência de Design e Tecnologia especialista em Identidade Visual, Criação de Sites Profissionais e Estratégias Digitais para escalar seu negócio." />

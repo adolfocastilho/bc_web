@@ -5,14 +5,14 @@
         {
             "title": "Identidade Visual Estratégica",
             "images": [
-                "/img/portfolio/identidade/1.webp",
-                "/img/portfolio/identidade/2.webp",
-                "/img/portfolio/identidade/3.webp",
-                "/img/portfolio/identidade/4.webp",
-                "/img/portfolio/identidade/5.webp",
-                "/img/portfolio/identidade/6.webp",
-                "/img/portfolio/identidade/7.webp",
-                "/img/portfolio/identidade/8.webp"
+                "/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo1.webp",
+                "/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo2.webp",
+                "/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo3.webp",
+                "/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo4.webp",
+                "/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo5.webp",
+                "/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo6.webp",
+                "/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo7.webp",
+                "/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo8.webp"
             ],
             "text": "Criação de identidade visual completa: logotipo, paleta de cores, tipografia, grafismos proprietários e manual de uso. Sistema visual pensado para aplicar em site, redes sociais, materiais digitais, impressos, apresentações e toda comunicação da marca. Marcas fortes cobram mais e atraem clientes melhores.",
             "link": "/services/service-1",
@@ -21,10 +21,14 @@
         {
             "title": "Sites Institucionais e Landing Pages",
             "images": [
-                "/img/portfolio/sites/1.webp",
-                "/img/portfolio/sites/2.webp",
-                "/img/portfolio/sites/3.webp",
-                "/img/portfolio/sites/4.webp"
+                "/img/portfolio/sites/bechange_criacao-sites-landing-page1.webp",
+                "/img/portfolio/sites/bechange_criacao-sites-landing-page2.webp",
+                "/img/portfolio/sites/bechange_criacao-sites-landing-page3.webp",
+                "/img/portfolio/sites/bechange_criacao-sites-landing-page4.webp",
+                "/img/portfolio/sites/bechange_criacao-sites-landing-page5.webp",
+                "/img/portfolio/sites/bechange_criacao-sites-landing-page6.webp",
+                "/img/portfolio/sites/bechange_criacao-sites-landing-page7.webp",
+                "/img/portfolio/sites/bechange_criacao-sites-landing-page8.webp"
             ],
             "text": "Desenvolvimento de sites e landing pages focados em conversão e autoridade. Layout responsivo, velocidade otimizada, SEO on page, acessibilidade, páginas legais LGPD e integrações para captar leads, vender online e fortalecer presença digital profissional. Cada site pensado para sustentar tráfego pago.",
             "link": "/services/service-2",
@@ -33,7 +37,7 @@
         {
             "title": "Edição de Vídeo e Motion",
             "images": [
-                "/img/portfolio/videos/edicao_de_video_bechange.mp4"
+                "/img/portfolio/videos/bechange-edicao-de-video-motion.mp4"
             ],
             "text": "Edição de vídeos institucionais, publicitários, reels e conteúdo curto com motion design, ritmo ajustado e narrativa clara. Entregas prontas para sites, apresentações, campanhas online, YouTube, Instagram e anúncios que precisam comunicar rápido, emocionar e gerar resultado real e audiência imediata qualificada.",
             "link": "/services/service-3",
@@ -42,8 +46,8 @@
         {
             "title": "Agentes de IA e Chatbots",
             "images": [
-                "/img/portfolio/agente/1.webp",
-                "/img/portfolio/agente/2.webp"
+                "/img/portfolio/agente/bechange_automacao-whatsapp-chatbot-ia1.webp",
+                "/img/portfolio/agente/bechange_automacao-whatsapp-chatbot-ia2.webp"
             ],
             "text": "Criação de agentes de IA e chatbots para site ou WhatsApp com linguagem humanizada. Atendem dúvidas, captam leads, registram contatos, automatizam respostas frequentes e conectam formulários, agendas e fluxos simples do negócio. Tecnologia aplicada para reduzir custos operacionais.",
             "link": "/services/service-4",
@@ -52,10 +56,12 @@
         {
             "title": "Sistemas, Apps Web e Manutenção",
             "images": [
-                "/img/portfolio/sistemas/1.webp",
-                "/img/portfolio/sistemas/2.webp",
-                "/img/portfolio/sistemas/3.webp",
-                "/img/portfolio/sistemas/4.webp"
+                "/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida1.webp",
+                "/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida2.webp",
+                "/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida3.webp",
+                "/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida4.webp",
+                "/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida5.webp",
+                "/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida6.webp"
             ],
             "text": "Desenvolvimento de sistemas e aplicativos web sob medida para orçamentos, reservas, áreas do cliente, e CRM. Manutenção com atualizações de segurança, monitoramento de performance, gerenciamento de hospedagem, backups automáticos e suporte contínuo. Tudo sempre seguro, estável e rápido.",
             "link": "/services/service-5",
@@ -64,10 +70,10 @@
         {
             "title": "Tráfego Pago e Performance",
             "images": [
-                "/img/portfolio/trafego/1.webp",
-                "/img/portfolio/trafego/2.webp",
-                "/img/portfolio/trafego/3.webp",
-                "/img/portfolio/trafego/4.webp"
+                "/img/portfolio/trafego/bechange_gestao-trafego-pago-google-ads-facebook-ads1.webp",
+                "/img/portfolio/trafego/bechange_gestao-trafego-pago-google-ads-facebook-ads2.webp",
+                "/img/portfolio/trafego/bechange_gestao-trafego-pago-google-ads-facebook-ads3.webp",
+                "/img/portfolio/trafego/bechange_gestao-trafego-pago-google-ads-facebook-ads4.webp"
             ],
             "text": "Gestão de tráfego pago e anúncios para Google, Instagram e Facebook alinhados à estratégia digital e ao posicionamento da marca. Campanhas pensadas para conversão, leitura clara das métricas principais, otimização constante do orçamento e resultados em vendas online. Design e mídia trabalhando juntos.",
             "link": "/services/service-6",
