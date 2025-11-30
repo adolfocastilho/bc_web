@@ -16,11 +16,13 @@ const AboutSection = () => {
                                 <div className="mil-quote mil-up mil-mb-30"><i className="fas fa-quote-left" /></div>
                                 <p className="mil-up mil-mb-30">{Data.description}</p>
                                 <div className="mil-logos-wrapper mil-up mil-mb-30">
-                                    {Data.logos.map((logo, index) => (
-                                        <div className="mil-logo-item" key={index}>
-                                            <img src={logo.image} alt={logo.alt} width={400} height={400} loading="lazy" />
-                                        </div>
-                                    ))}
+                                    <div className="mil-marquee-track">
+                                        {[...Data.logos, ...Data.logos, ...Data.logos, ...Data.logos].map((logo, index) => (
+                                            <div className="mil-logo-item" key={index}>
+                                                <img src={logo.image} alt={logo.alt} width={400} height={400} loading="lazy" />
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                                 <div className="mil-up mil-mb-30 mil-mt-60">
                                     <a href="#portfolio" className="mil-btn mil-sm-btn mil-rounded">

@@ -982,12 +982,41 @@ about
         }
     }
 
+    // Desktop styles for marquee track (static grid)
+    .mil-marquee-track {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+
+        // Hide duplicates on desktop (assuming 4 original logos)
+        .mil-logo-item:nth-child(n+5) {
+            display: none;
+        }
+    }
+
     @media screen and (max-width: 768px) {
         flex-wrap: nowrap;
-        gap: 10px;
+        gap: 0;
         margin-left: -20px;
         margin-right: -20px;
-        justify-content: center;
+        justify-content: flex-start;
+        overflow: hidden;
+
+        .mil-marquee-track {
+            display: flex;
+            gap: 20px;
+            animation: marquee 10s linear infinite;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+
+            // Show all items on mobile for marquee
+            .mil-logo-item:nth-child(n+5) {
+                display: flex;
+            }
+        }
 
         .mil-logo-item {
             width: 80px;
@@ -998,11 +1027,21 @@ about
     }
 }
 
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%); // Move by half the width (since we duplicated 4x, moving 50% covers 2 full sets)
+    }
+}
+
 #about {
     @media screen and (max-width: 768px) {
         .col-lg-10 {
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 }
@@ -1970,6 +2009,10 @@ textarea {
         letter-spacing: 2px;
         font-weight: 500;
         color: $dt-50;
+    }
+
+    @media screen and (max-width: 992px) {
+        font-size: 16px;
     }
 }
 

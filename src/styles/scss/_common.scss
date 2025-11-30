@@ -250,6 +250,9 @@ button
     color: $light;
     transition: $t-sm;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
 
     &.mil-sm-btn {
         height: 70px;
