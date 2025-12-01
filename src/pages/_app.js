@@ -7,10 +7,13 @@ import '../styles/scss/style-light.scss';
 import "../styles/globals.css";
 
 import { register } from "swiper/element/bundle";
-// register Swiper custom elements
-register();
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    register();
+  }, []);
+
   return (
     <>
       <Head>
