@@ -1,43 +1,32 @@
 {
   "../components/sections/Contact.jsx -> ../common/ContactForm": {
-    "id": 7819,
+    "id": "../components/sections/Contact.jsx -> ../common/ContactForm",
     "files": [
-      "static/chunks/175.748196a49fa9f171.js",
-      "static/chunks/819.b28e44f9219341fc.js"
+      "static/chunks/src_components_common_ContactForm_jsx.js"
     ]
   },
   "../components/sections/Portfolio.jsx -> ../sliders/PortfolioSlider": {
-    "id": 3620,
+    "id": "../components/sections/Portfolio.jsx -> ../sliders/PortfolioSlider",
     "files": [
-      "static/chunks/5.2acfa6778124a0ac.js",
-      "static/chunks/494.0e37f092a39e7622.js",
-      "static/css/7d566725ebb6e0ce.css",
-      "static/chunks/280.c07d6aac76b11c44.js"
+      "static/chunks/src_components_sliders_PortfolioSlider_jsx.js"
     ]
   },
   "../components/sections/Recognition.jsx -> ../sliders/RecognitionSlider": {
-    "id": 3094,
+    "id": "../components/sections/Recognition.jsx -> ../sliders/RecognitionSlider",
     "files": [
-      "static/chunks/5.2acfa6778124a0ac.js",
-      "static/chunks/494.0e37f092a39e7622.js",
-      "static/css/7360e429a1cdca87.css",
-      "static/chunks/883.48d02db92662ba6f.js"
+      "static/chunks/src_components_sliders_RecognitionSlider_jsx.js"
     ]
   },
   "../components/sections/Services.jsx -> ../sliders/ServicesSlider": {
-    "id": 9655,
+    "id": "../components/sections/Services.jsx -> ../sliders/ServicesSlider",
     "files": [
-      "static/chunks/5.2acfa6778124a0ac.js",
-      "static/chunks/494.0e37f092a39e7622.js",
-      "static/css/7d566725ebb6e0ce.css",
-      "static/chunks/304.59d5ee24e12f1b2c.js"
+      "static/chunks/src_components_sliders_ServicesSlider_jsx.js"
     ]
   },
   "_app.js -> swiper/element/bundle": {
-    "id": 5068,
+    "id": "_app.js -> swiper/element/bundle",
     "files": [
-      "static/chunks/5.2acfa6778124a0ac.js",
-      "static/chunks/68.b4f2a4650bc78469.js"
+      "static/chunks/node_modules_swiper_element_swiper-element-bundle_js.js"
     ]
   }
 }

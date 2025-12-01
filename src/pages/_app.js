@@ -33,9 +33,12 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* seo end */}
       </Head>
-      <div className={outfit.variable}>
-        <Component {...pageProps} />
-      </div>
+      <style jsx global>{`
+        :root {
+          --font-outfit: ${outfit.style.fontFamily};
+        }
+      `}</style>
+      <Component {...pageProps} />
     </>
   );
 }
