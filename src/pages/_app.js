@@ -11,6 +11,7 @@ import "../../public/css/plugins/bootstrap-grid.css";
 import "../../public/css/plugins/swiper.min.css";
 
 import { useEffect } from "react";
+import ThirdPartyScripts from "@/src/components/common/ThirdPartyScripts";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ function MyApp({ Component, pageProps }) {
         }
       `}</style>
       <Component {...pageProps} />
+      <ThirdPartyScripts />
     </>
   );
 }

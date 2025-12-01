@@ -1,0 +1,13 @@
+/* Performance Optimizations */
+.swiper-container,
+.mil-reviews-slider-frame,
+.mil-portfolio-slider-frame {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 500px;
+    /* Estimated height to prevent layout shift */
+}
+
+/* Reduce paint operations on heavy animations */
+.mil-up {
+    will-change: transform, opacity;
+}

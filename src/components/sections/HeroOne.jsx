@@ -10,12 +10,21 @@ const HeroOne = () => {
     const typedInstance = useRef(null);
 
     useEffect(() => {
+        let rafId;
         const handleScroll = () => {
-            setRotation(window.scrollY * ANIMATION.SCROLL_ROTATION_SPEED);
+            // Disable rotation animation on mobile to save CPU
+            if (window.innerWidth < 768) return;
+
+            rafId = requestAnimationFrame(() => {
+                setRotation(window.scrollY * ANIMATION.SCROLL_ROTATION_SPEED);
+            });
         };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (rafId) cancelAnimationFrame(rafId);
+        };
     }, []);
 
     useEffect(() => {

@@ -15,25 +15,25 @@
   "../components/sections/Portfolio.jsx -> ../sliders/PortfolioSlider": {
     "id": 3620,
     "files": [
-      "static/chunks/685.87007d30d0e95def.js",
+      "static/chunks/685.b35e53e2f9b515c4.js",
       "static/css/7d566725ebb6e0ce.css",
-      "static/chunks/280.2e434ca15d9fda9b.js"
+      "static/chunks/280.198dfa125a4a773e.js"
     ]
   },
   "../components/sections/Recognition.jsx -> ../sliders/RecognitionSlider": {
     "id": 3094,
     "files": [
-      "static/chunks/685.87007d30d0e95def.js",
+      "static/chunks/685.b35e53e2f9b515c4.js",
       "static/css/7360e429a1cdca87.css",
-      "static/chunks/883.52248a93092c091a.js"
+      "static/chunks/883.f1a5d24baa77450e.js"
     ]
   },
   "../components/sections/Services.jsx -> ../sliders/ServicesSlider": {
     "id": 9655,
     "files": [
-      "static/chunks/685.87007d30d0e95def.js",
+      "static/chunks/685.b35e53e2f9b515c4.js",
       "static/css/7d566725ebb6e0ce.css",
-      "static/chunks/304.6dc96a1d6bc15a4f.js"
+      "static/chunks/304.ee84fab7571d04f7.js"
     ]
   },
   "../layouts/Layouts.js -> ../common/counters": {

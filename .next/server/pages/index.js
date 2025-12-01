@@ -5,22 +5,54 @@ exports.id = 405;
 exports.ids = [405];
 exports.modules = {
 
-/***/ 4437:
+/***/ 3813:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "a": () => (/* binding */ useMediaQuery)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ common_Modal)
-});
+/**
+ * Custom hook for media query matching
+ * @param {string} query - CSS media query string (e.g., "(min-width: 992px)")
+ * @returns {boolean} - Whether the media query matches
+ * 
+ * @example
+ * const isDesktop = useMediaQuery("(min-width: 992px)");
+ * const isMobile = useMediaQuery("(max-width: 767px)");
+ */ const useMediaQuery = (query)=>{
+    const [matches, setMatches] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{
+        const media = window.matchMedia(query);
+        if (media.matches !== matches) {
+            setMatches(media.matches);
+        }
+        const listener = ()=>setMatches(media.matches);
+        media.addEventListener("change", listener);
+        return ()=>media.removeEventListener("change", listener);
+    }, [
+        matches,
+        query
+    ]);
+    return matches;
+};
 
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(5893);
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(6689);
-;// CONCATENATED MODULE: external "react-dom"
-const external_react_dom_namespaceObject = require("react-dom");
-;// CONCATENATED MODULE: ./src/components/common/Modal.jsx
+
+/***/ }),
+
+/***/ 1013:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5893);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6405);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -36,7 +68,7 @@ const external_react_dom_namespaceObject = require("react-dom");
  * @param {boolean} props.mounted - Client-side mounting flag
  */ const Modal = ({ isOpen , onClose , children , variant ="image" , mounted =true  })=>{
     // Handle ESC key to close modal
-    (0,external_react_.useEffect)(()=>{
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
         const handleEscape = (e)=>{
             if (e.key === "Escape") {
                 onClose();
@@ -56,18 +88,18 @@ const external_react_dom_namespaceObject = require("react-dom");
         onClose
     ]);
     if (!mounted || !isOpen) return null;
-    return /*#__PURE__*/ (0,external_react_dom_namespaceObject.createPortal)(/*#__PURE__*/ jsx_runtime.jsx("div", {
+    return /*#__PURE__*/ (0,react_dom__WEBPACK_IMPORTED_MODULE_2__.createPortal)(/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         className: "mil-modal-overlay",
         onClick: onClose,
         role: "dialog",
         "aria-modal": "true",
         "aria-label": "Modal",
-        children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             className: `mil-modal-content mil-modal-${variant}`,
             onClick: (e)=>e.stopPropagation(),
             children: [
                 children,
-                /*#__PURE__*/ jsx_runtime.jsx("button", {
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
                     onClick: onClose,
                     className: "mil-modal-close",
                     "aria-label": "Fechar modal",
@@ -78,7 +110,7 @@ const external_react_dom_namespaceObject = require("react-dom");
         })
     }), document.body);
 };
-/* harmony default export */ const common_Modal = (Modal);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Modal);
 
 
 /***/ }),
@@ -353,11 +385,21 @@ const HeroOne = ()=>{
     const [rotation, setRotation] = (0,external_react_.useState)(0);
     const typedInstance = (0,external_react_.useRef)(null);
     (0,external_react_.useEffect)(()=>{
+        let rafId;
         const handleScroll = ()=>{
-            setRotation(window.scrollY * ANIMATION.SCROLL_ROTATION_SPEED);
+            // Disable rotation animation on mobile to save CPU
+            if (window.innerWidth < 768) return;
+            rafId = requestAnimationFrame(()=>{
+                setRotation(window.scrollY * ANIMATION.SCROLL_ROTATION_SPEED);
+            });
         };
-        window.addEventListener("scroll", handleScroll);
-        return ()=>window.removeEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, {
+            passive: true
+        });
+        return ()=>{
+            window.removeEventListener("scroll", handleScroll);
+            if (rafId) cancelAnimationFrame(rafId);
+        };
     }, []);
     (0,external_react_.useEffect)(()=>{
         let isMounted = true;
@@ -515,7 +557,7 @@ const HeroOne = ()=>{
 
 /***/ }),
 
-/***/ 1026:
+/***/ 3834:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -530,35 +572,10 @@ var jsx_runtime = __webpack_require__(5893);
 const portfolio_namespaceObject = JSON.parse('{"TN":"Portfólio","WL":"22 anos de experiência, mais de 500 projetos entregues e clientes em 8 países. Cada trabalho reflete o compromisso com design estratégico, execução técnica refinada e resultados que escalam negócios.","ev":[{"title":"Projeto 1","text":"Identidade Visual & Branding","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo211.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo194.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo191.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo197.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo143.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo37.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo135.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo79.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo23.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo213.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo128.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo88.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo209.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo192.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo18.webp"],"link":"#"},{"title":"Projeto 2","text":"Design Estratégico","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo196.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo80.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo76.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo146.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo176.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo204.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo4.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo27.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo2.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo138.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo40.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo97.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo61.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo100.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo157.webp"],"link":"#"},{"title":"Projeto 3","text":"Criação de Sites","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo160.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo55.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo221.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo174.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo217.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo82.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo111.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo228.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo56.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo14.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo85.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo17.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo104.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo114.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo62.webp"],"link":"#"},{"title":"Projeto 4","text":"UI/UX Design","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo233.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo210.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo22.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo206.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo8.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo107.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo189.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo9.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo64.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo92.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo51.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo59.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo193.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo131.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo169.webp"],"link":"#"},{"title":"Projeto 5","text":"Marketing Digital","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo222.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo226.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo127.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo167.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo187.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo219.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo95.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo154.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo71.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo164.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo66.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo41.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo159.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo42.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo166.webp"],"link":"#"},{"title":"Projeto 6","text":"Consultoria de Marca","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo32.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo105.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo188.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo87.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo90.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo118.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo137.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo25.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo214.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo133.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo175.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo30.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo6.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo132.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo108.webp"],"link":"#"},{"title":"Projeto 7","text":"Identidade Corporativa","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo234.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo34.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo220.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo72.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo134.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo110.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo178.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo126.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo142.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo231.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo130.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo36.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo158.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo168.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo171.webp"],"link":"#"},{"title":"Projeto 8","text":"Design Gráfico","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo43.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo165.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo54.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo113.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo11.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo123.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo69.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo35.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo50.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo215.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo172.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo29.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo39.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo12.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo63.webp"],"link":"#"},{"title":"Projeto 9","text":"Web Design","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo53.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo24.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo198.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo15.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo86.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo185.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo218.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo148.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo161.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo75.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo77.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo184.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo229.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo94.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo162.webp"],"link":"#"},{"title":"Projeto 10","text":"Redes Sociais","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo153.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo21.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo89.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo207.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo144.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo122.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo225.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo141.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo13.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo74.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo170.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo91.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo58.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo33.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo103.webp"],"link":"#"},{"title":"Projeto 11","text":"Estratégia Digital","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo5.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo149.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo151.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo16.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo45.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo78.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo186.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo57.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo212.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo203.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo232.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo93.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo102.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo117.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo65.webp"],"link":"#"},{"title":"Projeto 12","text":"Design de Embalagens","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo125.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo60.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo180.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo183.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo83.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo109.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo96.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo49.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo200.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo190.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo199.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo163.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo140.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo1.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo145.webp"],"link":"#"},{"title":"Projeto 13","text":"Comunicação Visual","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo129.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo116.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo48.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo31.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo173.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo119.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo139.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo208.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo181.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo120.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo20.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo150.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo68.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo230.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo201.webp"],"link":"#"},{"title":"Projeto 14","text":"Design Editorial","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo205.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo227.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo195.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo101.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo112.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo73.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo224.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo179.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo182.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo67.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo10.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo28.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo46.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo19.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo121.webp"],"link":"#"},{"title":"Projeto 15","text":"Motion Graphics","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo124.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo152.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo3.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo223.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo44.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo106.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo147.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo84.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo115.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo47.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo98.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo7.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo99.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo52.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo70.webp"],"link":"#"},{"title":"Projeto 16","text":"Fotografia","images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo155.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo26.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo202.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo216.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo81.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo136.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo177.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo156.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo38.webp"],"link":"#"},{"title":"Projeto 17","text":"Mobile Only 1","mobileOnly":true,"images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo1.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo2.webp"],"link":"#"},{"title":"Projeto 18","text":"Mobile Only 2","mobileOnly":true,"images":["/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo3.webp","/img/portfolio/thumb/bechange_logomarca-identidade-visual-logotipo4.webp"],"link":"#"}]}');
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: ./src/components/common/Modal.jsx + 1 modules
-var Modal = __webpack_require__(4437);
-;// CONCATENATED MODULE: ./src/common/hooks/useMediaQuery.js
-
-/**
- * Custom hook for media query matching
- * @param {string} query - CSS media query string (e.g., "(min-width: 992px)")
- * @returns {boolean} - Whether the media query matches
- * 
- * @example
- * const isDesktop = useMediaQuery("(min-width: 992px)");
- * const isMobile = useMediaQuery("(max-width: 767px)");
- */ const useMediaQuery = (query)=>{
-    const [matches, setMatches] = (0,external_react_.useState)(false);
-    (0,external_react_.useEffect)(()=>{
-        const media = window.matchMedia(query);
-        if (media.matches !== matches) {
-            setMatches(media.matches);
-        }
-        const listener = ()=>setMatches(media.matches);
-        media.addEventListener("change", listener);
-        return ()=>media.removeEventListener("change", listener);
-    }, [
-        matches,
-        query
-    ]);
-    return matches;
-};
-
+// EXTERNAL MODULE: ./src/components/common/Modal.jsx
+var Modal = __webpack_require__(1013);
+// EXTERNAL MODULE: ./src/common/hooks/useMediaQuery.js
+var useMediaQuery = __webpack_require__(3813);
 // EXTERNAL MODULE: ./node_modules/next/dynamic.js
 var dynamic = __webpack_require__(5152);
 var dynamic_default = /*#__PURE__*/__webpack_require__.n(dynamic);
@@ -584,7 +601,7 @@ const PortfolioSlider = dynamic_default()(null, {
         })
 });
 const PortfolioSection = ()=>{
-    const isDesktop = useMediaQuery("(min-width: 992px)");
+    const isDesktop = (0,useMediaQuery/* useMediaQuery */.a)("(min-width: 992px)");
     const [lightboxOpen, setLightboxOpen] = (0,external_react_.useState)(false);
     const [selectedImage, setSelectedImage] = (0,external_react_.useState)("");
     const [mounted, setMounted] = (0,external_react_.useState)(false);
@@ -712,10 +729,11 @@ const PortfolioSection = ()=>{
 /* harmony import */ var _data_sections_recognition_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3108);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_common_Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4437);
+/* harmony import */ var _components_common_Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1013);
 /* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5152);
 /* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_dynamic__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _common_SkeletonLoader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(2961);
+/* harmony import */ var _src_common_hooks_useMediaQuery__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3813);
 
 
 
@@ -744,9 +762,11 @@ const RecognitionSliderMobile = next_dynamic__WEBPACK_IMPORTED_MODULE_4___defaul
             height: "400px"
         })
 });
+
 const RecognitionSection = ()=>{
     const [activeVideo, setActiveVideo] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(null);
     const [mounted, setMounted] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
+    const isDesktop = (0,_src_common_hooks_useMediaQuery__WEBPACK_IMPORTED_MODULE_6__/* .useMediaQuery */ .a)("(min-width: 992px)");
     (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(()=>{
         setMounted(true);
         return ()=>setMounted(false);
@@ -757,6 +777,7 @@ const RecognitionSection = ()=>{
     const handleClose = ()=>{
         setActiveVideo(null);
     };
+    if (!mounted) return null;
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("section", {
@@ -777,8 +798,8 @@ const RecognitionSection = ()=>{
                         className: "mil-up mil-p-0-10 mil-section-description",
                         children: _data_sections_recognition_json__WEBPACK_IMPORTED_MODULE_1__/* .description */ .WL
                     }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: "mil-p-90-30 d-none d-lg-block",
+                    isDesktop && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                        className: "mil-p-90-30",
                         style: {
                             paddingTop: "0"
                         },
@@ -790,8 +811,8 @@ const RecognitionSection = ()=>{
                             })
                         })
                     }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: "mil-p-90-90 d-lg-none",
+                    !isDesktop && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                        className: "mil-p-90-90",
                         style: {
                             paddingTop: "0"
                         },
@@ -1170,7 +1191,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_sections_About__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(607);
 /* harmony import */ var _components_sections_Services__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(5081);
 /* harmony import */ var _components_sections_Recognition__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(8231);
-/* harmony import */ var _components_sections_Portfolio__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(1026);
+/* harmony import */ var _components_sections_Portfolio__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(3834);
 /* harmony import */ var _src_components_sections_Contact__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(900);
 /* harmony import */ var _data_sections_recognition_json__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(3108);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_layouts_Layouts__WEBPACK_IMPORTED_MODULE_2__, _library_posts__WEBPACK_IMPORTED_MODULE_5__, _components_sections_About__WEBPACK_IMPORTED_MODULE_7__]);
@@ -1497,6 +1518,13 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ 6405:
+/***/ ((module) => {
+
+module.exports = require("react-dom");
+
+/***/ }),
+
 /***/ 9816:
 /***/ ((module) => {
 
@@ -1567,7 +1595,7 @@ module.exports = JSON.parse('{"TN":"Depoimentos","WL":"Clientes em diferentes pa
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [893,636,255,152,806,564], () => (__webpack_exec__(8955)));
+var __webpack_exports__ = __webpack_require__.X(0, [172,893,636,29,255,152,806,564], () => (__webpack_exec__(8955)));
 module.exports = __webpack_exports__;
 
 })();

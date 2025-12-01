@@ -21,9 +21,12 @@ const RecognitionSliderMobile = dynamic(
     }
 );
 
+import { useMediaQuery } from "@/src/common/hooks/useMediaQuery";
+
 const RecognitionSection = () => {
     const [activeVideo, setActiveVideo] = useState(null);
     const [mounted, setMounted] = useState(false);
+    const isDesktop = useMediaQuery("(min-width: 992px)");
 
     useEffect(() => {
         setMounted(true);
@@ -38,6 +41,8 @@ const RecognitionSection = () => {
         setActiveVideo(null);
     };
 
+    if (!mounted) return null;
+
     return (
         <>
             <section id="recognition">
@@ -47,39 +52,43 @@ const RecognitionSection = () => {
                 </div>
                 <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
 
-                {/* DESKTOP VERSION (3 Columns) - Hidden on mobile */}
-                <div className="mil-p-90-30 d-none d-lg-block" style={{ paddingTop: '0' }}>
-                    <div className="row justify-content-between align-items-center">
-                        <RecognitionSliderDesktop items={Data.items} handlePlay={handlePlay} />
-                    </div>
-                </div>
-
-                {/* MOBILE VERSION (Reviews Style) - Hidden on desktop */}
-                <div className="mil-p-90-90 d-lg-none" style={{ paddingTop: '0' }}>
-                    <div className="row justify-content-center mil-reviews-slider-frame">
-                        <div className="col-lg-8">
-                            <RecognitionSliderMobile items={Data.items} handlePlay={handlePlay} />
+                {/* DESKTOP VERSION (3 Columns) - Only rendered on desktop */}
+                {isDesktop && (
+                    <div className="mil-p-90-30" style={{ paddingTop: '0' }}>
+                        <div className="row justify-content-between align-items-center">
+                            <RecognitionSliderDesktop items={Data.items} handlePlay={handlePlay} />
                         </div>
-
-                        <div className="mil-slider-nav mil-up">
-                            <div className="mil-reviews-prev">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-right">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </div>
-                            <div className="mil-reviews-next">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-right">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <div className="swiper-reviews-pagination mil-up" />
-
                     </div>
-                </div>
+                )}
+
+                {/* MOBILE VERSION (Reviews Style) - Only rendered on mobile */}
+                {!isDesktop && (
+                    <div className="mil-p-90-90" style={{ paddingTop: '0' }}>
+                        <div className="row justify-content-center mil-reviews-slider-frame">
+                            <div className="col-lg-8">
+                                <RecognitionSliderMobile items={Data.items} handlePlay={handlePlay} />
+                            </div>
+
+                            <div className="mil-slider-nav mil-up">
+                                <div className="mil-reviews-prev">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-right">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </div>
+                                <div className="mil-reviews-next">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-right">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div className="swiper-reviews-pagination mil-up" />
+
+                        </div>
+                    </div>
+                )}
             </section>
 
             {/* Video Modal */}

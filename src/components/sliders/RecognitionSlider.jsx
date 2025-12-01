@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
+import { Pagination, Autoplay, Navigation, Parallax } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { sliderProps } from "@/src/common/sliderProps";
@@ -8,7 +8,7 @@ export const RecognitionSliderDesktop = ({ items, handlePlay }) => {
     return (
         <Swiper
             {...sliderProps.milReviewsSlider}
-            modules={[Pagination, Autoplay]}
+            modules={[Pagination, Autoplay, Navigation, Parallax]}
             spaceBetween={30}
             slidesPerView={3}
             loop={true}
@@ -49,6 +49,7 @@ export const RecognitionSliderMobile = ({ items, handlePlay }) => {
     return (
         <Swiper
             {...sliderProps.milReviewsSlider}
+            modules={[Pagination, Autoplay, Navigation, Parallax]}
             autoplay={{
                 delay: 2000,
                 disableOnInteraction: false,
