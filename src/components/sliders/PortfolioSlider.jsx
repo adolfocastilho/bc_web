@@ -38,6 +38,7 @@ const PortfolioSlider = ({ items, title, onItemClick }) => {
                         alt={`${title} ${i + 1}`}
                         width={800}
                         height={800}
+                        sizes="(max-width: 768px) 50vw, 25vw"
                         style={{ width: '100%', height: '100%', objectFit: 'cover', cursor: 'pointer' }}
                         onClick={() => onItemClick(img)}
                     />

@@ -4,8 +4,11 @@ import Modal from "@components/common/Modal";
 import { useMediaQuery } from "@common/hooks/useMediaQuery";
 import dynamic from "next/dynamic";
 
+import SkeletonLoader from "../common/SkeletonLoader";
+
 const PortfolioSlider = dynamic(() => import("../sliders/PortfolioSlider"), {
     ssr: false,
+    loading: () => <SkeletonLoader height="600px" />,
 });
 
 const PortfolioSection = () => {
@@ -36,7 +39,7 @@ const PortfolioSection = () => {
             <section id="portfolio">
                 <div className="mil-section-title mil-up">
                     <div className="mil-divider"></div>
-                    <h3>{Data.title}</h3>
+                    <h2>{Data.title}</h2>
                 </div>
                 <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
 

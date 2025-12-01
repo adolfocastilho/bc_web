@@ -1,6 +1,9 @@
 import { gsap } from "gsap";
 
 export const preloaderAnimation = () => {
+    const preloaderContent = document.querySelector(".mil-preloader-content");
+    if (!preloaderContent) return;
+
     var timeline = gsap.timeline();
 
     // Entry animation removed to prevent FOUC - preloader is now visible by default via inline styles

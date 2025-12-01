@@ -1,8 +1,11 @@
 import Data from "@data/sections/services.json";
 import dynamic from "next/dynamic";
 
+import SkeletonLoader from "../common/SkeletonLoader";
+
 const ServicesSlider = dynamic(() => import("../sliders/ServicesSlider"), {
     ssr: false,
+    loading: () => <SkeletonLoader height="500px" />,
 });
 
 const ServicesSection = () => {
@@ -10,7 +13,7 @@ const ServicesSection = () => {
         <section id="services">
             <div className="mil-section-title mil-up">
                 <div className="mil-divider"></div>
-                <h3>{Data.title}</h3>
+                <h2>{Data.title}</h2>
             </div>
             <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
 

@@ -19,11 +19,7 @@ const outfit = Outfit({
 });
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    import("swiper/element/bundle").then(({ register }) => {
-      register();
-    });
-  }, []);
+
 
   return (
     <>

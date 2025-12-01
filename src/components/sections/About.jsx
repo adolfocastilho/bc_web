@@ -1,5 +1,6 @@
 import Data from "@data/sections/about.json";
 import { FaQuoteLeft } from "react-icons/fa";
+import ExportedImage from "@components/common/ExportedImage";
 
 const AboutSection = () => {
     return (
@@ -8,7 +9,7 @@ const AboutSection = () => {
             <section id="about" className="mil-p-0-90">
                 <div className="container">
                     <div className="mil-oval-frame-2 mil-mb-90">
-                        <img src={Data.avatar.image} alt={Data.avatar.alt} width={1536} height={1536} loading="lazy" />
+                        <ExportedImage src={Data.avatar.image} alt={Data.avatar.alt} width={1536} height={1536} />
                     </div>
                     <div className="row justify-content-center">
                         <div className="col-lg-10">
@@ -20,7 +21,7 @@ const AboutSection = () => {
                                     <div className="mil-marquee-track">
                                         {[...Data.logos, ...Data.logos, ...Data.logos, ...Data.logos].map((logo, index) => (
                                             <div className="mil-logo-item" key={index}>
-                                                <img src={logo.image} alt={logo.alt} width={400} height={400} loading="lazy" />
+                                                <ExportedImage src={logo.image} alt={logo.alt} width={400} height={400} />
                                             </div>
                                         ))}
                                     </div>

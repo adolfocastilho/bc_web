@@ -3,14 +3,22 @@ import { useState, useEffect } from "react";
 import Modal from "@components/common/Modal";
 import dynamic from "next/dynamic";
 
+import SkeletonLoader from "../common/SkeletonLoader";
+
 const RecognitionSliderDesktop = dynamic(
     () => import("../sliders/RecognitionSlider").then((mod) => mod.RecognitionSliderDesktop),
-    { ssr: false }
+    {
+        ssr: false,
+        loading: () => <SkeletonLoader height="400px" />
+    }
 );
 
 const RecognitionSliderMobile = dynamic(
     () => import("../sliders/RecognitionSlider").then((mod) => mod.RecognitionSliderMobile),
-    { ssr: false }
+    {
+        ssr: false,
+        loading: () => <SkeletonLoader height="400px" />
+    }
 );
 
 const RecognitionSection = () => {
@@ -35,7 +43,7 @@ const RecognitionSection = () => {
             <section id="recognition">
                 <div className="mil-section-title mil-up">
                     <div className="mil-divider"></div>
-                    <h3>{Data.title}</h3>
+                    <h2>{Data.title}</h2>
                 </div>
                 <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
 

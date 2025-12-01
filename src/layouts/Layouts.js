@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { scrollAnimation } from "../common/scrollAnims";
-import { preloaderAnimation } from "../common/preloader";
-import { countersAnimation } from "../common/counters";
-import { parallaxAnimation } from "../common/parallax";
-import { anchorSscroll } from "../common/utilits";
+// import { scrollAnimation } from "../common/scrollAnims";
+// import { preloaderAnimation } from "../common/preloader";
+// import { countersAnimation } from "../common/counters";
+// import { parallaxAnimation } from "../common/parallax";
+// import { anchorSscroll } from "../common/utilits";
 
 import Footer from "./footers/Index";
 import Header from "./headers/Index";
@@ -38,17 +38,41 @@ const Layouts = ({
   }
 
   useEffect(() => {
-    preloaderAnimation();
-    scrollAnimation();
-    countersAnimation();
-    parallaxAnimation();
-    anchorSscroll();
+    // Dynamic imports for animations
+    const loadAnimations = async () => {
+      const { preloaderAnimation } = await import("../common/preloader");
+      // preloaderAnimation();
+
+      const { scrollAnimation } = await import("../common/scrollAnims");
+      scrollAnimation();
+
+      const { countersAnimation } = await import("../common/counters");
+      countersAnimation();
+
+      const { parallaxAnimation } = await import("../common/parallax");
+      parallaxAnimation();
+
+      const { anchorSscroll } = await import("../common/utilits");
+      anchorSscroll();
+    };
+
+    loadAnimations();
 
     if (document != undefined && bodyClass) {
-      document.querySelector('body').classList.add(...bodyClass);
+      const body = document.querySelector('body');
+      body.classList.add(...bodyClass);
+      // Failsafe to ensure body is visible if preloader CSS hid it
+      body.style.display = 'block';
+      body.style.opacity = '1';
+      body.style.visibility = 'visible';
     } else {
-      document.querySelector('body').classList.remove('mil-fw-page');
-      document.querySelector('body').classList.remove('mil-100-page');
+      const body = document.querySelector('body');
+      body.classList.remove('mil-fw-page');
+      body.classList.remove('mil-100-page');
+      // Failsafe to ensure body is visible if preloader CSS hid it
+      body.style.display = 'block';
+      body.style.opacity = '1';
+      body.style.visibility = 'visible';
     }
   }, []);
 

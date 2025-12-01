@@ -32,6 +32,11 @@ const Home1 = (props) => {
       "@type": "PostalAddress",
       "addressCountry": "BR"
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": RecognitionData.items.length.toString()
+    },
     "review": RecognitionData.items.map(item => ({
       "@type": "Review",
       "author": {

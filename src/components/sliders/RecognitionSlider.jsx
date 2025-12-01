@@ -24,7 +24,7 @@ export const RecognitionSliderDesktop = ({ items, handlePlay }) => {
                     <div className="mil-icon-box mil-center mil-mb-60">
                         <div className="mil-video-thumbnail" style={{ marginBottom: '30px' }} onClick={() => handlePlay(item.videoId)}>
                             <img
-                                src={`https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`}
+                                src={`https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`}
                                 alt={item.title}
                             />
                             <div className="mil-play-button">
@@ -66,7 +66,7 @@ export const RecognitionSliderMobile = ({ items, handlePlay }) => {
                                 onClick={() => handlePlay(item.videoId)}
                             >
                                 <img
-                                    src={`https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`}
+                                    src={`https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`}
                                     alt={item.title}
                                     loading="lazy"
                                 />

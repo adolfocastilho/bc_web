@@ -374,20 +374,29 @@ section {
     display: flex;
     align-items: center;
 
-    & h3 {
+    & h3,
+    & h2 {
+        font-size: $h3;
+
+        @media screen and (max-width: 768px) {
+            font-size: $h3 - 2px;
+        }
+
         white-space: nowrap;
         display: block;
         padding: 0 30px;
         margin-left: 50%;
-        transform: translateX(-50%);
+        top: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
         position: absolute;
-        top: 1px;
         background-color: $gs-1;
     }
 
     &.mil-left {
-        & h3 {
+
+        & h3,
+        & h2 {
             white-space: nowrap;
             text-align: left;
             transform: translateX(0);

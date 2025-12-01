@@ -1,6 +1,5 @@
 import Data from "@data/sections/hero-1.json";
 import { useEffect, useRef, useState } from "react";
-import Typed from 'typed.js';
 import { ANIMATION } from "@common/constants";
 
 import ExportedImage from "@components/common/ExportedImage";
@@ -8,6 +7,7 @@ import ExportedImage from "@components/common/ExportedImage";
 const HeroOne = () => {
     const el = useRef(null);
     const [rotation, setRotation] = useState(0);
+    const typedInstance = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,17 +19,29 @@ const HeroOne = () => {
     }, []);
 
     useEffect(() => {
-        const typed = new Typed(el.current, {
-            strings: Data.typedStrings,
-            typeSpeed: ANIMATION.TYPE_SPEED,
-            backSpeed: ANIMATION.BACKSPACE_SPEED,
-            backDelay: ANIMATION.BACKSPACE_DELAY,
-            loop: true,
-            showCursor: true
+        let isMounted = true;
+
+        import("typed.js").then((TypedModule) => {
+            if (!isMounted || !el.current) return;
+
+            const Typed = TypedModule.default;
+            typedInstance.current = new Typed(el.current, {
+                strings: Data.typedStrings,
+                typeSpeed: ANIMATION.TYPE_SPEED,
+                backSpeed: ANIMATION.BACKSPACE_SPEED,
+                backDelay: ANIMATION.BACKSPACE_DELAY,
+                loop: true,
+                showCursor: true,
+                cursorChar: '|'
+            });
         });
 
         return () => {
-            typed.destroy();
+            isMounted = false;
+            if (typedInstance.current) {
+                typedInstance.current.destroy();
+                typedInstance.current = null;
+            }
         };
     }, []);
 
@@ -38,10 +50,10 @@ const HeroOne = () => {
             {/* banner */}
             <section className="mil-side-banner mil-center">
                 <div className="mil-banner-top mil-up"></div>
-                <div className="mil-banner-title">
-                    <ExportedImage src="/img/icons/icone_hero_bechange.svg" alt="BeCHANGE" width={180} height={250} className="mil-up mil-mb-30 mil-hero-icon" />
-                    <div className="mil-upper mil-dark mil-up mil-mb-30">{Data.subtitle}</div>
-                    <h1 className="mil-up mil-mb-30" style={{ minHeight: '1.2em' }}>
+                <div className="mil-banner-title" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px' }}>
+                    <ExportedImage src="/img/icons/icone_hero_bechange.svg" alt="BeCHANGE" width={180} height={250} sizes="180px" className="mil-up mil-hero-icon" />
+                    <div className="mil-upper mil-dark mil-up">{Data.subtitle}</div>
+                    <h1 className="mil-up" style={{ minHeight: '1.2em' }}>
                         <span ref={el} />
                     </h1>
                     <p className="mil-upper mil-dark mil-up">{Data.description}</p>
