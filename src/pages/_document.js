@@ -15,6 +15,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="/css/plugins/font-awesome.min.css" />
           <link rel="stylesheet" href="/css/plugins/swiper.min.css" />
           {/* public assets end */}
+          <link rel="icon" href="/img/icons/icone_bechange.svg" type="image/svg+xml" />
         </Head>
         <body>
           <Main />

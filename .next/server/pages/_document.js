@@ -42,6 +42,11 @@ class MyDocument extends (next_document__WEBPACK_IMPORTED_MODULE_1___default()) 
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
                             rel: "stylesheet",
                             href: "/css/plugins/swiper.min.css"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                            rel: "icon",
+                            href: "/img/icons/icone_bechange.svg",
+                            type: "image/svg+xml"
                         })
                     ]
                 }),
