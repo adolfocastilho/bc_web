@@ -1,12 +1,12 @@
 import Data from "@data/sections/portfolio.json";
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper";
-import "swiper/css";
-import "swiper/css/effect-fade";
 import { useState, useEffect } from "react";
 import Modal from "@components/common/Modal";
 import { useMediaQuery } from "@common/hooks/useMediaQuery";
+import dynamic from "next/dynamic";
+
+const PortfolioSlider = dynamic(() => import("../sliders/PortfolioSlider"), {
+    ssr: false,
+});
 
 const PortfolioSection = () => {
     const isDesktop = useMediaQuery("(min-width: 992px)");
@@ -85,42 +85,11 @@ const PortfolioSection = () => {
                                             borderRadius: borderRadius,
                                             overflow: 'hidden'
                                         }}>
-                                            <Swiper
-                                                modules={[Autoplay, EffectFade]}
-                                                spaceBetween={0}
-                                                slidesPerView={1}
-                                                loop={true}
-                                                autoplay={{
-                                                    delay: 1500,
-                                                    disableOnInteraction: false,
-                                                }}
-                                                effect={"fade"}
-                                                style={{ width: '100%', aspectRatio: '1/1' }}
-                                                onSwiper={(swiper) => {
-                                                    setTimeout(() => {
-                                                        if (swiper.autoplay) {
-                                                            swiper.autoplay.stop();
-                                                            setTimeout(() => {
-                                                                if (swiper.autoplay) {
-                                                                    swiper.autoplay.start();
-                                                                }
-                                                            }, Math.random() * 3000);
-                                                        }
-                                                    }, 0);
-                                                }}
-                                            >
-                                                {item.images.map((img, i) => (
-                                                    <SwiperSlide key={`portfolio-img-${key}-${i}`}>
-                                                        <img
-                                                            src={img}
-                                                            loading="lazy"
-                                                            alt={`${item.title} ${i + 1}`}
-                                                            style={{ width: '100%', height: '100%', objectFit: 'cover', cursor: 'pointer' }}
-                                                            onClick={() => openLightbox(img)}
-                                                        />
-                                                    </SwiperSlide>
-                                                ))}
-                                            </Swiper>
+                                            <PortfolioSlider
+                                                items={item.images}
+                                                title={item.title}
+                                                onItemClick={openLightbox}
+                                            />
                                         </div>
                                     </div>
                                 </div>

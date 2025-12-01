@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import Typed from 'typed.js';
 import { ANIMATION } from "@common/constants";
 
+import ExportedImage from "@components/common/ExportedImage";
+
 const HeroOne = () => {
     const el = useRef(null);
     const [rotation, setRotation] = useState(0);
@@ -37,7 +39,7 @@ const HeroOne = () => {
             <section className="mil-side-banner mil-center">
                 <div className="mil-banner-top mil-up"></div>
                 <div className="mil-banner-title">
-                    <img src="/img/icons/icone_hero_bechange.svg" alt="BeCHANGE" width={180} height={250} className="mil-up mil-mb-30 mil-hero-icon" />
+                    <ExportedImage src="/img/icons/icone_hero_bechange.svg" alt="BeCHANGE" width={180} height={250} className="mil-up mil-mb-30 mil-hero-icon" />
                     <div className="mil-upper mil-dark mil-up mil-mb-30">{Data.subtitle}</div>
                     <h1 className="mil-up mil-mb-30" style={{ minHeight: '1.2em' }}>
                         <span ref={el} />

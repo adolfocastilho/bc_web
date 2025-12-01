@@ -1,4 +1,5 @@
 import appData from "@data/app.json";
+import IconMapper from "@components/common/IconMapper";
 
 const leftPanelModule = () => {
     return (
@@ -10,7 +11,7 @@ const leftPanelModule = () => {
 
                 <ul className="mil-social-icons">
                     {appData.social.map((item, key) => (
-                        <li key={`lp-social-item-${key}`}><a href={item.link} target="_blank" className="social-icon"><i className={item.icon} /></a></li>
+                        <li key={`lp-social-item-${key}`}><a href={item.link} target="_blank" className="social-icon"><IconMapper icon={item.icon} /></a></li>
                     ))}
                 </ul>
 

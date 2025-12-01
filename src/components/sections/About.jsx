@@ -1,4 +1,5 @@
 import Data from "@data/sections/about.json";
+import { FaQuoteLeft } from "react-icons/fa";
 
 const AboutSection = () => {
     return (
@@ -13,7 +14,7 @@ const AboutSection = () => {
                         <div className="col-lg-10">
                             <div className="mil-center">
                                 <h2 className="mil-up mil-mb-30" dangerouslySetInnerHTML={{ __html: Data.title }} />
-                                <div className="mil-quote mil-up mil-mb-30"><i className="fas fa-quote-left" /></div>
+                                <div className="mil-quote mil-up mil-mb-30"><FaQuoteLeft /></div>
                                 <p className="mil-up mil-mb-30">{Data.description}</p>
                                 <div className="mil-logos-wrapper mil-up mil-mb-30">
                                     <div className="mil-marquee-track">
