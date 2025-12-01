@@ -28,11 +28,11 @@ const ServicesSection = () => {
                                 }}>
                                     <ServicesSlider items={item.images} />
                                 </div>
-                                <h5 className="mil-up mil-mb-30">
+                                <h3 className="mil-up mil-mb-30">
                                     <span style={{ color: 'inherit', textDecoration: 'none', cursor: 'default' }}>
                                         {item.title}
                                     </span>
-                                </h5>
+                                </h3>
                                 <p className="mil-up mil-mb-5">{item.text}</p>
                                 <span className="mil-up mil-mb-30" style={{ display: "block", fontWeight: "bold", color: "inherit", cursor: 'default' }}>{item.linkText || "Saiba mais..."}</span>
                             </div>

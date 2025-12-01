@@ -70,7 +70,7 @@ const Layouts = ({
         <BackToTop />
       </div>
 
-      <div className="mil-content">
+      <main className="mil-content">
         <div className="mil-scroll-wrapper transition-fade" id="swupMain">
           <div className={containerClass ? containerClass : "mil-container"}>
             {children}
@@ -83,7 +83,7 @@ const Layouts = ({
           <RightPanel background={rightPanelBackground} img={rightPanelImg} />
         }
 
-      </div>
+      </main>
     </div>
   );
 };

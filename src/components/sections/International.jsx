@@ -24,7 +24,7 @@ const InternationalSection = () => {
                 <div className="row">
                     <div className="col-lg-4">
                         <div className="mil-icon-box mil-center mil-mb-60 mil-up">
-                            <h5 className="mil-mb-30">Câmbio que beneficia você</h5>
+                            <h3 className="mil-mb-30">Câmbio que beneficia você</h3>
                             <p>Ganha em euro ou dólar, paga em real. O investimento pesa menos do que contratar uma agência no país onde você mora.</p>
                         </div>
                     </div>

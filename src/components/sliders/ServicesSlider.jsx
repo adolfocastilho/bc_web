@@ -42,6 +42,8 @@ const ServicesSlider = ({ items }) => {
                                 loop
                                 muted
                                 playsInline
+                                aria-hidden="true"
+                                role="presentation"
                                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                             />
                         ) : (
