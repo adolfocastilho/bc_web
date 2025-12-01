@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST={};
+self.__REACT_LOADABLE_MANIFEST={"_app.js -> swiper/element/bundle":{"id":"_app.js -> swiper/element/bundle","files":["static/chunks/node_modules_swiper_element_swiper-element-bundle_js.js"]}}

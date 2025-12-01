@@ -54,7 +54,7 @@ const Layouts = ({
 
   return (
     <div className="mil-wrapper" id="top">
-      <Preloader />
+      {/* <Preloader /> */}
 
       <div className="mil-frame">
 
