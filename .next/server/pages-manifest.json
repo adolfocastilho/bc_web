@@ -1,13 +1,8 @@
 {
-  "/_error": "pages/_error.js",
   "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/404": "pages/404.html",
   "/obrigado": "pages/obrigado.html",
-  "/blog/[id]": "pages/blog/[id].js",
-  "/blog": "pages/blog.js",
-  "/blog/page/[page]": "pages/blog/page/[page].js",
-  "/": "pages/index.js",
-  "/services/[id]": "pages/services/[id].js",
-  "/projects/[id]": "pages/projects/[id].js"
+  "/": "pages/index.js"
 }

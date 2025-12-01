@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST={"services/[id].jsx -> @components/sliders/Testimonial":{id:1563,files:["static/chunks/949-242419a2bbf4529e.js","static/css/e7f2c32b53a96c4e.css","static/chunks/416.8e8168fca916c984.js"]}};
+self.__REACT_LOADABLE_MANIFEST={};
