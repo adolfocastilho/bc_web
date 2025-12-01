@@ -10,6 +10,10 @@ class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
           {/* meta end */}
 
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
           {/* public assets begin */}
           <link rel="preload" href="/css/plugins/bootstrap-grid.css" as="style" />
           <link rel="stylesheet" href="/css/plugins/bootstrap-grid.css" media="print" onLoad="this.media='all'" />
