@@ -32,6 +32,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@next/bundle-analyzer": "^16.0.6"
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "@next/bundle-analyzer": "^16.0.6",
+    "postcss": "^8.5.6"
   }
 }

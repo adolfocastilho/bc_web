@@ -212,6 +212,43 @@ function MyApp({ Component , pageProps  }) {
                                 ]
                             ]
                         ])
+                    }),
+                    /*#__PURE__*/ jsx_runtime.jsx("link", {
+                        rel: "preconnect",
+                        href: "https://fonts.googleapis.com",
+                        className: style_default().dynamic([
+                            [
+                                "7ab22b11a229ee13",
+                                [
+                                    (_app_js_import_Outfit_arguments_subsets_latin_variable_font_outfit_display_swap_variableName_outfit_default()).style.fontFamily
+                                ]
+                            ]
+                        ])
+                    }),
+                    /*#__PURE__*/ jsx_runtime.jsx("link", {
+                        rel: "preconnect",
+                        href: "https://fonts.gstatic.com",
+                        crossOrigin: "anonymous",
+                        className: style_default().dynamic([
+                            [
+                                "7ab22b11a229ee13",
+                                [
+                                    (_app_js_import_Outfit_arguments_subsets_latin_variable_font_outfit_display_swap_variableName_outfit_default()).style.fontFamily
+                                ]
+                            ]
+                        ])
+                    }),
+                    /*#__PURE__*/ jsx_runtime.jsx("link", {
+                        rel: "dns-prefetch",
+                        href: "https://fonts.googleapis.com",
+                        className: style_default().dynamic([
+                            [
+                                "7ab22b11a229ee13",
+                                [
+                                    (_app_js_import_Outfit_arguments_subsets_latin_variable_font_outfit_display_swap_variableName_outfit_default()).style.fontFamily
+                                ]
+                            ]
+                        ])
                     })
                 ]
             }),

@@ -81,6 +81,9 @@ const Home1 = (props) => {
         {/* Canonical */}
         <link rel="canonical" href="https://bechange.com.br/" />
 
+        {/* Preload hero image for better LCP */}
+        <link rel="preload" as="image" href="/img/hero/1.jpg" />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

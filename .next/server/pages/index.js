@@ -1379,6 +1379,11 @@ const Home1 = (props)=>{
                         rel: "canonical",
                         href: "https://bechange.com.br/"
                     }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                        rel: "preload",
+                        as: "image",
+                        href: "/img/hero/1.jpg"
+                    }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
                         type: "application/ld+json",
                         dangerouslySetInnerHTML: {

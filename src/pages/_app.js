@@ -28,6 +28,10 @@ function MyApp({ Component, pageProps }) {
         {/* seo begin */}
         <title>{appData.settings.siteName} - Identidade Visual e Sites Profissionais</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* Performance optimizations */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         {/* seo end */}
       </Head>
       <style jsx global>{`
