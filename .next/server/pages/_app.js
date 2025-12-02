@@ -187,7 +187,7 @@ function MyApp({ Component , pageProps  }) {
         children: [
             /*#__PURE__*/ (0,jsx_runtime.jsxs)((head_default()), {
                 children: [
-                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("title", {
+                    /*#__PURE__*/ jsx_runtime.jsx("title", {
                         className: style_default().dynamic([
                             [
                                 "7ab22b11a229ee13",
@@ -196,10 +196,7 @@ function MyApp({ Component , pageProps  }) {
                                 ]
                             ]
                         ]),
-                        children: [
-                            app/* settings.siteName */.Xd.aD,
-                            " - Identidade Visual e Sites Profissionais"
-                        ]
+                        children: "BecHANGE - Ag\xeancia de Cria\xe7\xe3o de Sites e Identidade Visual"
                     }),
                     /*#__PURE__*/ jsx_runtime.jsx("meta", {
                         name: "viewport",

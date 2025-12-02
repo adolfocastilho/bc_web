@@ -47,7 +47,6 @@ const ServicesSlider = ({ items }) => {
                         {img.endsWith('.mp4') ? (
                             <video
                                 src={img}
-                                poster="/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo1.webp"
                                 preload="none"
                                 autoPlay
                                 loop

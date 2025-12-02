@@ -11,10 +11,10 @@ const ContactSection = () => {
             <div className="mil-center mil-mb-60">
                 <div className="mil-section-title mil-up mil-mb-30">
                     <div className="mil-divider" />
-                    <h3>Vamos conversar</h3>
+                    <h3>Agenda restrita</h3>
                 </div>
                 <p className="mil-up mil-p-0-10" style={{ maxWidth: '800px', margin: '30px auto 30px', textAlign: 'center' }}>
-                    Se você enxerga potencial de crescimento mas sabe que sua presença digital atual não sustenta esse próximo passo, seja pela marca que não transmite autoridade, pelo site que não converte, ou pela estrutura despreparada para tráfego pago, este é o ponto de partida. Solicite uma Reunião de Avaliação Estratégica de 60 minutos (cortesia). Vamos analisar sua situação atual, identificar o que está impedindo vendas e desenhar um plano técnico e financeiramente viável para escalar com solidez.
+                    Trabalhamos apenas com clientes que entendem que marca forte e site estratégico são investimento, não gasto. Que sabem diferenciar designer de executor. Que buscam parceiro de longo prazo, não fornecedor pontual. Se este é o seu perfil, agende 60 minutos de análise estratégica sem custo. Vamos avaliar se faz sentido trabalharmos juntos, identificar o que impede seus resultados e desenhar um plano claro para o próximo nível.
                 </p>
             </div>
             <div className="mil-center mil-up mil-mb-60">

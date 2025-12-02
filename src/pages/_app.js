@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         {/* seo begin */}
-        <title>{appData.settings.siteName} - Identidade Visual e Sites Profissionais</title>
+        <title>BecHANGE - Agência de Criação de Sites e Identidade Visual</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* Performance optimizations */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -337,7 +337,7 @@ const ContactSection = ()=>{
                                 className: "mil-divider"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                                children: "Vamos conversar"
+                                children: "Agenda restrita"
                             })
                         ]
                     }),
@@ -348,7 +348,7 @@ const ContactSection = ()=>{
                             margin: "30px auto 30px",
                             textAlign: "center"
                         },
-                        children: "Se voc\xea enxerga potencial de crescimento mas sabe que sua presen\xe7a digital atual n\xe3o sustenta esse pr\xf3ximo passo, seja pela marca que n\xe3o transmite autoridade, pelo site que n\xe3o converte, ou pela estrutura despreparada para tr\xe1fego pago, este \xe9 o ponto de partida. Solicite uma Reuni\xe3o de Avalia\xe7\xe3o Estrat\xe9gica de 60 minutos (cortesia). Vamos analisar sua situa\xe7\xe3o atual, identificar o que est\xe1 impedindo vendas e desenhar um plano t\xe9cnico e financeiramente vi\xe1vel para escalar com solidez."
+                        children: "Trabalhamos apenas com clientes que entendem que marca forte e site estrat\xe9gico s\xe3o investimento, n\xe3o gasto. Que sabem diferenciar designer de executor. Que buscam parceiro de longo prazo, n\xe3o fornecedor pontual. Se este \xe9 o seu perfil, agende 60 minutos de an\xe1lise estrat\xe9gica sem custo. Vamos avaliar se faz sentido trabalharmos juntos, identificar o que impede seus resultados e desenhar um plano claro para o pr\xf3ximo n\xedvel."
                     })
                 ]
             }),
@@ -1345,7 +1345,7 @@ const Home1 = (props)=>{
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
                         property: "og:title",
-                        content: "BeCHANGE - Identidade Visual e Sites Profissionais"
+                        content: "BecHANGE - Ag\xeancia de Cria\xe7\xe3o de Sites e Identidade Visual"
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
                         property: "og:description",
@@ -1365,7 +1365,7 @@ const Home1 = (props)=>{
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
                         property: "twitter:title",
-                        content: "BeCHANGE - Identidade Visual e Sites Profissionais"
+                        content: "BecHANGE - Ag\xeancia de Cria\xe7\xe3o de Sites e Identidade Visual"
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
                         property: "twitter:description",

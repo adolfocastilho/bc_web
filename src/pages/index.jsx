@@ -67,14 +67,14 @@ const Home1 = (props) => {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://bechange.com.br/" />
-        <meta property="og:title" content="BeCHANGE - Identidade Visual e Sites Profissionais" />
+        <meta property="og:title" content="BecHANGE - Agência de Criação de Sites e Identidade Visual" />
         <meta property="og:description" content="Agência de Design e Tecnologia especialista em Identidade Visual, Criação de Sites Profissionais e Estratégias Digitais." />
         <meta property="og:image" content="https://bechange.com.br/img/hero/1.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://bechange.com.br/" />
-        <meta property="twitter:title" content="BeCHANGE - Identidade Visual e Sites Profissionais" />
+        <meta property="twitter:title" content="BecHANGE - Agência de Criação de Sites e Identidade Visual" />
         <meta property="twitter:description" content="Agência de Design e Tecnologia especialista em Identidade Visual, Criação de Sites Profissionais e Estratégias Digitais." />
         <meta property="twitter:image" content="https://bechange.com.br/img/hero/1.jpg" />
 

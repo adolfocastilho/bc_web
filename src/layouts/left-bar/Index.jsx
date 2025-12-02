@@ -7,7 +7,7 @@ const leftPanelModule = () => {
             {/* left bar */}
             <div className="mil-left-panel">
 
-                <div className="mil-page-name mil-upper mil-dark">BeCHANGE • Estúdio Brasileiro de Design</div>
+                <div className="mil-page-name mil-upper mil-dark">BecHANGE - Agência de Criação de Sites e Identidade Visual</div>
 
                 <ul className="mil-social-icons">
                     {appData.social.map((item, key) => (
