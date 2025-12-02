@@ -1,5 +1,6 @@
 import Data from "@data/sections/services.json";
 import dynamic from "next/dynamic";
+import LazyLoadComponent from "../common/LazyLoadComponent";
 
 import SkeletonLoader from "../common/SkeletonLoader";
 
@@ -23,13 +24,16 @@ const ServicesSection = () => {
                     {Data.items.map((item, key) => (
                         <div key={`services-item-${key}`} className="col-lg-4">
                             <div className="mil-icon-box mil-center mil-mb-60">
+                                {/* ... inside the map loop */}
                                 <div className="mil-service-slider mil-mb-30" style={{
                                     width: '100%',
                                     borderRadius: '20px',
                                     overflow: 'hidden',
                                     border: 'solid 1px rgba(0, 0, 0, 0.05)'
                                 }}>
-                                    <ServicesSlider items={item.images} />
+                                    <LazyLoadComponent>
+                                        <ServicesSlider items={item.images} />
+                                    </LazyLoadComponent>
                                 </div>
                                 <h3 className="mil-up mil-mb-30">
                                     <span style={{ color: 'inherit', textDecoration: 'none', cursor: 'default' }}>

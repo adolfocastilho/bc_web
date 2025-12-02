@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Modal from "@components/common/Modal";
 import { useMediaQuery } from "@common/hooks/useMediaQuery";
 import dynamic from "next/dynamic";
+import LazyLoadComponent from "../common/LazyLoadComponent";
 
 import SkeletonLoader from "../common/SkeletonLoader";
 
@@ -88,11 +89,13 @@ const PortfolioSection = () => {
                                             borderRadius: borderRadius,
                                             overflow: 'hidden'
                                         }}>
-                                            <PortfolioSlider
-                                                items={item.images}
-                                                title={item.title}
-                                                onItemClick={openLightbox}
-                                            />
+                                            <LazyLoadComponent>
+                                                <PortfolioSlider
+                                                    items={item.images}
+                                                    title={item.title}
+                                                    onItemClick={openLightbox}
+                                                />
+                                            </LazyLoadComponent>
                                         </div>
                                     </div>
                                 </div>

@@ -5,22 +5,22 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/ASG9Sh-4OSYiRVJMP-NZG/_buildManifest.js",
-    "static/ASG9Sh-4OSYiRVJMP-NZG/_ssgManifest.js"
+    "static/x2jICMuOh60wtFc46u7gb/_buildManifest.js",
+    "static/x2jICMuOh60wtFc46u7gb/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
     "/": [
-      "static/chunks/webpack-d756a83a0b06ab56.js",
+      "static/chunks/webpack-af7f6a4c78bcdae6.js",
       "static/chunks/framework-af27a8b8615822a5.js",
       "static/chunks/main-c8ec04ed2be66629.js",
       "static/chunks/cb355538-71a5b5136c74586d.js",
       "static/chunks/983-e8650c978b1bf45a.js",
       "static/chunks/459-40b02bec3555217a.js",
-      "static/chunks/pages/index-cc65b690cfecc97f.js"
+      "static/chunks/pages/index-8f37520530777c90.js"
     ],
     "/404": [
-      "static/chunks/webpack-d756a83a0b06ab56.js",
+      "static/chunks/webpack-af7f6a4c78bcdae6.js",
       "static/chunks/framework-af27a8b8615822a5.js",
       "static/chunks/main-c8ec04ed2be66629.js",
       "static/chunks/cb355538-71a5b5136c74586d.js",
@@ -29,20 +29,20 @@
       "static/chunks/pages/404-1db3608e00a5e5b8.js"
     ],
     "/_app": [
-      "static/chunks/webpack-d756a83a0b06ab56.js",
+      "static/chunks/webpack-af7f6a4c78bcdae6.js",
       "static/chunks/framework-af27a8b8615822a5.js",
       "static/chunks/main-c8ec04ed2be66629.js",
       "static/css/fbcea40201eb60eb.css",
       "static/chunks/pages/_app-e7316748446ee6da.js"
     ],
     "/_error": [
-      "static/chunks/webpack-d756a83a0b06ab56.js",
+      "static/chunks/webpack-af7f6a4c78bcdae6.js",
       "static/chunks/framework-af27a8b8615822a5.js",
       "static/chunks/main-c8ec04ed2be66629.js",
       "static/chunks/pages/_error-54de1933a164a1ff.js"
     ],
     "/obrigado": [
-      "static/chunks/webpack-d756a83a0b06ab56.js",
+      "static/chunks/webpack-af7f6a4c78bcdae6.js",
       "static/chunks/framework-af27a8b8615822a5.js",
       "static/chunks/main-c8ec04ed2be66629.js",
       "static/chunks/cb355538-71a5b5136c74586d.js",

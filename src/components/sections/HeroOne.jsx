@@ -49,7 +49,7 @@ const HeroOne = () => {
 
         // Delay Typed.js on mobile to reduce initial TBT
         if (window.innerWidth < 768) {
-            const timer = setTimeout(initTyped, 2500);
+            const timer = setTimeout(initTyped, 800);
             return () => {
                 clearTimeout(timer);
                 isMounted = false;

@@ -17,27 +17,28 @@ const ServicesSlider = ({ items }) => {
 
     return (
         <Swiper
+            key={isMobile ? 'mobile' : 'desktop'}
             modules={[Autoplay, EffectFade]}
             spaceBetween={0}
             slidesPerView={1}
             loop={true}
-            autoplay={false}
+            autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+            }}
             effect={isMobile ? "slide" : "fade"}
             style={{ width: '100%', aspectRatio: '1/1' }}
             onSwiper={(swiper) => {
-                const randomDelay = Math.floor(Math.random() * 2500);
-                if (!swiper.params.autoplay) {
-                    swiper.params.autoplay = {};
+                // Stop immediately to apply random delay
+                if (swiper.autoplay) {
+                    swiper.autoplay.stop();
+                    const randomDelay = Math.floor(Math.random() * 1875);
+                    setTimeout(() => {
+                        if (swiper && swiper.autoplay) {
+                            swiper.autoplay.start();
+                        }
+                    }, randomDelay);
                 }
-                Object.assign(swiper.params.autoplay, {
-                    delay: 2000,
-                    disableOnInteraction: false,
-                });
-                setTimeout(() => {
-                    if (swiper.autoplay) {
-                        swiper.autoplay.start();
-                    }
-                }, randomDelay);
             }}
         >
             {items.map((img, i) => (

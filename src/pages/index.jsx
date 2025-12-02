@@ -20,7 +20,7 @@ const Home1 = (props) => {
     "@type": "LocalBusiness",
     "name": "BeCHANGE",
     "image": "https://bechange.com.br/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
-    "description": "Agência especialista em Identidade Visual e Sites de Alta Performance.",
+    "description": "Agência de Criação de Sites Profissionais e Identidade Visual Estratégica",
     "url": "https://bechange.com.br",
     "sameAs": [
       "https://www.instagram.com/bechangecomunicacao/",

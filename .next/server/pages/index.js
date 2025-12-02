@@ -42,6 +42,55 @@ exports.modules = {
 
 /***/ }),
 
+/***/ 3731:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5893);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const LazyLoadComponent = ({ children , threshold =0.1 , rootMargin ="200px"  })=>{
+    const [isVisible, setIsVisible] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+    const ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
+        const observer = new IntersectionObserver(([entry])=>{
+            if (entry.isIntersecting) {
+                setIsVisible(true);
+                observer.disconnect();
+            }
+        }, {
+            threshold,
+            rootMargin
+        });
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+        return ()=>{
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
+        };
+    }, [
+        threshold,
+        rootMargin
+    ]);
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+        ref: ref,
+        style: {
+            minHeight: "100px"
+        },
+        children: isVisible ? children : null
+    });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LazyLoadComponent);
+
+
+/***/ }),
+
 /***/ 1013:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -341,7 +390,7 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(5893);
 ;// CONCATENATED MODULE: ./src/data/sections/hero-1.json
-const hero_1_namespaceObject = JSON.parse('{"Oc":"22 ANOS DE CRIATIVIDADE","AT":["BeCHANGE","Seja a Mudança"],"WL":"Estúdio de Design Especialista em Sites e Identidade Visual"}');
+const hero_1_namespaceObject = JSON.parse('{"Oc":"22 ANOS DE CRIATIVIDADE","AT":["BeCHANGE","Seja a Mudança"],"WL":"Agência de Criação de Sites e Identidade Visual"}');
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
 ;// CONCATENATED MODULE: ./src/common/constants.js
@@ -420,7 +469,7 @@ const HeroOne = ()=>{
         };
         // Delay Typed.js on mobile to reduce initial TBT
         if (window.innerWidth < 768) {
-            const timer = setTimeout(initTyped, 2500);
+            const timer = setTimeout(initTyped, 800);
             return ()=>{
                 clearTimeout(timer);
                 isMounted = false;
@@ -595,9 +644,12 @@ var useMediaQuery = __webpack_require__(3813);
 // EXTERNAL MODULE: ./node_modules/next/dynamic.js
 var dynamic = __webpack_require__(5152);
 var dynamic_default = /*#__PURE__*/__webpack_require__.n(dynamic);
+// EXTERNAL MODULE: ./src/components/common/LazyLoadComponent.jsx
+var LazyLoadComponent = __webpack_require__(3731);
 // EXTERNAL MODULE: ./src/components/common/SkeletonLoader.jsx
 var SkeletonLoader = __webpack_require__(2961);
 ;// CONCATENATED MODULE: ./src/components/sections/Portfolio.jsx
+
 
 
 
@@ -704,10 +756,12 @@ const PortfolioSection = ()=>{
                                                 borderRadius: borderRadius,
                                                 overflow: "hidden"
                                             },
-                                            children: /*#__PURE__*/ jsx_runtime.jsx(PortfolioSlider, {
-                                                items: item.images,
-                                                title: item.title,
-                                                onItemClick: openLightbox
+                                            children: /*#__PURE__*/ jsx_runtime.jsx(LazyLoadComponent/* default */.Z, {
+                                                children: /*#__PURE__*/ jsx_runtime.jsx(PortfolioSlider, {
+                                                    items: item.images,
+                                                    title: item.title,
+                                                    onItemClick: openLightbox
+                                                })
                                             })
                                         })
                                     })
@@ -940,13 +994,16 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(5893);
 ;// CONCATENATED MODULE: ./src/data/sections/services.json
-const services_namespaceObject = JSON.parse('{"TN":"Serviços","WL":"Uma estrutura completa para posicionar sua marca com consistência, sofisticação e resultado mensurável. Cada projeto é desenhado para aumentar o valor percebido da sua marca, gerar autoridade no mercado e transformar presença digital em ferramenta de vendas.","ev":[{"title":"Identidade Visual Estratégica","images":["/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo1.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo2.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo3.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo4.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo5.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo6.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo7.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo8.webp"],"text":"Criação de identidade visual completa: logotipo, paleta de cores, tipografia, grafismos proprietários e manual de uso. Sistema visual pensado para aplicar em site, redes sociais, materiais digitais, impressos, apresentações e toda comunicação da marca. Marcas fortes cobram mais e atraem clientes melhores.","link":"/services/service-1","linkText":"Ver projetos de Identidade Visual"},{"title":"Sites Institucionais e Landing Pages","images":["/img/portfolio/sites/bechange_criacao-sites-landing-page1.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page2.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page3.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page4.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page5.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page6.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page7.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page8.webp"],"text":"Desenvolvimento de sites e landing pages focados em conversão e autoridade. Layout responsivo, velocidade otimizada, SEO on page, acessibilidade, páginas legais LGPD e integrações para captar leads, vender online e fortalecer presença digital profissional. Cada site pensado para sustentar tráfego pago.","link":"/services/service-2","linkText":"Conhecer Criação de Sites"},{"title":"Edição de Vídeo e Motion","images":["/img/portfolio/videos/bechange-edicao-de-video-motion.mp4"],"text":"Edição de vídeos institucionais, publicitários, reels e conteúdo curto com motion design, ritmo ajustado e narrativa clara. Entregas prontas para sites, apresentações, campanhas online, YouTube, Instagram e anúncios que precisam comunicar rápido, emocionar e gerar resultado real e audiência imediata qualificada.","link":"/services/service-3","linkText":"Ver portfólio de Vídeos"},{"title":"Agentes de IA e Chatbots","images":["/img/portfolio/agente/bechange_automacao-whatsapp-chatbot-ia1.webp","/img/portfolio/agente/bechange_automacao-whatsapp-chatbot-ia2.webp"],"text":"Criação de agentes de IA e chatbots para site ou WhatsApp com linguagem humanizada. Atendem dúvidas, captam leads, registram contatos, automatizam respostas frequentes e conectam formulários, agendas e fluxos simples do negócio. Tecnologia aplicada para reduzir custos operacionais.","link":"/services/service-4","linkText":"Contratar Agentes de IA"},{"title":"Sistemas, Apps Web e Manutenção","images":["/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida1.webp","/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida2.webp","/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida3.webp","/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida4.webp","/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida5.webp","/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida6.webp"],"text":"Desenvolvimento de sistemas e aplicativos web sob medida para orçamentos, reservas, áreas do cliente, e CRM. Manutenção com atualizações de segurança, monitoramento de performance, gerenciamento de hospedagem, backups automáticos e suporte contínuo. Tudo sempre seguro, estável e rápido.","link":"/services/service-5","linkText":"Ver soluções em Sistemas"},{"title":"Tráfego Pago e Performance","images":["/img/portfolio/trafego/bechange_gestao-trafego-pago-google-ads-facebook-ads1.webp","/img/portfolio/trafego/bechange_gestao-trafego-pago-google-ads-facebook-ads2.webp","/img/portfolio/trafego/bechange_gestao-trafego-pago-google-ads-facebook-ads3.webp","/img/portfolio/trafego/bechange_gestao-trafego-pago-google-ads-facebook-ads4.webp"],"text":"Gestão de tráfego pago e anúncios para Google, Instagram e Facebook alinhados à estratégia digital e ao posicionamento da marca. Campanhas pensadas para conversão, leitura clara das métricas principais, otimização constante do orçamento e resultados em vendas online. Design e mídia trabalhando juntos.","link":"/services/service-6","linkText":"Consultar Gestão de Tráfego"}]}');
+const services_namespaceObject = JSON.parse('{"TN":"Serviços","WL":"Uma estrutura completa para posicionar sua marca com consistência, sofisticação e resultado mensurável. Cada projeto é desenhado para aumentar o valor percebido da sua marca, gerar autoridade no mercado e transformar presença digital em ferramenta de vendas.","ev":[{"title":"Identidade Visual Estratégica","images":["/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo1.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo2.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo3.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo4.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo5.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo6.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo7.webp","/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo8.webp"],"text":"Criação de identidade visual completa: logotipo, paleta de cores, tipografia, grafismos proprietários e manual de uso. Sistema visual pensado para aplicar em site, redes sociais, materiais digitais, impressos, apresentações e toda comunicação da marca. Marcas fortes cobram mais e atraem clientes melhores.","link":"/services/service-1","linkText":"Ver projetos de Identidade Visual"},{"title":"Sites Institucionais e Landing Pages","images":["/img/portfolio/sites/bechange_criacao-sites-landing-page1.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page2.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page3.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page4.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page5.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page6.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page7.webp","/img/portfolio/sites/bechange_criacao-sites-landing-page8.webp"],"text":"Desenvolvimento de sites e landing pages focados em conversão e autoridade. Layout responsivo, velocidade otimizada, SEO on page, acessibilidade, páginas legais LGPD e integrações para captar leads, vender online e fortalecer presença digital profissional. Cada site pensado para sustentar tráfego pago.","link":"/services/service-2","linkText":"Conhecer Criação de Sites"},{"title":"Edição de Vídeo e Motion","images":["/img/portfolio/videos/bechange-edicao-de-video-motion.mp4"],"text":"Edição de vídeos institucionais, publicitários, reels e conteúdo curto com motion design, ritmo ajustado e narrativa clara. Entregas prontas para sites, apresentações, campanhas online, YouTube, Instagram e anúncios que precisam comunicar rápido, emocionar e gerar resultado real e audiência imediata qualificada.","link":"/services/service-3","linkText":"Ver portfólio de Vídeos"},{"title":"Agentes de IA e Chatbots","images":["/img/portfolio/agente/bechange_automacao-whatsapp-chatbot-ia-2.webp","/img/portfolio/agente/bechange_automacao-whatsapp-chatbot-ia2.webp"],"text":"Criação de agentes de IA e chatbots para site ou WhatsApp com linguagem humanizada. Atendem dúvidas, captam leads, registram contatos, automatizam respostas frequentes e conectam formulários, agendas e fluxos simples do negócio. Tecnologia aplicada para reduzir custos operacionais.","link":"/services/service-4","linkText":"Contratar Agentes de IA"},{"title":"Sistemas, Apps Web e Manutenção","images":["/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida1.webp","/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida2.webp","/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida3.webp","/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida4.webp","/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida5.webp","/img/portfolio/sistemas/bechange_desenvolvimento-sistemas-web-software-sob-medida6.webp"],"text":"Desenvolvimento de sistemas e aplicativos web sob medida para orçamentos, reservas, áreas do cliente, e CRM. Manutenção com atualizações de segurança, monitoramento de performance, gerenciamento de hospedagem, backups automáticos e suporte contínuo. Tudo sempre seguro, estável e rápido.","link":"/services/service-5","linkText":"Ver soluções em Sistemas"},{"title":"Tráfego Pago e Performance","images":["/img/portfolio/trafego/bechange_gestao-trafego-pago-google-ads-facebook-ads1.webp","/img/portfolio/trafego/bechange_gestao-trafego-pago-google-ads-facebook-ads2.webp","/img/portfolio/trafego/bechange_gestao-trafego-pago-google-ads-facebook-ads3.webp","/img/portfolio/trafego/bechange_gestao-trafego-pago-google-ads-facebook-ads4.webp"],"text":"Gestão de tráfego pago e anúncios para Google, Instagram e Facebook alinhados à estratégia digital e ao posicionamento da marca. Campanhas pensadas para conversão, leitura clara das métricas principais, otimização constante do orçamento e resultados em vendas online. Design e mídia trabalhando juntos.","link":"/services/service-6","linkText":"Consultar Gestão de Tráfego"}]}');
 // EXTERNAL MODULE: ./node_modules/next/dynamic.js
 var dynamic = __webpack_require__(5152);
 var dynamic_default = /*#__PURE__*/__webpack_require__.n(dynamic);
+// EXTERNAL MODULE: ./src/components/common/LazyLoadComponent.jsx
+var LazyLoadComponent = __webpack_require__(3731);
 // EXTERNAL MODULE: ./src/components/common/SkeletonLoader.jsx
 var SkeletonLoader = __webpack_require__(2961);
 ;// CONCATENATED MODULE: ./src/components/sections/Services.jsx
+
 
 
 
@@ -1001,8 +1058,10 @@ const ServicesSection = ()=>{
                                             overflow: "hidden",
                                             border: "solid 1px rgba(0, 0, 0, 0.05)"
                                         },
-                                        children: /*#__PURE__*/ jsx_runtime.jsx(ServicesSlider, {
-                                            items: item.images
+                                        children: /*#__PURE__*/ jsx_runtime.jsx(LazyLoadComponent/* default */.Z, {
+                                            children: /*#__PURE__*/ jsx_runtime.jsx(ServicesSlider, {
+                                                items: item.images
+                                            })
                                         })
                                     }),
                                     /*#__PURE__*/ jsx_runtime.jsx("h3", {
@@ -1231,7 +1290,7 @@ const Home1 = (props)=>{
         "@type": "LocalBusiness",
         "name": "BeCHANGE",
         "image": "https://bechange.com.br/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
-        "description": "Ag\xeancia especialista em Identidade Visual e Sites de Alta Performance.",
+        "description": "Ag\xeancia de Cria\xe7\xe3o de Sites Profissionais e Identidade Visual Estrat\xe9gica",
         "url": "https://bechange.com.br",
         "sameAs": [
             "https://www.instagram.com/bechangecomunicacao/",
@@ -1593,7 +1652,7 @@ module.exports = require("path");
 /***/ 2166:
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"ri":{"B":"/img/person/adolfo-castilho-garcia-bechange_avatar.webp","w":"avatar"},"TN":"Agência especialista em Identidade Visual e Sites de Alta Performance.","WL":"Adolfo Castilho é a força criativa e estratégica por trás da BeChange. Há mais de 22 anos transforma ideias em identidades visuais, sites e experiências digitais que geram resultado financeiro. Lidera pessoalmente cada projeto, garantindo visão refinada, foco em conversão e atendimento direto e humanizado. Desde 2013, à frente da BeChange, acompanha clientes que abriram ou expandiram empresas no Brasil, EUA, Emirados Árabes, França, Itália, Austrália e outros países, levando design estratégico e presença digital profissional para novos mercados. A BeChange conta com selos Adegraf, ADG, ABCOM e registro DUNS, reforçando a seriedade da operação e a segurança para quem escolhe trabalhar com a agência","UN":[{"image":"/img/logos/adegraf.webp","alt":"Adegraf"},{"image":"/img/logos/duns.webp","alt":"DUNS"},{"image":"/img/logos/adg.webp","alt":"ADG"},{"image":"/img/logos/abcom.webp","alt":"ABCOM"}]}');
+module.exports = JSON.parse('{"ri":{"B":"/img/person/adolfo-castilho-garcia-bechange_avatar.webp","w":"avatar"},"TN":"Agência de Criação de Sites Profissionais e Identidade Visual Estratégica","WL":"Adolfo Castilho é a força criativa e estratégica por trás da BeChange. Há mais de 22 anos transforma ideias em identidades visuais, sites e experiências digitais que geram resultado financeiro. Lidera pessoalmente cada projeto, garantindo visão refinada, foco em conversão e atendimento direto e humanizado. Desde 2013, à frente da BeChange, acompanha clientes que abriram ou expandiram empresas no Brasil, EUA, Emirados Árabes, França, Itália, Austrália e outros países, levando design estratégico e presença digital profissional para novos mercados. A BeChange conta com certificações Adegraf, ADG, ABCOM e registro DUNS, reforçando a seriedade da operação e a segurança para quem escolhe trabalhar com a agência.","UN":[{"image":"/img/logos/adegraf.webp","alt":"Adegraf"},{"image":"/img/logos/duns.webp","alt":"DUNS"},{"image":"/img/logos/adg.webp","alt":"ADG"},{"image":"/img/logos/abcom.webp","alt":"ABCOM"}]}');
 
 /***/ }),
 
