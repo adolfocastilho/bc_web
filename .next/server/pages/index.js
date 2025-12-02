@@ -403,26 +403,42 @@ const HeroOne = ()=>{
     }, []);
     (0,external_react_.useEffect)(()=>{
         let isMounted = true;
-        Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 5505)).then((TypedModule)=>{
-            if (!isMounted || !el.current) return;
-            const Typed = TypedModule.default;
-            typedInstance.current = new Typed(el.current, {
-                strings: hero_1_namespaceObject.AT,
-                typeSpeed: ANIMATION.TYPE_SPEED,
-                backSpeed: ANIMATION.BACKSPACE_SPEED,
-                backDelay: ANIMATION.BACKSPACE_DELAY,
-                loop: true,
-                showCursor: true,
-                cursorChar: "|"
+        const initTyped = ()=>{
+            Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 5505)).then((TypedModule)=>{
+                if (!isMounted || !el.current) return;
+                const Typed = TypedModule.default;
+                typedInstance.current = new Typed(el.current, {
+                    strings: hero_1_namespaceObject.AT,
+                    typeSpeed: ANIMATION.TYPE_SPEED,
+                    backSpeed: ANIMATION.BACKSPACE_SPEED,
+                    backDelay: ANIMATION.BACKSPACE_DELAY,
+                    loop: true,
+                    showCursor: true,
+                    cursorChar: "|"
+                });
             });
-        });
-        return ()=>{
-            isMounted = false;
-            if (typedInstance.current) {
-                typedInstance.current.destroy();
-                typedInstance.current = null;
-            }
         };
+        // Delay Typed.js on mobile to reduce initial TBT
+        if (window.innerWidth < 768) {
+            const timer = setTimeout(initTyped, 2500);
+            return ()=>{
+                clearTimeout(timer);
+                isMounted = false;
+                if (typedInstance.current) {
+                    typedInstance.current.destroy();
+                    typedInstance.current = null;
+                }
+            };
+        } else {
+            initTyped();
+            return ()=>{
+                isMounted = false;
+                if (typedInstance.current) {
+                    typedInstance.current.destroy();
+                    typedInstance.current = null;
+                }
+            };
+        }
     }, []);
     return /*#__PURE__*/ jsx_runtime.jsx(jsx_runtime.Fragment, {
         children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("section", {

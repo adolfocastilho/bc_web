@@ -1,10 +1,20 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper";
+import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import ExportedImage from "@components/common/ExportedImage";
 
 const ServicesSlider = ({ items }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 768);
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <Swiper
             modules={[Autoplay, EffectFade]}
@@ -12,7 +22,7 @@ const ServicesSlider = ({ items }) => {
             slidesPerView={1}
             loop={true}
             autoplay={false}
-            effect={"fade"}
+            effect={isMobile ? "slide" : "fade"}
             style={{ width: '100%', aspectRatio: '1/1' }}
             onSwiper={(swiper) => {
                 const randomDelay = Math.floor(Math.random() * 2500);

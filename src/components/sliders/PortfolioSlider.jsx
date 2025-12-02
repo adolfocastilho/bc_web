@@ -1,10 +1,20 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper";
+import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import ExportedImage from "@components/common/ExportedImage";
 
 const PortfolioSlider = ({ items, title, onItemClick }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 768);
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <Swiper
             modules={[Autoplay, EffectFade]}
@@ -15,7 +25,7 @@ const PortfolioSlider = ({ items, title, onItemClick }) => {
                 delay: 1500,
                 disableOnInteraction: false,
             }}
-            effect={"fade"}
+            effect={isMobile ? "slide" : "fade"}
             style={{ width: '100%', aspectRatio: '1/1' }}
             onSwiper={(swiper) => {
                 setTimeout(() => {

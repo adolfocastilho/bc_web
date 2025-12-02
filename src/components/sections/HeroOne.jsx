@@ -30,28 +30,44 @@ const HeroOne = () => {
     useEffect(() => {
         let isMounted = true;
 
-        import("typed.js").then((TypedModule) => {
-            if (!isMounted || !el.current) return;
+        const initTyped = () => {
+            import("typed.js").then((TypedModule) => {
+                if (!isMounted || !el.current) return;
 
-            const Typed = TypedModule.default;
-            typedInstance.current = new Typed(el.current, {
-                strings: Data.typedStrings,
-                typeSpeed: ANIMATION.TYPE_SPEED,
-                backSpeed: ANIMATION.BACKSPACE_SPEED,
-                backDelay: ANIMATION.BACKSPACE_DELAY,
-                loop: true,
-                showCursor: true,
-                cursorChar: '|'
+                const Typed = TypedModule.default;
+                typedInstance.current = new Typed(el.current, {
+                    strings: Data.typedStrings,
+                    typeSpeed: ANIMATION.TYPE_SPEED,
+                    backSpeed: ANIMATION.BACKSPACE_SPEED,
+                    backDelay: ANIMATION.BACKSPACE_DELAY,
+                    loop: true,
+                    showCursor: true,
+                    cursorChar: '|'
+                });
             });
-        });
-
-        return () => {
-            isMounted = false;
-            if (typedInstance.current) {
-                typedInstance.current.destroy();
-                typedInstance.current = null;
-            }
         };
+
+        // Delay Typed.js on mobile to reduce initial TBT
+        if (window.innerWidth < 768) {
+            const timer = setTimeout(initTyped, 2500);
+            return () => {
+                clearTimeout(timer);
+                isMounted = false;
+                if (typedInstance.current) {
+                    typedInstance.current.destroy();
+                    typedInstance.current = null;
+                }
+            };
+        } else {
+            initTyped();
+            return () => {
+                isMounted = false;
+                if (typedInstance.current) {
+                    typedInstance.current.destroy();
+                    typedInstance.current = null;
+                }
+            };
+        }
     }, []);
 
     return (
