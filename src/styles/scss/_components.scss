@@ -850,6 +850,14 @@ content banner
         width: 180px;
         height: auto;
 
+        @media screen and (max-width: 1200px) {
+            width: 140px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            width: 120px;
+        }
+
         @media screen and (max-width: 992px) {
             display: none;
         }

@@ -5,10 +5,10 @@
       "static/chunks/src_components_common_ContactForm_jsx.js"
     ]
   },
-  "../components/sections/HeroOne.jsx -> typed.js": {
-    "id": "../components/sections/HeroOne.jsx -> typed.js",
+  "../components/sections/HeroOne.jsx -> @components/common/VaporizeTextCycle": {
+    "id": "../components/sections/HeroOne.jsx -> @components/common/VaporizeTextCycle",
     "files": [
-      "static/chunks/node_modules_typed_js_dist_typed_module_js.js"
+      "static/chunks/src_components_common_VaporizeTextCycle_jsx.js"
     ]
   },
   "../components/sections/Portfolio.jsx -> ../sliders/PortfolioSlider": {
