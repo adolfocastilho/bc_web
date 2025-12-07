@@ -45,17 +45,19 @@ const RecognitionSection = () => {
 
     return (
         <>
-            <section id="recognition">
-                <div className="mil-section-title mil-up">
-                    <div className="mil-divider"></div>
-                    <h2>{Data.title}</h2>
+            <section id="recognition" style={{ paddingTop: '30px' }}>
+                <div style={{ padding: 0 }}>
+                    <div className="mil-section-title mil-up">
+                        <div className="mil-divider"></div>
+                        <h2>{Data.title}</h2>
+                    </div>
+                    <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
                 </div>
-                <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
 
                 {/* DESKTOP VERSION (3 Columns) - Only rendered on desktop */}
                 {isDesktop && (
-                    <div className="mil-p-90-30" style={{ paddingTop: '0' }}>
-                        <div className="row justify-content-between align-items-center">
+                    <div style={{ padding: 0 }}>
+                        <div className="row justify-content-between align-items-center" style={{ margin: 0 }}>
                             <RecognitionSliderDesktop items={Data.items} handlePlay={handlePlay} />
                         </div>
                     </div>
@@ -63,8 +65,8 @@ const RecognitionSection = () => {
 
                 {/* MOBILE VERSION (Reviews Style) - Only rendered on mobile */}
                 {!isDesktop && (
-                    <div className="mil-p-90-90" style={{ paddingTop: '0' }}>
-                        <div className="row justify-content-center mil-reviews-slider-frame">
+                    <div style={{ padding: 0 }}>
+                        <div className="row justify-content-center mil-reviews-slider-frame" style={{ margin: 0 }}>
                             <div className="col-lg-8">
                                 <RecognitionSliderMobile items={Data.items} handlePlay={handlePlay} />
                             </div>

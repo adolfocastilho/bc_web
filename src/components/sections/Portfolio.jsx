@@ -38,15 +38,17 @@ const PortfolioSection = () => {
     return (
         <>
             <section id="portfolio">
-                <div className="mil-section-title mil-up">
-                    <div className="mil-divider"></div>
-                    <h2>{Data.title}</h2>
+                <div style={{ padding: 0 }}>
+                    <div className="mil-section-title mil-up">
+                        <div className="mil-divider"></div>
+                        <h2>{Data.title}</h2>
+                    </div>
+                    <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
                 </div>
-                <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
 
                 {/* portfolio grid */}
-                <div className="mil-p-90-30" style={{ paddingTop: '0' }}>
-                    <div className="row g-0 align-items-center">
+                <div style={{ padding: 0 }}>
+                    <div className="row g-0 align-items-center" style={{ margin: 0 }}>
                         {Data.items.map((item, key) => {
                             let borderRadius = '0';
                             // Calculate effective index for desktop (ignoring mobileOnly items)

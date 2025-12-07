@@ -64,7 +64,29 @@ const DefaultHeader = ({ extraClass }) => {
             <ul>
               {navItems.map((item, key) => (
                 <li className={item.classes} key={`header-menu-item-${key}`}>
-                  <a href={item.link} onClick={() => {
+                  <a href={item.link} onClick={(e) => {
+                    // Custom scroll for anchor links
+                    if (item.link.startsWith('#')) {
+                      e.preventDefault();
+                      const section = document.querySelector(item.link);
+                      if (section) {
+                        // Find the section title (mil-section-title) inside the section
+                        const sectionTitle = section.querySelector('.mil-section-title');
+                        const targetElement = sectionTitle || section;
+
+                        // Calculate position: 90px header + 50px offset above title
+                        const headerHeight = 90;
+                        const offsetAboveTitle = 50;
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                        const offsetPosition = elementPosition - headerHeight - offsetAboveTitle;
+
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: 'smooth'
+                        });
+                      }
+                    }
+
                     if (window.innerWidth <= 768) {
                       setTimeout(() => {
                         setToggle(false);

@@ -26,7 +26,7 @@ const AboutSection = () => {
                                         ))}
                                     </div>
                                 </div>
-                                <div className="mil-up mil-mb-30 mil-mt-60">
+                                <div className="mil-center mil-up mil-mt-60">
                                     <a href="#portfolio" className="mil-btn mil-sm-btn mil-rounded">
                                         <span>Ver Portfólio</span>
                                     </a>

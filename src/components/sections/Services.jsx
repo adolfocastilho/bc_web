@@ -11,19 +11,21 @@ const ServicesSlider = dynamic(() => import("../sliders/ServicesSlider"), {
 
 const ServicesSection = () => {
     return (
-        <section id="services">
-            <div className="mil-section-title mil-up">
-                <div className="mil-divider"></div>
-                <h2>{Data.title}</h2>
+        <section id="services" style={{ paddingTop: '50px' }}>
+            <div style={{ padding: 0 }}>
+                <div className="mil-section-title mil-up">
+                    <div className="mil-divider"></div>
+                    <h2>{Data.title}</h2>
+                </div>
+                <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
             </div>
-            <p className="mil-up mil-p-0-10 mil-section-description">{Data.description}</p>
 
             {/* services */}
-            <div className="mil-p-90-30" style={{ paddingTop: '0' }}>
+            <div style={{ padding: 0 }}>
                 <div className="row justify-content-between align-items-center">
                     {Data.items.map((item, key) => (
                         <div key={`services-item-${key}`} className="col-lg-4">
-                            <div className="mil-icon-box mil-center mil-mb-60">
+                            <div className="mil-icon-box mil-center mil-mb-30">
                                 {/* ... inside the map loop */}
                                 <div className="mil-service-slider mil-mb-30" style={{
                                     width: '100%',
@@ -36,7 +38,7 @@ const ServicesSection = () => {
                                     </LazyLoadComponent>
                                 </div>
                                 <h3 className="mil-up mil-mb-30">
-                                    <span style={{ color: 'inherit', textDecoration: 'none', cursor: 'default' }}>
+                                    <span style={{ color: 'inherit', textDecoration: 'none', cursor: 'default', whiteSpace: 'pre-line' }}>
                                         {item.title}
                                     </span>
                                 </h3>

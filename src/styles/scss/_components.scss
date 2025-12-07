@@ -1011,6 +1011,7 @@ about
         gap: 0;
         margin-left: -20px;
         margin-right: -20px;
+        margin-bottom: 75px !important;
         justify-content: flex-start;
         overflow: hidden;
 
@@ -2718,6 +2719,14 @@ international section
     }
 }
 
+.mil-desktop-br {
+    display: inline;
+
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
+}
+
 // Process Steps Timeline
 .mil-process-steps {
     display: flex;
@@ -2806,5 +2815,91 @@ international section
         @media screen and (max-width: 992px) {
             font-size: 15px;
         }
+    }
+}
+
+// FAQ Accordion Styles
+.mil-faq-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 30px;
+
+    @media screen and (max-width: 768px) {
+        padding: 0 15px;
+    }
+}
+
+.mil-faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    &:first-child {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
+
+.mil-faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: $dark;
+        margin: 0;
+        padding-right: 20px;
+        line-height: 1.4;
+
+        @media screen and (max-width: 768px) {
+            font-size: 16px;
+        }
+    }
+
+    .mil-faq-icon {
+        flex-shrink: 0;
+        font-size: 14px;
+        color: $accent;
+        transition: transform 0.3s ease;
+    }
+}
+
+.mil-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+
+    p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: $dt-50;
+        margin: 0;
+        padding-bottom: 25px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 15px;
+        }
+    }
+}
+
+.mil-faq-item.mil-expanded {
+    .mil-faq-question {
+        .mil-faq-icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    .mil-faq-answer {
+        max-height: 500px;
     }
 }
