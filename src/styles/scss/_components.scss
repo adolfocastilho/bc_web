@@ -2487,3 +2487,324 @@ international section
     color: $gs-60;
     line-height: 1.5;
 }
+
+.mil-text-truncate-desktop {
+    width: 100%;
+
+    @media screen and (min-width: 992px) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+// Identidade Visual Feature Cards Responsive Hybrid Layout
+.mil-iv-feature-card {
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    padding: 30px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 220px; // Desktop height
+
+    &.mil-expanded {
+        background-color: #fff;
+        border-color: #FFD700;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .mil-card-icon-container {
+        background-color: #FFD700;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #fff;
+        margin-bottom: 20px;
+        flex-shrink: 0;
+    }
+
+    .mil-card-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #202124;
+        margin-bottom: 15px;
+        width: 100%;
+        @extend .mil-text-truncate-desktop;
+    }
+
+    .mil-card-desc {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        width: 100%;
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555;
+            margin: 0;
+        }
+    }
+
+    &.mil-expanded .mil-card-desc {
+        max-height: 300px;
+        opacity: 1;
+        margin-bottom: 20px;
+    }
+
+    .mil-card-indicator-desktop {
+        margin-top: auto;
+        width: 24px;
+        height: 24px;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        color: #888;
+        transition: transform 0.3s ease;
+    }
+
+    &.mil-expanded .mil-card-indicator-desktop {
+        background-color: #202124;
+        color: #FFD700;
+        border-color: #202124;
+        transform: rotate(45deg);
+    }
+
+    .mil-card-indicator-mobile {
+        display: none;
+        font-size: 14px;
+        color: #666;
+        transition: transform 0.3s ease;
+    }
+
+    // MOBILE LAYOUT (< 992px)
+    @media screen and (max-width: 992px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: left;
+        padding: 20px !important;
+        min-height: auto;
+        justify-content: space-between;
+
+        .mil-card-icon-container {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            margin-bottom: 0;
+            margin-right: 15px;
+        }
+
+        .mil-card-title {
+            width: auto;
+            flex: 1;
+            margin-bottom: 0;
+            white-space: normal;
+            font-size: 16px;
+        }
+
+        .mil-card-desc {
+            order: 5;
+            flex-basis: 100%;
+            text-align: left;
+            margin-top: 0;
+
+            p {
+                text-align: left;
+            }
+        }
+
+        &.mil-expanded .mil-card-desc {
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+
+        .mil-card-indicator-desktop {
+            display: none !important;
+        }
+
+        .mil-card-indicator-mobile {
+            display: block;
+            margin-left: 10px;
+        }
+
+        &.mil-expanded .mil-card-indicator-mobile {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+// Price Factor Cards for "O que influencia no preço"
+.mil-price-factor-card {
+    background-color: #f8f8f8;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    height: 100%;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    &:hover {
+        background-color: #fff;
+        border-color: $accent;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transform: translateY(-5px);
+    }
+
+    .mil-factor-icon {
+        font-size: 36px;
+        margin-bottom: 15px;
+        line-height: 1;
+    }
+
+    h5 {
+        font-size: 16px;
+        font-weight: 700;
+        color: $dark;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: $dt-50;
+        margin: 0;
+    }
+
+    @media screen and (max-width: 992px) {
+        padding: 20px 15px;
+        min-height: 160px;
+
+        .mil-factor-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        h5 {
+            font-size: 15px;
+        }
+
+        p {
+            font-size: 13px;
+        }
+    }
+}
+
+.mil-mobile-br {
+    display: none;
+
+    @media screen and (max-width: 992px) {
+        display: inline;
+    }
+}
+
+// Process Steps Timeline
+.mil-process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 992px) {
+        gap: 30px;
+    }
+}
+
+.mil-process-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    position: relative;
+
+    @media screen and (max-width: 992px) {
+        gap: 20px;
+    }
+
+    // Vertical line connector
+    &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        left: 25px;
+        top: 55px;
+        width: 2px;
+        height: calc(100% + 40px - 55px);
+        background: linear-gradient(to bottom, $accent, rgba($accent, 0.2));
+
+        @media screen and (max-width: 992px) {
+            left: 20px;
+            top: 45px;
+            height: calc(100% + 30px - 45px);
+        }
+    }
+}
+
+.mil-step-number {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $accent;
+    color: $light;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba($accent, 0.3);
+
+    @media screen and (max-width: 992px) {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+.mil-step-content {
+    flex: 1;
+    padding-top: 5px;
+
+    h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: $dark;
+        margin-bottom: 10px;
+
+        @media screen and (max-width: 992px) {
+            font-size: 18px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: $dt-50;
+        margin: 0;
+
+        @media screen and (max-width: 992px) {
+            font-size: 15px;
+        }
+    }
+}

@@ -365,7 +365,15 @@ section title
 
 ------------------------------------------- */
 section {
-    scroll-margin-top: 140px;
+    scroll-margin-top: 0px;
+
+    @media screen and (max-width: 992px) {
+        scroll-margin-top: 30px;
+    }
+}
+
+#about {
+    scroll-margin-top: 90px !important;
 }
 
 .mil-section-title {
@@ -409,6 +417,24 @@ section {
 
 /* -------------------------------------------
 
+section description (content text standard)
+
+------------------------------------------- */
+.mil-section-description {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    @media screen and (max-width: 992px) {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* -------------------------------------------
+
 spaces
 
 ------------------------------------------- */
@@ -424,12 +450,26 @@ spaces
     margin-bottom: 30px !important;
 }
 
+.mil-mb-30-mobile {
+    @media screen and (max-width: 992px) {
+        margin-bottom: 30px !important;
+    }
+}
+
 .mil-mb-60 {
     margin-bottom: 60px !important;
+
+    @media screen and (max-width: 992px) {
+        margin-bottom: 30px !important;
+    }
 }
 
 .mil-mb-90 {
     margin-bottom: 90px !important;
+
+    @media screen and (max-width: 992px) {
+        margin-bottom: 60px !important;
+    }
 }
 
 .mil-mt-30 {
@@ -438,10 +478,18 @@ spaces
 
 .mil-mt-60 {
     margin-top: 60px !important;
+
+    @media screen and (max-width: 992px) {
+        margin-top: 30px !important;
+    }
 }
 
 .mil-mt-90 {
     margin-top: 90px !important;
+
+    @media screen and (max-width: 992px) {
+        margin-top: 60px !important;
+    }
 }
 
 .mil-rounded {
@@ -449,30 +497,57 @@ spaces
 }
 
 .mil-p-90-90 {
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding-top: 60px;
+    padding-bottom: 30px;
+
+    @media screen and (max-width: 992px) {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
 }
 
 .mil-p-0-90 {
-    padding-bottom: 90px;
+    padding-bottom: 30px;
+
+    @media screen and (max-width: 992px) {
+        padding-bottom: 30px;
+    }
 }
 
 .mil-p-90-0 {
-    padding-top: 90px;
+    padding-top: 60px;
+
+    @media screen and (max-width: 992px) {
+        padding-top: 60px;
+    }
 }
 
 .mil-p-90-60 {
-    padding-top: 90px;
-    padding-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 30px;
+
+    @media screen and (max-width: 992px) {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
 }
 
 .mil-p-0-60 {
-    padding-bottom: 60px;
+    padding-bottom: 30px;
+
+    @media screen and (max-width: 992px) {
+        padding-bottom: 30px;
+    }
 }
 
 .mil-p-90-30 {
-    padding-top: 90px;
+    padding-top: 60px;
     padding-bottom: 30px;
+
+    @media screen and (max-width: 992px) {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
 }
 
 .mil-p-0-30 {
