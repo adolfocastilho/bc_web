@@ -1,0 +1,194 @@
+================================================================================
+                    MANUAL: COMO CRIAR NOVAS PÁGINAS
+================================================================================
+
+Este manual explica como criar novas páginas de serviço (ex: criação de sites,
+edição de vídeo, etc.) seguindo o padrão do projeto.
+
+================================================================================
+ARQUITETURA DE SEÇÕES COMPARTILHADAS
+================================================================================
+
+O projeto usa 4 seções que são compartilhadas entre TODAS as páginas:
+
+  1. ServicesSection    → Lista de serviços
+  2. RecognitionSection → Depoimentos de clientes
+  3. PortfolioSection   → Portfólio de trabalhos
+  4. ContactSection     → Agenda restrita / Contato
+
+IMPORTANTE: Qualquer alteração feita nesses componentes afeta TODAS as páginas
+automaticamente. Os arquivos ficam em:
+
+  - src/components/sections/Services.jsx
+  - src/components/sections/Recognition.jsx
+  - src/components/sections/Portfolio.jsx
+  - src/components/sections/Contact.jsx
+
+
+================================================================================
+PASSO A PASSO PARA CRIAR UMA NOVA PÁGINA
+================================================================================
+
+PASSO 1: Criar o arquivo da página
+-----------------------------------
+Crie um novo arquivo em: src/pages/nome-da-pagina.jsx
+
+Exemplo: src/pages/criacao-de-sites.jsx
+
+
+PASSO 2: Criar os componentes únicos da página
+-----------------------------------------------
+Cada página tem 2 componentes únicos:
+
+  - Hero (banner inicial)
+  - About (conteúdo principal)
+
+Crie os arquivos:
+  - src/components/sections/HeroNomeDaPagina.jsx
+  - src/components/sections/AboutNomeDaPagina.jsx
+
+Exemplo:
+  - src/components/sections/HeroCriacaoDeSites.jsx
+  - src/components/sections/AboutCriacaoDeSites.jsx
+
+
+PASSO 3: Estrutura básica da página
+------------------------------------
+Use este template como base:
+
+```jsx
+import React from "react";
+import Layouts from "@layouts/Layouts";
+import Head from "next/head";
+
+import { getSortedPostsData } from "@library/posts";
+
+// Componentes únicos da página
+import HeroNomeDaPagina from "@components/sections/HeroNomeDaPagina";
+import AboutNomeDaPagina from "@components/sections/AboutNomeDaPagina";
+
+// Seções compartilhadas (NÃO MODIFICAR - afeta todas as páginas)
+import { ServicesSection, RecognitionSection, PortfolioSection, ContactSection } from "@components/sections/SharedSections";
+
+import RecognitionData from "@data/sections/recognition.json";
+
+const NomeDaPagina = (props) => {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Nome do Serviço - BeCHANGE",
+        "description": "Descrição do serviço para SEO",
+        "url": "https://bechange.com.br/nome-da-pagina",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "BeCHANGE",
+            "image": "https://bechange.com.br/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
+            "url": "https://bechange.com.br"
+        }
+    };
+
+    return (
+        <Layouts
+            rightPanelBackground={"/img/person/bg-1.jpg"}
+            rightPanelImg={"/img/person/adolfo-castilho-garcia-bechange.webp"}
+        >
+            <Head>
+                <title>Título da Página | BeCHANGE</title>
+                <meta name="description" content="Descrição para SEO" />
+
+                {/* Open Graph */}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://bechange.com.br/nome-da-pagina" />
+                <meta property="og:title" content="Título | BeCHANGE" />
+                <meta property="og:description" content="Descrição" />
+                <meta property="og:image" content="https://bechange.com.br/img/hero/1.jpg" />
+
+                {/* Twitter */}
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://bechange.com.br/nome-da-pagina" />
+                <meta property="twitter:title" content="Título | BeCHANGE" />
+                <meta property="twitter:description" content="Descrição" />
+                <meta property="twitter:image" content="https://bechange.com.br/img/hero/1.jpg" />
+
+                {/* Canonical */}
+                <link rel="canonical" href="https://bechange.com.br/nome-da-pagina" />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                />
+            </Head>
+
+            {/* SEÇÕES ÚNICAS DA PÁGINA */}
+            <HeroNomeDaPagina />
+            <AboutNomeDaPagina />
+
+            {/* SEÇÕES COMPARTILHADAS - NÃO MODIFICAR AQUI */}
+            <ServicesSection />
+            <RecognitionSection />
+            <PortfolioSection />
+            <ContactSection />
+
+        </Layouts>
+    );
+};
+
+export default NomeDaPagina;
+
+export async function getStaticProps() {
+    const allPosts = getSortedPostsData();
+
+    return {
+        props: {
+            posts: allPosts
+        }
+    }
+}
+```
+
+
+================================================================================
+CHECKLIST PARA NOVA PÁGINA
+================================================================================
+
+[ ] Criar arquivo da página em src/pages/nome-da-pagina.jsx
+[ ] Criar HeroNomeDaPagina.jsx em src/components/sections/
+[ ] Criar AboutNomeDaPagina.jsx em src/components/sections/
+[ ] Configurar meta tags de SEO (title, description, og:*, twitter:*)
+[ ] Configurar schema JSON-LD
+[ ] Configurar canonical URL
+[ ] Importar SharedSections para as seções compartilhadas
+[ ] Testar a página localmente (npm run dev)
+[ ] Fazer commit no GitHub
+
+
+================================================================================
+EXEMPLO DE REFERÊNCIA
+================================================================================
+
+Use a página de identidade visual como referência:
+  - src/pages/identidade-visual.jsx
+  - src/components/sections/HeroIdentidadeVisual.jsx
+  - src/components/sections/AboutIdentidadeVisual.jsx
+
+
+================================================================================
+DÚVIDAS FREQUENTES
+================================================================================
+
+P: Se eu alterar Services.jsx, afeta todas as páginas?
+R: SIM! Esse é o objetivo. Altere uma vez, atualiza em todas.
+
+P: Posso adicionar mais seções compartilhadas?
+R: Sim, basta criar o componente e adicioná-lo em SharedSections.jsx
+
+P: E se uma página precisar de uma seção diferente?
+R: Crie um componente específico para essa página (ex: AboutNomeDaPagina.jsx)
+
+P: Como adicionar um novo serviço na lista de serviços?
+R: Edite o arquivo src/data/sections/services.json
+
+
+================================================================================
+                         FIM DO MANUAL
+================================================================================

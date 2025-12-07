@@ -69,7 +69,7 @@ const AboutIdentidadeVisual = () => {
             answer: 'O preço da criação de identidade visual profissional varia de acordo com o que a sua empresa precisa. Em vez de tabela fixa, trabalhamos com proposta personalizada, porque cada projeto tem um nível de estudo, complexidade de logotipo e quantidade de materiais diferente.'
         },
         {
-            question: 'Como funciona o valor, identidade visual preço é fechado ou por hora?',
+            question: 'Como funciona o valor, o preço da identidade visual é fechado ou por hora?',
             answer: 'O valor da identidade visual é fechado por projeto, nunca por hora. Assim você sabe exatamente quanto vai investir na criação de identidade visual completa, sem surpresas no meio do caminho.'
         },
         {
@@ -78,7 +78,7 @@ const AboutIdentidadeVisual = () => {
         },
         {
             question: 'O que está incluso no projeto de identidade visual?',
-            answer: 'O projeto inclui criação de logotipo, paleta de cores, tipografia, elementos visuais, aplicações base para materiais e um guia simples de uso. Você recebe uma identidade visual profissional completa, pronta para ser aplicada em site, redes sociais, apresentações e materiais impressos.'
+            answer: 'O projeto inclui criação de logotipo (logomarca), paleta de cores, tipografia, elementos visuais, aplicações base para materiais e um guia simples de uso. Você recebe uma identidade visual profissional completa, pronta para ser aplicada em site, redes sociais, apresentações e materiais impressos.'
         },
         {
             question: 'Quais arquivos eu recebo no final do trabalho?',
