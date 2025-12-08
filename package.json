@@ -27,8 +27,11 @@
     "typed.js": "^2.1.0"
   },
   "browserslist": [
-    ">0.2%",
-    "not dead",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions",
+    "not IE 11",
     "not op_mini all"
   ],
   "devDependencies": {

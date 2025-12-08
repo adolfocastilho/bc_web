@@ -70,13 +70,17 @@ const HeroOne = () => {
     }, []);
 
     // ========================================================================
-    // FADE EFFECT - Only runs when hero is visible on screen
+    // FADE EFFECT - Only runs on DESKTOP when hero is visible
+    // MOBILE: Static text to match identidade-visual performance
     // ========================================================================
     const [textIndex, setTextIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
-        // Only run interval when hero is visible
+        // MOBILE OPTIMIZATION: Skip animation on mobile - static text
+        if (isMobile) return;
+
+        // Only run interval when hero is visible (desktop only)
         if (!isHeroVisible) return;
 
         const interval = setInterval(() => {
@@ -88,7 +92,7 @@ const HeroOne = () => {
         }, 4000); // Change text every 4 seconds
 
         return () => clearInterval(interval);
-    }, [isHeroVisible]);
+    }, [isHeroVisible, isMobile]);
 
     return (
         <>
@@ -123,11 +127,11 @@ const HeroOne = () => {
                                 className="mil-fade-text"
                                 style={{
                                     opacity: isVisible ? 1 : 0,
-                                    transition: 'opacity 0.5s ease-in-out',
+                                    transition: isMobile ? 'none' : 'opacity 0.5s ease-in-out',
                                     display: 'inline-block'
                                 }}
                             >
-                                {Data.typedStrings[textIndex]}
+                                {isMobile ? Data.typedStrings[1] : Data.typedStrings[textIndex]}
                             </span>
                         </h1>
                     </div>
