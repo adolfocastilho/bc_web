@@ -32,6 +32,14 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        {/* Preload main font for better LCP */}
+        <link
+          rel="preload"
+          href="/_next/static/media/7b0b24f36b1a6d0b-s.p.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         {/* seo end */}
       </Head>
       <style jsx global>{`

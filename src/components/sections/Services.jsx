@@ -11,7 +11,7 @@ const ServicesSlider = dynamic(() => import("../sliders/ServicesSlider"), {
 
 const ServicesSection = () => {
     return (
-        <section id="services" style={{ paddingTop: '50px' }}>
+        <section id="servicos" style={{ paddingTop: '50px' }}>
             <div style={{ padding: 0 }}>
                 <div className="mil-section-title mil-up">
                     <div className="mil-divider"></div>

@@ -6,7 +6,7 @@ const AboutSection = () => {
     return (
         <>
             {/* about */}
-            <section id="about" className="mil-p-0-90">
+            <section id="sobre" className="mil-p-0-90">
                 <div className="container">
                     <div className="mil-oval-frame-2 mil-mb-90">
                         <ExportedImage src={Data.avatar.image} alt={Data.avatar.alt} width={1536} height={1536} />

@@ -54,11 +54,13 @@ const HeroOne = () => {
         };
     }, []);
 
-    /* 
     // ========================================================================
-    // TYPED.JS EFFECT (ORIGINAL - COMMENTED OUT)
+    // TYPED.JS EFFECT (MOBILE ONLY - Lightweight alternative to VaporizeTextCycle)
     // ========================================================================
     useEffect(() => {
+        // Only run Typed.js on mobile
+        if (!isMobile) return;
+
         let isMounted = true;
 
         const initTyped = () => {
@@ -78,29 +80,17 @@ const HeroOne = () => {
             });
         };
 
-        // Delay Typed.js on mobile to reduce initial TBT
-        if (window.innerWidth < 768) {
-            const timer = setTimeout(initTyped, 800);
-            return () => {
-                clearTimeout(timer);
-                isMounted = false;
-                if (typedInstance.current) {
-                    typedInstance.current.destroy();
-                    typedInstance.current = null;
-                }
-            };
-        } else {
-            initTyped();
-            return () => {
-                isMounted = false;
-                if (typedInstance.current) {
-                    typedInstance.current.destroy();
-                    typedInstance.current = null;
-                }
-            };
-        }
-    }, []);
-    */
+        // Small delay to reduce initial TBT
+        const timer = setTimeout(initTyped, 300);
+        return () => {
+            clearTimeout(timer);
+            isMounted = false;
+            if (typedInstance.current) {
+                typedInstance.current.destroy();
+                typedInstance.current = null;
+            }
+        };
+    }, [isMobile]);
 
 
     /* 
@@ -133,37 +123,55 @@ const HeroOne = () => {
                     <div className="mil-upper mil-dark mil-up">{Data.subtitle}</div>
 
                     {/* ========================================================================
-                        VAPORIZE TEXT EFFECT (ACTIVE - FIXED HEIGHT)
+                        CONDITIONAL TEXT EFFECT: Typed.js on mobile, VaporizeTextCycle on desktop
                         ======================================================================== */}
-                    <div className="mil-up" style={{
-                        width: '100%',
-                        maxWidth: viewportSize === 'mobile' ? '100%' : '1000px',
-                        padding: viewportSize === 'mobile' ? '0 15px' : '0',
-                        height: { mobile: '55px', tablet: '100px', smallLaptop: '120px', desktop: '138px' }[viewportSize],
-                        minHeight: { mobile: '40px', tablet: '72px', smallLaptop: '80px', desktop: '92px' }[viewportSize],
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center'
-                    }}>
-                        <VaporizeTextCycle
-                            texts={Data.typedStrings}
-                            font={{
-                                fontSize: { mobile: '36px', tablet: '64px', smallLaptop: '76px', desktop: '92px' }[viewportSize],
-                                fontWeight: 600
-                            }}
-                            color="rgba(32, 33, 36, 1)"
-                            spread={5}
-                            density={5}
-                            animation={{
-                                vaporizeDuration: 1.5,
-                                fadeInDuration: 0.2,
-                                waitDuration: 2
-                            }}
-                            direction="left-to-right"
-                            alignment="center"
-                            tag="h1"
-                        />
-                    </div>
+                    {isMobile ? (
+                        // MOBILE: Use lightweight Typed.js effect
+                        <div className="mil-up" style={{
+                            width: '100%',
+                            padding: '0 15px',
+                            height: '55px',
+                            minHeight: '40px',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}>
+                            <h1 style={{ fontSize: '36px', fontWeight: 600, textAlign: 'center' }}>
+                                <span ref={el}></span>
+                            </h1>
+                        </div>
+                    ) : (
+                        // DESKTOP/TABLET: Use VaporizeTextCycle effect
+                        <div className="mil-up" style={{
+                            width: '100%',
+                            maxWidth: '1000px',
+                            padding: '0',
+                            height: { tablet: '100px', smallLaptop: '120px', desktop: '138px' }[viewportSize],
+                            minHeight: { tablet: '72px', smallLaptop: '80px', desktop: '92px' }[viewportSize],
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}>
+                            <VaporizeTextCycle
+                                texts={Data.typedStrings}
+                                font={{
+                                    fontSize: { tablet: '64px', smallLaptop: '76px', desktop: '92px' }[viewportSize],
+                                    fontWeight: 600
+                                }}
+                                color="rgba(32, 33, 36, 1)"
+                                spread={5}
+                                density={5}
+                                animation={{
+                                    vaporizeDuration: 1.5,
+                                    fadeInDuration: 0.2,
+                                    waitDuration: 0.1
+                                }}
+                                direction="left-to-right"
+                                alignment="center"
+                                tag="h1"
+                            />
+                        </div>
+                    )}
 
                     {/* ========================================================================
                         FADE EFFECT (COMMENTED OUT - KEPT FOR EASY REVERSION)
@@ -207,7 +215,7 @@ const HeroOne = () => {
                                 </text>
                             </g>
                         </svg>
-                        <a href="#about" className="mil-button" aria-label="Role para baixo">
+                        <a href="#sobre" className="mil-button" aria-label="Role para baixo">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-down">
                                 <line x1="12" y1="5" x2="12" y2="19"></line>
                                 <polyline points="19 12 12 19 5 12"></polyline>

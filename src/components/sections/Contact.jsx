@@ -7,7 +7,7 @@ const ContactForm = dynamic(() => import("../common/ContactForm"), {
 
 const ContactSection = () => {
     return (
-        <section id="contact" style={{ paddingTop: '90px' }}>
+        <section id="contato" style={{ paddingTop: '90px' }}>
             <div style={{ padding: 0 }}>
                 <div className="mil-section-title mil-up">
                     <div className="mil-divider"></div>

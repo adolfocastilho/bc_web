@@ -99,7 +99,7 @@ const AboutIdentidadeVisual = () => {
     ];
 
     return (
-        <section id="about">
+        <section id="sobre">
             {/* Intro Section - Matching Services structure */}
             <div className="mil-p-0-90">
                 <div className="mil-oval-frame-2 mil-mb-90" style={{ margin: '0 auto' }}>
@@ -130,7 +130,7 @@ const AboutIdentidadeVisual = () => {
             <div className="mil-p-90-30">
                 <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
                 <div className="mil-center mil-up mil-mb-30">
-                    <h2 style={{ whiteSpace: 'normal' }}>
+                    <h2 id="o-que-esta-incluso" style={{ whiteSpace: 'normal' }}>
                         O que está incluso na sua <br className="mil-desktop-br" />
                         identidade visual profissional
                     </h2>
@@ -183,7 +183,7 @@ const AboutIdentidadeVisual = () => {
             <div className="mil-p-90-30">
                 <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
                 <div className="mil-center mil-up">
-                    <h2 style={{ whiteSpace: 'normal' }}>
+                    <h2 id="como-funciona" style={{ whiteSpace: 'normal' }}>
                         Como funciona o passo a passo da criação <br className="mil-desktop-br" />
                         da sua identidade visual
                     </h2>
@@ -245,7 +245,7 @@ const AboutIdentidadeVisual = () => {
             <div className="mil-p-90-30">
                 <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
                 <div className="mil-center mil-up mil-mb-30">
-                    <h2 style={{ whiteSpace: 'normal' }}>
+                    <h2 id="quanto-custa" style={{ whiteSpace: 'normal' }}>
                         Quanto custa criar uma <br className="mil-mobile-br" />
                         identidade visual profissional <br className="mil-mobile-br" />
                         para sua empresa
@@ -299,7 +299,7 @@ const AboutIdentidadeVisual = () => {
                 <div className="mil-p-90-30" style={{ paddingTop: '30px' }}>
                     <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
                     <div className="mil-center mil-up mil-mb-30">
-                        <h2 style={{ whiteSpace: 'normal' }}>
+                        <h2 id="para-quem" style={{ whiteSpace: 'normal' }}>
                             Para quem é indicada a criação <br className="mil-desktop-br" />
                             de identidade visual profissional
                         </h2>
@@ -363,7 +363,7 @@ const AboutIdentidadeVisual = () => {
                 <div className="mil-p-90-30" style={{ paddingTop: '30px' }}>
                     <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
                     <div className="mil-center mil-up mil-mb-30">
-                        <h2 style={{ whiteSpace: 'normal' }}>
+                        <h2 id="diferenciais" style={{ whiteSpace: 'normal' }}>
                             Por que escolher a BeChange para criar <br className="mil-desktop-br" />
                             a identidade visual da sua empresa
                         </h2>
@@ -419,7 +419,7 @@ const AboutIdentidadeVisual = () => {
                 <div className="mil-p-90-30" style={{ paddingTop: '30px' }}>
                     <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
                     <div className="mil-center mil-up mil-mb-30">
-                        <h2 style={{ whiteSpace: 'normal' }}>
+                        <h2 id="faq" style={{ whiteSpace: 'normal' }}>
                             Perguntas frequentes sobre <br className="mil-desktop-br" />
                             criação de identidade visual
                         </h2>

@@ -45,7 +45,7 @@ const RecognitionSection = () => {
 
     return (
         <>
-            <section id="recognition" style={{ paddingTop: '30px' }}>
+            <section id="depoimentos" style={{ paddingTop: '30px' }}>
                 <div style={{ padding: 0 }}>
                     <div className="mil-section-title mil-up">
                         <div className="mil-divider"></div>

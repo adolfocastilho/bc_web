@@ -23,17 +23,17 @@
             },
             {
                 "label": "Sobre",
-                "link": "#about",
+                "link": "#sobre",
                 "children": 0
             },
             {
                 "label": "Serviços",
-                "link": "#services",
+                "link": "#servicos",
                 "children": 0
             },
             {
                 "label": "Depoimentos",
-                "link": "#recognition",
+                "link": "#depoimentos",
                 "children": 0
             },
             {
@@ -43,7 +43,7 @@
             },
             {
                 "label": "Contato",
-                "link": "#contact",
+                "link": "#contato",
                 "children": 0
             }
         ]
