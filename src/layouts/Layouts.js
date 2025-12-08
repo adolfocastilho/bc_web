@@ -38,8 +38,8 @@ const Layouts = ({
   }
 
   useEffect(() => {
-    // Defer heavy animations until browser is idle to reduce TBT
-    const loadHeavyScripts = async () => {
+    // Dynamic imports for animations
+    const loadAnimations = async () => {
       const { preloaderAnimation } = await import("../common/preloader");
       // preloaderAnimation();
 
@@ -56,15 +56,7 @@ const Layouts = ({
       anchorSscroll();
     };
 
-    // Use requestIdleCallback to defer loading until browser is idle
-    // This significantly reduces Total Blocking Time (TBT)
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(() => loadHeavyScripts(), { timeout: 2000 });
-    } else {
-      // Fallback for Safari: use setTimeout with small delay
-      setTimeout(loadHeavyScripts, 100);
-    }
-
+    loadAnimations();
 
     if (document != undefined && bodyClass) {
       const body = document.querySelector('body');

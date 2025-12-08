@@ -77,34 +77,20 @@ const HeroIdentidadeVisual = () => {
                     />
                     <div className="mil-upper mil-dark mil-up">22 ANOS DE CRIATIVIDADE</div>
 
-                    {/* Static H1 Title - 3 lines on mobile, 2 lines on desktop */}
+                    {/* Static H1 Title - uses CSS for responsive sizing to avoid CLS */}
                     <h1
-                        className="mil-up"
+                        className="mil-up mil-hero-title-identidade"
                         style={{
-                            fontSize: titleFontSize,
                             fontWeight: 600,
-                            lineHeight: lineHeight,
                             textAlign: 'center',
                             color: 'rgba(32, 33, 36, 1)',
-                            margin: 0,
-                            padding: viewportSize === 'mobile' ? '0 15px' : '0'
+                            margin: 0
                         }}
                     >
-                        {viewportSize === 'mobile' ? (
-                            <>
-                                Criação de<br />
-                                Identidade Visual<br />
-                                Profissional<br />
-                                para Empresas
-                            </>
-                        ) : (
-                            <>
-                                Criação de<br />
-                                Identidade Visual<br />
-                                Profissional para<br />
-                                Empresas
-                            </>
-                        )}
+                        Criação de<br />
+                        Identidade Visual<br />
+                        Profissional para<br />
+                        Empresas
                     </h1>
 
                     <p className="mil-upper mil-dark mil-up" style={{ textAlign: 'center', maxWidth: '700px' }}>

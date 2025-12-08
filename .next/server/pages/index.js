@@ -36,7 +36,8 @@ const AboutSection = ()=>{
                             src: _data_sections_about_json__WEBPACK_IMPORTED_MODULE_1__/* .avatar.image */ .ri.B,
                             alt: _data_sections_about_json__WEBPACK_IMPORTED_MODULE_1__/* .avatar.alt */ .ri.w,
                             width: 1536,
-                            height: 1536
+                            height: 1536,
+                            sizes: "120px"
                         })
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
@@ -123,9 +124,6 @@ const hero_1_namespaceObject = JSON.parse('{"Oc":"22 ANOS DE CRIATIVIDADE","AT":
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./src/common/constants.js
 var constants = __webpack_require__(7714);
-// EXTERNAL MODULE: ./node_modules/next/dynamic.js
-var dynamic = __webpack_require__(5152);
-var dynamic_default = /*#__PURE__*/__webpack_require__.n(dynamic);
 // EXTERNAL MODULE: ./src/components/common/ExportedImage.jsx
 var ExportedImage = __webpack_require__(4438);
 ;// CONCATENATED MODULE: ./src/components/sections/HeroOne.jsx
@@ -134,16 +132,6 @@ var ExportedImage = __webpack_require__(4438);
 
 
 
-
-// Dynamically import VaporizeTextCycle to avoid SSR issues with canvas
-const VaporizeTextCycle = dynamic_default()(null, {
-    loadableGenerated: {
-        modules: [
-            "../components/sections/HeroOne.jsx -> " + "@components/common/VaporizeTextCycle"
-        ]
-    },
-    ssr: false
-});
 const HeroOne = ()=>{
     const el = (0,external_react_.useRef)(null);
     const [rotation, setRotation] = (0,external_react_.useState)(0);
@@ -183,59 +171,21 @@ const HeroOne = ()=>{
         };
     }, []);
     // ========================================================================
-    // TYPED.JS EFFECT (MOBILE ONLY - Lightweight alternative to VaporizeTextCycle)
+    // FADE EFFECT - Same animation for all devices (mobile, tablet, desktop)
     // ========================================================================
+    const [textIndex, setTextIndex] = (0,external_react_.useState)(0);
+    const [isVisible, setIsVisible] = (0,external_react_.useState)(true);
     (0,external_react_.useEffect)(()=>{
-        // Only run Typed.js on mobile
-        if (!isMobile) return;
-        let isMounted = true;
-        const initTyped = ()=>{
-            Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 5505)).then((TypedModule)=>{
-                if (!isMounted || !el.current) return;
-                const Typed = TypedModule.default;
-                typedInstance.current = new Typed(el.current, {
-                    strings: hero_1_namespaceObject.AT,
-                    typeSpeed: constants/* ANIMATION.TYPE_SPEED */.l.TYPE_SPEED,
-                    backSpeed: constants/* ANIMATION.BACKSPACE_SPEED */.l.BACKSPACE_SPEED,
-                    backDelay: constants/* ANIMATION.BACKSPACE_DELAY */.l.BACKSPACE_DELAY,
-                    loop: true,
-                    showCursor: true,
-                    cursorChar: "|"
-                });
-            });
-        };
-        // Small delay to reduce initial TBT
-        const timer = setTimeout(initTyped, 300);
-        return ()=>{
-            clearTimeout(timer);
-            isMounted = false;
-            if (typedInstance.current) {
-                typedInstance.current.destroy();
-                typedInstance.current = null;
-            }
-        };
-    }, [
-        isMobile
-    ]);
-    /* 
-    // ========================================================================
-    // FADE EFFECT (TEMPORARY - FOR SIZE COMPARISON)
-    // ========================================================================
-    const [textIndex, setTextIndex] = useState(0);
-    const [isVisible, setIsVisible] = useState(true);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
+        const interval = setInterval(()=>{
             setIsVisible(false); // Start fade out
-            setTimeout(() => {
-                setTextIndex((prev) => (prev + 1) % Data.typedStrings.length);
+            setTimeout(()=>{
+                setTextIndex((prev)=>(prev + 1) % hero_1_namespaceObject.AT.length);
                 setIsVisible(true); // Start fade in
             }, 500); // Wait for fade out transition (matches CSS transition duration)
         }, 4000); // Change text every 4 seconds
-
-        return () => clearInterval(interval);
+        return ()=>clearInterval(interval);
     }, []);
-    */ return /*#__PURE__*/ jsx_runtime.jsx(jsx_runtime.Fragment, {
+    return /*#__PURE__*/ jsx_runtime.jsx(jsx_runtime.Fragment, {
         children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("section", {
             className: "mil-side-banner mil-center",
             children: [
@@ -264,75 +214,58 @@ const HeroOne = ()=>{
                             className: "mil-upper mil-dark mil-up",
                             children: hero_1_namespaceObject.Oc
                         }),
-                        isMobile ? // MOBILE: Use lightweight Typed.js effect
                         /*#__PURE__*/ jsx_runtime.jsx("div", {
                             className: "mil-up",
                             style: {
                                 width: "100%",
-                                padding: "0 15px",
-                                height: "55px",
-                                minHeight: "40px",
+                                maxWidth: "1000px",
+                                padding: isMobile ? "0 15px" : "0",
+                                height: isMobile ? "55px" : ({
+                                    tablet: "100px",
+                                    smallLaptop: "120px",
+                                    desktop: "138px"
+                                })[viewportSize],
+                                minHeight: isMobile ? "40px" : ({
+                                    tablet: "72px",
+                                    smallLaptop: "80px",
+                                    desktop: "92px"
+                                })[viewportSize],
                                 display: "flex",
                                 justifyContent: "center",
                                 alignItems: "center"
                             },
                             children: /*#__PURE__*/ jsx_runtime.jsx("h1", {
                                 style: {
-                                    fontSize: "36px",
-                                    fontWeight: 600,
-                                    textAlign: "center"
-                                },
-                                children: /*#__PURE__*/ jsx_runtime.jsx("span", {
-                                    ref: el
-                                })
-                            })
-                        }) : // DESKTOP/TABLET: Use VaporizeTextCycle effect
-                        /*#__PURE__*/ jsx_runtime.jsx("div", {
-                            className: "mil-up",
-                            style: {
-                                width: "100%",
-                                maxWidth: "1000px",
-                                padding: "0",
-                                height: {
-                                    tablet: "100px",
-                                    smallLaptop: "120px",
-                                    desktop: "138px"
-                                }[viewportSize],
-                                minHeight: {
-                                    tablet: "72px",
-                                    smallLaptop: "80px",
-                                    desktop: "92px"
-                                }[viewportSize],
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center"
-                            },
-                            children: /*#__PURE__*/ jsx_runtime.jsx(VaporizeTextCycle, {
-                                texts: hero_1_namespaceObject.AT,
-                                font: {
-                                    fontSize: {
+                                    fontSize: isMobile ? "36px" : ({
                                         tablet: "64px",
                                         smallLaptop: "76px",
                                         desktop: "92px"
-                                    }[viewportSize],
-                                    fontWeight: 600
+                                    })[viewportSize],
+                                    fontWeight: 600,
+                                    textAlign: "center",
+                                    color: "rgba(32, 33, 36, 1)",
+                                    margin: 0
                                 },
-                                color: "rgba(32, 33, 36, 1)",
-                                spread: 5,
-                                density: 5,
-                                animation: {
-                                    vaporizeDuration: 1.5,
-                                    fadeInDuration: 0.2,
-                                    waitDuration: 0.1
-                                },
-                                direction: "left-to-right",
-                                alignment: "center",
-                                tag: "h1"
+                                children: /*#__PURE__*/ jsx_runtime.jsx("span", {
+                                    className: "mil-fade-text",
+                                    style: {
+                                        opacity: isVisible ? 1 : 0,
+                                        transition: "opacity 0.5s ease-in-out",
+                                        display: "inline-block"
+                                    },
+                                    children: hero_1_namespaceObject.AT[textIndex]
+                                })
                             })
                         }),
                         /*#__PURE__*/ jsx_runtime.jsx("p", {
                             className: "mil-upper mil-dark mil-up",
-                            children: hero_1_namespaceObject.WL
+                            children: isMobile ? /*#__PURE__*/ (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+                                children: [
+                                    "Ag\xeancia de Cria\xe7\xe3o de Sites",
+                                    /*#__PURE__*/ jsx_runtime.jsx("br", {}),
+                                    "e Identidade Visual"
+                                ]
+                            }) : hero_1_namespaceObject.WL
                         })
                     ]
                 }),
@@ -812,13 +745,6 @@ module.exports = import("remark");;
 /***/ ((module) => {
 
 module.exports = import("remark-html");;
-
-/***/ }),
-
-/***/ 5505:
-/***/ ((module) => {
-
-module.exports = import("typed.js");;
 
 /***/ }),
 

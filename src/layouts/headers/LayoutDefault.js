@@ -56,7 +56,7 @@ const DefaultHeader = ({ extraClass }) => {
 
         {/* You need to remove the "mil-dot" class if you don't need a dot */}
         <Link href={appData.header.logo.link} className="mil-logo">
-          <img src="/img/icons/icone_bechange.svg" alt="BeCHANGE" style={{ width: '28px', height: 'auto' }} />
+          <img src="/img/icons/icone_bechange.svg" alt="BeCHANGE" width="28" height="28" style={{ width: '28px', height: 'auto' }} />
         </Link>
 
         <div className={`mil-navigation ${toggle ? "mil-active" : ""}`}>
@@ -108,7 +108,7 @@ const DefaultHeader = ({ extraClass }) => {
 
         <div className="mil-top-panel-btns">
           <Link href="https://wa.me/5561996090943" target="_blank" rel="noopener noreferrer" className="mil-contact-btn">
-            <img src="/img/icons/zap.svg" alt="WhatsApp" style={{ height: 'auto' }} />
+            <img src="/img/icons/zap.svg" alt="WhatsApp" width="32" height="32" style={{ height: 'auto' }} />
           </Link>
 
           <div

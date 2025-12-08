@@ -6,18 +6,6 @@
       "static/chunks/819.b28e44f9219341fc.js"
     ]
   },
-  "../components/sections/HeroOne.jsx -> @components/common/VaporizeTextCycle": {
-    "id": 5196,
-    "files": [
-      "static/chunks/196.10f0542a8e5830e7.js"
-    ]
-  },
-  "../components/sections/HeroOne.jsx -> typed.js": {
-    "id": 9911,
-    "files": [
-      "static/chunks/911.bc8465f81d48a483.js"
-    ]
-  },
   "../components/sections/Portfolio.jsx -> ../sliders/PortfolioSlider": {
     "id": 3620,
     "files": [

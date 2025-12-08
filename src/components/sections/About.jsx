@@ -9,7 +9,7 @@ const AboutSection = () => {
             <section id="sobre" className="mil-p-0-90">
                 <div className="container">
                     <div className="mil-oval-frame-2 mil-mb-90">
-                        <ExportedImage src={Data.avatar.image} alt={Data.avatar.alt} width={1536} height={1536} />
+                        <ExportedImage src={Data.avatar.image} alt={Data.avatar.alt} width={1536} height={1536} sizes="120px" />
                     </div>
                     <div className="row justify-content-center">
                         <div className="col-lg-10">

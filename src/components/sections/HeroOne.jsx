@@ -1,15 +1,8 @@
 import Data from "@data/sections/hero-1.json";
 import { useEffect, useRef, useState } from "react";
 import { ANIMATION } from "@common/constants";
-import dynamic from "next/dynamic";
 
 import ExportedImage from "@components/common/ExportedImage";
-
-// Dynamically import VaporizeTextCycle to avoid SSR issues with canvas
-const VaporizeTextCycle = dynamic(
-    () => import("@components/common/VaporizeTextCycle"),
-    { ssr: false }
-);
 
 const HeroOne = () => {
     const el = useRef(null);
@@ -55,47 +48,7 @@ const HeroOne = () => {
     }, []);
 
     // ========================================================================
-    // TYPED.JS EFFECT (MOBILE ONLY - Lightweight alternative to VaporizeTextCycle)
-    // ========================================================================
-    useEffect(() => {
-        // Only run Typed.js on mobile
-        if (!isMobile) return;
-
-        let isMounted = true;
-
-        const initTyped = () => {
-            import("typed.js").then((TypedModule) => {
-                if (!isMounted || !el.current) return;
-
-                const Typed = TypedModule.default;
-                typedInstance.current = new Typed(el.current, {
-                    strings: Data.typedStrings,
-                    typeSpeed: ANIMATION.TYPE_SPEED,
-                    backSpeed: ANIMATION.BACKSPACE_SPEED,
-                    backDelay: ANIMATION.BACKSPACE_DELAY,
-                    loop: true,
-                    showCursor: true,
-                    cursorChar: '|'
-                });
-            });
-        };
-
-        // Small delay to reduce initial TBT
-        const timer = setTimeout(initTyped, 300);
-        return () => {
-            clearTimeout(timer);
-            isMounted = false;
-            if (typedInstance.current) {
-                typedInstance.current.destroy();
-                typedInstance.current = null;
-            }
-        };
-    }, [isMobile]);
-
-
-    /* 
-    // ========================================================================
-    // FADE EFFECT (TEMPORARY - FOR SIZE COMPARISON)
+    // FADE EFFECT - Same animation for all devices (mobile, tablet, desktop)
     // ========================================================================
     const [textIndex, setTextIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
@@ -111,7 +64,6 @@ const HeroOne = () => {
 
         return () => clearInterval(interval);
     }, []);
-    */
 
     return (
         <>
@@ -123,55 +75,37 @@ const HeroOne = () => {
                     <div className="mil-upper mil-dark mil-up">{Data.subtitle}</div>
 
                     {/* ========================================================================
-                        CONDITIONAL TEXT EFFECT: Typed.js on mobile, VaporizeTextCycle on desktop
+                        FADE TEXT EFFECT - Same animation for mobile and desktop
                         ======================================================================== */}
-                    {isMobile ? (
-                        // MOBILE: Use lightweight Typed.js effect
-                        <div className="mil-up" style={{
-                            width: '100%',
-                            padding: '0 15px',
-                            height: '55px',
-                            minHeight: '40px',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
+                    <div className="mil-up" style={{
+                        width: '100%',
+                        maxWidth: '1000px',
+                        padding: isMobile ? '0 15px' : '0',
+                        height: isMobile ? '55px' : { tablet: '100px', smallLaptop: '120px', desktop: '138px' }[viewportSize],
+                        minHeight: isMobile ? '40px' : { tablet: '72px', smallLaptop: '80px', desktop: '92px' }[viewportSize],
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <h1 style={{
+                            fontSize: isMobile ? '36px' : { tablet: '64px', smallLaptop: '76px', desktop: '92px' }[viewportSize],
+                            fontWeight: 600,
+                            textAlign: 'center',
+                            color: 'rgba(32, 33, 36, 1)',
+                            margin: 0
                         }}>
-                            <h1 style={{ fontSize: '36px', fontWeight: 600, textAlign: 'center' }}>
-                                <span ref={el}></span>
-                            </h1>
-                        </div>
-                    ) : (
-                        // DESKTOP/TABLET: Use VaporizeTextCycle effect
-                        <div className="mil-up" style={{
-                            width: '100%',
-                            maxWidth: '1000px',
-                            padding: '0',
-                            height: { tablet: '100px', smallLaptop: '120px', desktop: '138px' }[viewportSize],
-                            minHeight: { tablet: '72px', smallLaptop: '80px', desktop: '92px' }[viewportSize],
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}>
-                            <VaporizeTextCycle
-                                texts={Data.typedStrings}
-                                font={{
-                                    fontSize: { tablet: '64px', smallLaptop: '76px', desktop: '92px' }[viewportSize],
-                                    fontWeight: 600
+                            <span
+                                className="mil-fade-text"
+                                style={{
+                                    opacity: isVisible ? 1 : 0,
+                                    transition: 'opacity 0.5s ease-in-out',
+                                    display: 'inline-block'
                                 }}
-                                color="rgba(32, 33, 36, 1)"
-                                spread={5}
-                                density={5}
-                                animation={{
-                                    vaporizeDuration: 1.5,
-                                    fadeInDuration: 0.2,
-                                    waitDuration: 0.1
-                                }}
-                                direction="left-to-right"
-                                alignment="center"
-                                tag="h1"
-                            />
-                        </div>
-                    )}
+                            >
+                                {Data.typedStrings[textIndex]}
+                            </span>
+                        </h1>
+                    </div>
 
                     {/* ========================================================================
                         FADE EFFECT (COMMENTED OUT - KEPT FOR EASY REVERSION)
@@ -187,7 +121,13 @@ const HeroOne = () => {
                     </h1>
                     */}
 
-                    <p className="mil-upper mil-dark mil-up">{Data.description}</p>
+                    <p className="mil-upper mil-dark mil-up">
+                        {isMobile ? (
+                            <>Agência de Criação de Sites<br />e Identidade Visual</>
+                        ) : (
+                            Data.description
+                        )}
+                    </p>
                 </div>
                 <div className="mil-up mil-oval-frame">
                     <div className="mil-circle-text">
