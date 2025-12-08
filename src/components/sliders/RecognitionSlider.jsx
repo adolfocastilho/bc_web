@@ -49,7 +49,7 @@ export const RecognitionSliderMobile = ({ items, handlePlay }) => {
     return (
         <Swiper
             {...sliderProps.milReviewsSlider}
-            modules={[Pagination, Autoplay, Navigation, Parallax]}
+            modules={[Pagination, Autoplay, Navigation]}
             autoplay={{
                 delay: 2000,
                 disableOnInteraction: false,
@@ -58,7 +58,7 @@ export const RecognitionSliderMobile = ({ items, handlePlay }) => {
         >
             {items.map((item, key) => (
                 <SwiperSlide className="swiper-slide" key={`recognition-mobile-${key}`}>
-                    <div className="mil-review mil-center" data-swiper-parallax-opacity="0" data-swiper-parallax="-90" data-swiper-parallax-scale=".8">
+                    <div className="mil-review mil-center">
                         <div className="mil-review-top" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             {/* Video Thumbnail */}
                             <div

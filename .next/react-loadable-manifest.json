@@ -11,7 +11,7 @@
     "files": [
       "static/chunks/685.b35e53e2f9b515c4.js",
       "static/css/7d566725ebb6e0ce.css",
-      "static/chunks/280.2fddded69499deb1.js"
+      "static/chunks/280.901fd59d0a661b4f.js"
     ]
   },
   "../components/sections/Recognition.jsx -> ../sliders/RecognitionSlider": {
@@ -19,7 +19,7 @@
     "files": [
       "static/chunks/685.b35e53e2f9b515c4.js",
       "static/css/7360e429a1cdca87.css",
-      "static/chunks/883.f1a5d24baa77450e.js"
+      "static/chunks/883.483c1537ec4f8b88.js"
     ]
   },
   "../components/sections/Services.jsx -> ../sliders/ServicesSlider": {
@@ -27,7 +27,7 @@
     "files": [
       "static/chunks/685.b35e53e2f9b515c4.js",
       "static/css/7d566725ebb6e0ce.css",
-      "static/chunks/304.597bfc66f3ee2ad2.js"
+      "static/chunks/304.ee227e25c088252d.js"
     ]
   },
   "../layouts/Layouts.js -> ../common/counters": {
@@ -43,7 +43,7 @@
     "id": 1560,
     "files": [
       "static/chunks/411.1cf1b866c1717dcd.js",
-      "static/chunks/560.464071386bbe0199.js"
+      "static/chunks/560.93de00a5de35916f.js"
     ]
   },
   "../layouts/Layouts.js -> ../common/preloader": {
@@ -60,7 +60,7 @@
       "static/chunks/94726e6d.705fea02291b9b48.js",
       "static/chunks/990.566010a11c46cd9d.js",
       "static/chunks/546.9b014afd93e871ad.js",
-      "static/chunks/905.fd1245e99bccb0f0.js"
+      "static/chunks/905.4f1839616a66c130.js"
     ]
   },
   "../layouts/Layouts.js -> ../common/utilits": {

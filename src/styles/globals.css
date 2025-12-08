@@ -7,7 +7,24 @@
     /* Estimated height to prevent layout shift */
 }
 
-/* Reduce paint operations on heavy animations */
-.mil-up {
-    will-change: transform, opacity;
+/* Reduce paint operations on heavy animations - DESKTOP ONLY */
+@media (min-width: 768px) {
+    .mil-up {
+        will-change: transform, opacity;
+    }
+}
+
+/* MOBILE OPTIMIZATION: Remove will-change, add containment */
+@media (max-width: 767px) {
+    .mil-up {
+        /* No will-change on mobile to reduce layer creation */
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Optimize sections below the fold */
+    section:not(:first-child) {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 400px;
+    }
 }

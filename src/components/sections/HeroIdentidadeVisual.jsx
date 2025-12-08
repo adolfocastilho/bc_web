@@ -106,30 +106,32 @@ const HeroIdentidadeVisual = () => {
                 </div>
                 <div className="mil-up mil-oval-frame">
                     <div className="mil-circle-text">
-                        <svg
-                            version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlnsXlink="http://www.w3.org/1999/xlink"
-                            x="0px"
-                            y="0px"
-                            viewBox="0 0 300 300"
-                            enableBackground="new 0 0 300 300"
-                            xmlSpace="preserve"
-                            className="mil-ct-svg"
-                            style={{ transform: `scale(2) rotate(${rotation}deg)` }}
-                        >
-                            <defs>
-                                <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
-                            </defs>
-                            <circle cx="150" cy="100" r="75" fill="none" />
-                            <g>
-                                <use xlinkHref="#circlePath" fill="none" />
-                                <text style={{ "letterSpacing": "3px" }}>
-                                    {/* circle text */}
-                                    <textPath xlinkHref="#circlePath">Deslize para baixo - Deslize para baixo - </textPath>
-                                </text>
-                            </g>
-                        </svg>
+                        {/* SVG circular text - only on desktop to avoid LCP issues */}
+                        {viewportSize !== 'mobile' && (
+                            <svg
+                                version="1.1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlnsXlink="http://www.w3.org/1999/xlink"
+                                x="0px"
+                                y="0px"
+                                viewBox="0 0 300 300"
+                                enableBackground="new 0 0 300 300"
+                                xmlSpace="preserve"
+                                className="mil-ct-svg"
+                                style={{ transform: `scale(2) rotate(${rotation}deg)` }}
+                            >
+                                <defs>
+                                    <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
+                                </defs>
+                                <circle cx="150" cy="100" r="75" fill="none" />
+                                <g>
+                                    <use xlinkHref="#circlePath" fill="none" />
+                                    <text style={{ "letterSpacing": "3px" }}>
+                                        <textPath xlinkHref="#circlePath">Deslize para baixo - Deslize para baixo - </textPath>
+                                    </text>
+                                </g>
+                            </svg>
+                        )}
                         <a href="#sobre" className="mil-button" aria-label="Role para baixo">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-down">
                                 <line x1="12" y1="5" x2="12" y2="19"></line>

@@ -1,18 +1,24 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import ExportedImage from "@components/common/ExportedImage";
 
 const ServicesSlider = ({ items }) => {
-    const [isMobile, setIsMobile] = useState(false);
+    // MOBILE OPTIMIZATION: Use initial value, skip resize listener on mobile
+    const [isMobile, setIsMobile] = useState(() => {
+        if (typeof window === 'undefined') return false;
+        return window.innerWidth < 768;
+    });
 
     useEffect(() => {
-        setIsMobile(window.innerWidth < 768);
-        const handleResize = () => setIsMobile(window.innerWidth < 768);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        // Only add resize listener on desktop (mobile doesn't need it)
+        if (window.innerWidth >= 768) {
+            const handleResize = () => setIsMobile(window.innerWidth < 768);
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }
     }, []);
 
     return (
@@ -29,7 +35,9 @@ const ServicesSlider = ({ items }) => {
             effect={isMobile ? "slide" : "fade"}
             style={{ width: '100%', aspectRatio: '1/1' }}
             onSwiper={(swiper) => {
-                // Stop immediately to apply random delay
+                // MOBILE OPTIMIZATION: Skip random delay on mobile to reduce callbacks
+                if (isMobile) return;
+
                 if (swiper.autoplay) {
                     swiper.autoplay.stop();
                     const randomDelay = Math.floor(Math.random() * 1875);

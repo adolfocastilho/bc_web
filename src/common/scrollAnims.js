@@ -4,7 +4,29 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 export const scrollAnimation = () => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // appearance
+    // MOBILE OPTIMIZATION: Skip animations on mobile to reduce reflows
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+        // Make all elements visible immediately without animation
+        const appearance = document.querySelectorAll(".mil-up");
+        appearance.forEach((section) => {
+            section.style.opacity = '1';
+            section.style.transform = 'translateY(0)';
+        });
+
+        // Only initialize progress bar on mobile (lightweight)
+        gsap.to('.mil-progress', {
+            height: '100%',
+            ease: 'linear',
+            scrollTrigger: {
+                scrub: 1
+            }
+        });
+        return;
+    }
+
+    // DESKTOP: Full animations
     const appearance = document.querySelectorAll(".mil-up");
 
     appearance.forEach((section) => {

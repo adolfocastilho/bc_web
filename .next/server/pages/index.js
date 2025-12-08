@@ -16,13 +16,34 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _data_sections_about_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2166);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1301);
 /* harmony import */ var _components_common_ExportedImage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4438);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([react_icons_fa__WEBPACK_IMPORTED_MODULE_2__]);
 react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
 
+
 const AboutSection = ()=>{
+    const marqueeRef = (0,react__WEBPACK_IMPORTED_MODULE_4__.useRef)(null);
+    const [isVisible, setIsVisible] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+    // Pause marquee animation when not visible to save CPU/GPU
+    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
+        const observer = new IntersectionObserver(([entry])=>{
+            setIsVisible(entry.isIntersecting);
+        }, {
+            threshold: 0.1
+        });
+        if (marqueeRef.current) {
+            observer.observe(marqueeRef.current);
+        }
+        return ()=>{
+            if (marqueeRef.current) {
+                observer.unobserve(marqueeRef.current);
+            }
+        };
+    }, []);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
             id: "sobre",
@@ -62,9 +83,13 @@ const AboutSection = ()=>{
                                         children: _data_sections_about_json__WEBPACK_IMPORTED_MODULE_1__/* .description */ .WL
                                     }),
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                        ref: marqueeRef,
                                         className: "mil-logos-wrapper mil-up mil-mb-30",
                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                             className: "mil-marquee-track",
+                                            style: {
+                                                animationPlayState: isVisible ? "running" : "paused"
+                                            },
                                             children: [
                                                 ..._data_sections_about_json__WEBPACK_IMPORTED_MODULE_1__/* .logos */ .UN,
                                                 ..._data_sections_about_json__WEBPACK_IMPORTED_MODULE_1__/* .logos */ .UN,
@@ -134,9 +159,11 @@ var ExportedImage = __webpack_require__(4438);
 
 const HeroOne = ()=>{
     const el = (0,external_react_.useRef)(null);
+    const heroRef = (0,external_react_.useRef)(null);
     const [rotation, setRotation] = (0,external_react_.useState)(0);
     const typedInstance = (0,external_react_.useRef)(null);
     const [viewportSize, setViewportSize] = (0,external_react_.useState)("desktop");
+    const [isHeroVisible, setIsHeroVisible] = (0,external_react_.useState)(true);
     // Detect viewport size on mount
     (0,external_react_.useEffect)(()=>{
         const getViewportSize = ()=>{
@@ -153,6 +180,22 @@ const HeroOne = ()=>{
     }, []);
     // Helper to check if mobile
     const isMobile = viewportSize === "mobile";
+    // Intersection Observer to pause text cycle when hero is not visible
+    (0,external_react_.useEffect)(()=>{
+        const observer = new IntersectionObserver(([entry])=>{
+            setIsHeroVisible(entry.isIntersecting);
+        }, {
+            threshold: 0.1
+        });
+        if (heroRef.current) {
+            observer.observe(heroRef.current);
+        }
+        return ()=>{
+            if (heroRef.current) {
+                observer.unobserve(heroRef.current);
+            }
+        };
+    }, []);
     (0,external_react_.useEffect)(()=>{
         let rafId;
         const handleScroll = ()=>{
@@ -171,11 +214,13 @@ const HeroOne = ()=>{
         };
     }, []);
     // ========================================================================
-    // FADE EFFECT - Same animation for all devices (mobile, tablet, desktop)
+    // FADE EFFECT - Only runs when hero is visible on screen
     // ========================================================================
     const [textIndex, setTextIndex] = (0,external_react_.useState)(0);
     const [isVisible, setIsVisible] = (0,external_react_.useState)(true);
     (0,external_react_.useEffect)(()=>{
+        // Only run interval when hero is visible
+        if (!isHeroVisible) return;
         const interval = setInterval(()=>{
             setIsVisible(false); // Start fade out
             setTimeout(()=>{
@@ -184,9 +229,12 @@ const HeroOne = ()=>{
             }, 500); // Wait for fade out transition (matches CSS transition duration)
         }, 4000); // Change text every 4 seconds
         return ()=>clearInterval(interval);
-    }, []);
+    }, [
+        isHeroVisible
+    ]);
     return /*#__PURE__*/ jsx_runtime.jsx(jsx_runtime.Fragment, {
         children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("section", {
+            ref: heroRef,
             className: "mil-side-banner mil-center",
             children: [
                 /*#__PURE__*/ jsx_runtime.jsx("div", {
@@ -220,12 +268,12 @@ const HeroOne = ()=>{
                                 width: "100%",
                                 maxWidth: "1000px",
                                 padding: isMobile ? "0 15px" : "0",
-                                height: isMobile ? "55px" : ({
+                                height: isMobile ? "72px" : ({
                                     tablet: "100px",
                                     smallLaptop: "120px",
                                     desktop: "138px"
                                 })[viewportSize],
-                                minHeight: isMobile ? "40px" : ({
+                                minHeight: isMobile ? "52px" : ({
                                     tablet: "72px",
                                     smallLaptop: "80px",
                                     desktop: "92px"
@@ -236,7 +284,7 @@ const HeroOne = ()=>{
                             },
                             children: /*#__PURE__*/ jsx_runtime.jsx("h1", {
                                 style: {
-                                    fontSize: isMobile ? "36px" : ({
+                                    fontSize: isMobile ? "47px" : ({
                                         tablet: "64px",
                                         smallLaptop: "76px",
                                         desktop: "92px"
@@ -274,7 +322,7 @@ const HeroOne = ()=>{
                     children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
                         className: "mil-circle-text",
                         children: [
-                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
+                            !isMobile && /*#__PURE__*/ (0,jsx_runtime.jsxs)("svg", {
                                 version: "1.1",
                                 xmlns: "http://www.w3.org/2000/svg",
                                 xmlnsXlink: "http://www.w3.org/1999/xlink",
