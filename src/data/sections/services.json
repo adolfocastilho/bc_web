@@ -15,8 +15,8 @@
                 "/img/portfolio/identidade/bechange_logomarca-identidade-visual-logotipo8.webp"
             ],
             "text": "Criação de identidade visual completa: logotipo, paleta de cores, tipografia, grafismos proprietários e manual de uso. Sistema visual pensado para aplicar em site, redes sociais, materiais digitais, impressos, apresentações e toda comunicação da marca. Marcas fortes cobram mais e atraem clientes melhores.",
-            "link": "/services/service-1",
-            "linkText": "Ver projetos de Identidade Visual"
+            "link": "/identidade-visual",
+            "linkText": "Mais detalhes"
         },
         {
             "title": "Sites Institucionais e Landing Pages",
@@ -32,7 +32,7 @@
             ],
             "text": "Desenvolvimento de sites e landing pages focados em conversão e autoridade. Layout responsivo, velocidade otimizada, SEO on page, acessibilidade, páginas legais LGPD e integrações para captar leads, vender online e fortalecer presença digital profissional. Cada site pensado para sustentar tráfego pago.",
             "link": "/services/service-2",
-            "linkText": "Conhecer Criação de Sites"
+            "linkText": "Mais detalhes"
         },
         {
             "title": "Edição de\nVídeo e Motion",
@@ -42,7 +42,7 @@
             ],
             "text": "Edição de vídeos institucionais, publicitários, reels e conteúdo curto com motion design, ritmo ajustado e narrativa clara. Entregas prontas para sites, apresentações, campanhas online, YouTube, Instagram e anúncios que precisam comunicar rápido, emocionar e gerar resultado real e audiência imediata qualificada.",
             "link": "/services/service-3",
-            "linkText": "Ver portfólio de Vídeos"
+            "linkText": "Mais detalhes"
         },
         {
             "title": "Agentes de IA\ne Chatbots Whatsapp",
@@ -52,7 +52,7 @@
             ],
             "text": "Criação de agentes de IA e chatbots para site ou WhatsApp com linguagem humanizada. Atendem dúvidas, captam leads, registram contatos, automatizam respostas frequentes e conectam formulários, agendas e fluxos simples do negócio. Tecnologia aplicada para reduzir custos operacionais.",
             "link": "/services/service-4",
-            "linkText": "Contratar Agentes de IA"
+            "linkText": "Mais detalhes"
         },
         {
             "title": "Sistemas, Apps Web e Manutenção",
@@ -66,7 +66,7 @@
             ],
             "text": "Desenvolvimento de sistemas e aplicativos web sob medida para orçamentos, reservas, áreas do cliente, e CRM. Manutenção com atualizações de segurança, monitoramento de performance, gerenciamento de hospedagem, backups automáticos e suporte contínuo. Tudo sempre seguro, estável e rápido.",
             "link": "/services/service-5",
-            "linkText": "Ver soluções em Sistemas"
+            "linkText": "Mais detalhes"
         },
         {
             "title": "Tráfego Pago e Performance",
@@ -78,7 +78,7 @@
             ],
             "text": "Gestão de tráfego pago e anúncios para Google, Instagram e Facebook alinhados à estratégia digital e ao posicionamento da marca. Campanhas pensadas para conversão, leitura clara das métricas principais, otimização constante do orçamento e resultados em vendas online. Design e mídia trabalhando juntos.",
             "link": "/services/service-6",
-            "linkText": "Consultar Gestão de Tráfego"
+            "linkText": "Mais detalhes"
         }
     ]
 }

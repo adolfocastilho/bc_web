@@ -1,6 +1,7 @@
 import Data from "@data/sections/services.json";
 import dynamic from "next/dynamic";
 import LazyLoadComponent from "../common/LazyLoadComponent";
+import Link from "next/link";
 
 import SkeletonLoader from "../common/SkeletonLoader";
 
@@ -43,7 +44,13 @@ const ServicesSection = () => {
                                     </span>
                                 </h3>
                                 <p className="mil-up mil-mb-5">{item.text}</p>
-                                <span className="mil-up mil-mb-30" style={{ display: "block", fontWeight: "bold", color: "inherit", cursor: 'default' }}>{item.linkText || "Saiba mais..."}</span>
+                                {item.link && item.link !== "/services/service-1" && item.link !== "/services/service-2" && item.link !== "/services/service-3" && item.link !== "/services/service-4" && item.link !== "/services/service-5" && item.link !== "/services/service-6" ? (
+                                    <Link href={item.link} className="mil-up mil-mb-30 mil-link" style={{ display: "block", fontWeight: "bold" }}>
+                                        {item.linkText || "Saiba mais..."}
+                                    </Link>
+                                ) : (
+                                    <span className="mil-up mil-mb-30" style={{ display: "block", fontWeight: "bold", color: "inherit", cursor: 'default' }}>{item.linkText || "Saiba mais..."}</span>
+                                )}
                             </div>
                         </div>
                     ))}

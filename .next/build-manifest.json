@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/lAVaSZHHMtMJnJdJlqkCn/_buildManifest.js",
-    "static/lAVaSZHHMtMJnJdJlqkCn/_ssgManifest.js"
+    "static/AjrkjaC2NDIvopYGstV1b/_buildManifest.js",
+    "static/AjrkjaC2NDIvopYGstV1b/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -17,7 +17,7 @@
       "static/chunks/cb355538-14e0ca275c8ea8c9.js",
       "static/chunks/983-e8650c978b1bf45a.js",
       "static/chunks/459-2a8937c7ab12eb88.js",
-      "static/chunks/875-c7e8b18fe8a5f8f0.js",
+      "static/chunks/875-ad4d0f8774972422.js",
       "static/chunks/pages/index-e4d2d0693420cf93.js"
     ],
     "/404": [
@@ -49,7 +49,7 @@
       "static/chunks/cb355538-14e0ca275c8ea8c9.js",
       "static/chunks/983-e8650c978b1bf45a.js",
       "static/chunks/459-2a8937c7ab12eb88.js",
-      "static/chunks/875-c7e8b18fe8a5f8f0.js",
+      "static/chunks/875-ad4d0f8774972422.js",
       "static/chunks/pages/identidade-visual-58e45e9791fee4ec.js"
     ],
     "/obrigado": [
