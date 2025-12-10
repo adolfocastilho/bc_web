@@ -28,3 +28,18 @@
         contain-intrinsic-size: 1px 400px;
     }
 }
+
+/* FIX: About section - REMOVE extra padding layers on mobile to match Services */
+/* Services has ~30px from edge, About was 60px (30 container + 15 col + 15 p) */
+/* Solution: Zero out col and p padding, leave only container's 30px */
+@media (max-width: 767px) {
+    #sobre .row>[class*="col-"] {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #sobre .mil-section-description {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}

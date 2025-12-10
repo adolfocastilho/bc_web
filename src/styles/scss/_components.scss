@@ -1047,11 +1047,37 @@ about
     }
 }
 
-#about {
-    @media screen and (max-width: 768px) {
-        .col-lg-10 {
-            padding-left: 0;
-            padding-right: 0;
+// #sobre padding fix moved to globals.css with !important to override Bootstrap
+
+/* Mobile static logos grid - no animation for better performance */
+.mil-logos-static {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    padding: 30px 15px 40px 15px;
+    width: 100%;
+    box-sizing: border-box;
+
+    .mil-logo-item-static {
+        width: 75px;
+        height: 75px;
+        min-width: 75px;
+        background-color: $light;
+        border: solid 1px $gs-10;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
         }
     }
 }

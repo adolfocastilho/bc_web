@@ -1,0 +1,147 @@
+import { useEffect, useState } from "react";
+import { ANIMATION } from "@common/constants";
+import ExportedImage from "@components/common/ExportedImage";
+
+const HeroCriacaoDeSites = () => {
+    const [rotation, setRotation] = useState(0);
+    const [viewportSize, setViewportSize] = useState('desktop');
+
+    // Detect viewport size on mount
+    useEffect(() => {
+        const getViewportSize = () => {
+            const width = window.innerWidth;
+            if (width < 768) return 'mobile';
+            if (width < 1024) return 'tablet';
+            if (width < 1200) return 'smallLaptop';
+            return 'desktop';
+        };
+
+        setViewportSize(getViewportSize());
+        const handleResize = () => setViewportSize(getViewportSize());
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        let rafId;
+        const handleScroll = () => {
+            // Disable rotation animation on mobile to save CPU
+            if (window.innerWidth < 768) return;
+
+            rafId = requestAnimationFrame(() => {
+                setRotation(window.scrollY * ANIMATION.SCROLL_ROTATION_SPEED);
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (rafId) cancelAnimationFrame(rafId);
+        };
+    }, []);
+
+    // Responsive font sizes
+    const titleFontSize = {
+        mobile: '32px',
+        tablet: '48px',
+        smallLaptop: '64px',
+        desktop: '80px'
+    }[viewportSize];
+
+    const lineHeight = {
+        mobile: '1.2',
+        tablet: '1.15',
+        smallLaptop: '1.1',
+        desktop: '1.1'
+    }[viewportSize];
+
+    return (
+        <>
+            {/* banner */}
+            <section className="mil-side-banner mil-center">
+                <div className="mil-banner-top mil-up"></div>
+                <div className="mil-banner-title" style={{
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: viewportSize === 'mobile' ? '15px' : '30px'
+                }}>
+                    <ExportedImage
+                        src="/img/icons/icone_hero_bechange.svg"
+                        alt="BeCHANGE"
+                        width={180}
+                        height={250}
+                        sizes="180px"
+                        className="mil-up mil-hero-icon"
+                    />
+                    <div className="mil-upper mil-dark mil-up">22 ANOS DE EXPERIÊNCIA</div>
+
+                    {/* Static H1 Title - uses CSS for responsive sizing to avoid CLS */}
+                    <h1
+                        className="mil-up mil-hero-title-identidade"
+                        style={{
+                            fontWeight: 600,
+                            textAlign: 'center',
+                            color: 'rgba(32, 33, 36, 1)',
+                            margin: 0
+                        }}
+                    >
+                        Criação de<br />
+                        Sites Profissionais<br />
+                        e Landing Pages
+                    </h1>
+
+                    <p className="mil-upper mil-dark mil-up" style={{ textAlign: 'center', maxWidth: '700px' }}>
+                        {viewportSize === 'mobile' ? (
+                            'Criação de sites institucionais e landing pages profissionais focadas em conversão, SEO, velocidade, LGPD e integrações.'
+                        ) : (
+                            <>
+                                Criação de sites institucionais e landing pages profissionais<br />
+                                focadas em conversão, SEO, velocidade, LGPD e integrações.
+                            </>
+                        )}
+                    </p>
+                </div>
+                <div className="mil-up mil-oval-frame">
+                    <div className="mil-circle-text">
+                        {/* SVG circular text - only on desktop to avoid LCP issues */}
+                        {viewportSize !== 'mobile' && (
+                            <svg
+                                version="1.1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlnsXlink="http://www.w3.org/1999/xlink"
+                                x="0px"
+                                y="0px"
+                                viewBox="0 0 300 300"
+                                enableBackground="new 0 0 300 300"
+                                xmlSpace="preserve"
+                                className="mil-ct-svg"
+                                style={{ transform: `scale(2) rotate(${rotation}deg)` }}
+                            >
+                                <defs>
+                                    <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
+                                </defs>
+                                <circle cx="150" cy="100" r="75" fill="none" />
+                                <g>
+                                    <use xlinkHref="#circlePath" fill="none" />
+                                    <text style={{ "letterSpacing": "3px" }}>
+                                        <textPath xlinkHref="#circlePath">Deslize para baixo - Deslize para baixo - </textPath>
+                                    </text>
+                                </g>
+                            </svg>
+                        )}
+                        <a href="#sobre" className="mil-button" aria-label="Role para baixo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-down">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <polyline points="19 12 12 19 5 12"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            {/* banner end */}
+        </>
+    );
+}
+export default HeroCriacaoDeSites;
