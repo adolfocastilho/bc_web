@@ -65,36 +65,44 @@ const AboutCriacaoDeSites = () => {
 
     const faqItems = [
         {
-            question: 'Quanto custa criar uma identidade visual profissional?',
-            answer: 'O preço da criação de identidade visual profissional varia de acordo com o que a sua empresa precisa. Em vez de tabela fixa, trabalhamos com proposta personalizada, porque cada projeto tem um nível de estudo, complexidade de logotipo e quantidade de materiais diferente.'
+            question: 'Quanto custa um site profissional para empresa ou landing page de alta conversão',
+            answer: 'O custo de um site profissional para empresa ou de uma landing page de alta conversão varia conforme o escopo: número de páginas, complexidade de conteúdo, integrações e nível de personalização. Na BeChange, a criação de sites profissionais é sempre orçada com base no seu projeto real, e você recebe uma proposta clara com faixas de investimento, prazos e o que está incluso antes de começar.'
         },
         {
-            question: 'Como funciona o valor, o preço da identidade visual é fechado ou por hora?',
-            answer: 'O valor da identidade visual é fechado por projeto, nunca por hora. Assim você sabe exatamente quanto vai investir na criação de identidade visual completa, sem surpresas no meio do caminho.'
+            question: 'Como funciona o orçamento na criação de sites profissionais — o preço é fechado ou por escopo',
+            answer: 'Na BeChange, o preço da criação de sites profissionais não é por hora, e sim por escopo fechado. Após o briefing, definimos quais páginas serão criadas, quais integrações serão feitas, quais recursos o site institucional ou a landing page profissional precisam ter e, a partir disso, montamos um valor fechado. Isso facilita a comparação com outras agências de criação de sites e dá previsibilidade de investimento.'
         },
         {
-            question: 'Em quanto tempo a identidade visual fica pronta?',
-            answer: 'O prazo médio vai de 2 a 4 semanas, dependendo do tamanho do projeto e da rapidez do feedback. Esse tempo inclui entendimento do negócio, criação do logotipo, montagem da identidade visual para empresas e ajustes finais.'
+            question: 'Em quanto tempo um site institucional profissional ou landing page fica pronto',
+            answer: 'O prazo médio para criação de um site institucional profissional costuma ser de algumas semanas, dependendo da quantidade de páginas e da agilidade nos retornos. Já uma landing page profissional focada em conversão normalmente fica pronta em menos tempo, por ser mais enxuta. Em ambos os casos, o cronograma é definido já na proposta, para que você saiba quando o site estará pronto para receber tráfego orgânico e tráfego pago.'
         },
         {
-            question: 'O que está incluso no projeto de identidade visual?',
-            answer: 'O projeto inclui criação de logotipo (logomarca), paleta de cores, tipografia, elementos visuais, aplicações base para materiais e um guia simples de uso. Você recebe uma identidade visual profissional completa, pronta para ser aplicada em site, redes sociais, apresentações e materiais impressos.'
+            question: 'O que está incluso no projeto de criação de site profissional da BeChange',
+            answer: 'O projeto de criação de site profissional da BeChange inclui arquitetura de informação, layout exclusivo, desenvolvimento, SEO on-page, ajustes de performance, configuração de páginas legais (LGPD), integrações combinadas em briefing e suporte inicial após o lançamento. Tudo pensado para que seu site institucional ou landing page nasça pronto para gerar leads e fortalecer a presença digital da sua marca.'
         },
         {
-            question: 'Quais arquivos eu recebo no final do trabalho?',
-            answer: 'Você recebe os arquivos do logotipo e da identidade visual em formatos práticos para o dia a dia, como PNG, JPG, SVG e PDF. Também entregamos versões em alta resolução e arquivos prontos para uso em digital e impressão.'
+            question: 'Vocês desenvolvem site em WordPress com blog e SEO para conteúdo',
+            answer: 'Sim. Trabalhamos com WordPress e outras plataformas profissionais quando fazem sentido para o seu projeto. É possível ter um site profissional com blog integrado, categorias pensadas para SEO e estrutura pronta para publicar conteúdos que tragam tráfego orgânico todos os meses. A escolha da tecnologia é feita considerando estratégia de conteúdo, facilidade de edição e crescimento do projeto.'
         },
         {
-            question: 'Quantas rodadas de ajustes estão incluídas?',
-            answer: 'O projeto já prevê uma etapa de apresentação e uma etapa de ajustes para alinhar tudo com o que você espera. Os detalhes de quantas rodadas de ajustes estão inclusas são combinados na proposta, sempre de forma clara antes do início do trabalho.'
+            question: 'Depois de pronto vou conseguir editar textos, imagens e páginas do site sozinho',
+            answer: 'Sim. Um dos diferenciais da BeChange como agência de criação de sites é entregar sites institucionais e landing pages profissionais com painel simples de edição. Você consegue atualizar textos, trocar imagens e fazer ajustes pontuais sem depender de freelancer para cada mudança. Também entregamos um manual de uso e treinamento básico para a sua equipe.'
         },
         {
-            question: 'Posso contratar só a criação de logotipo, sem identidade visual completa?',
-            answer: 'O foco do serviço é a criação de identidade visual completa para empresas, não apenas um logo isolado. Em alguns casos é possível avaliar a criação de logotipo pontual, mas a recomendação é sempre trabalhar o conjunto para ter resultado melhor na imagem da marca.'
+            question: 'A BeChange cuida de domínio, hospedagem, e-mails profissionais e configurações técnicas',
+            answer: 'Podemos orientar ou assumir junto com você a parte técnica: registro de domínio, contratação de hospedagem, configuração de e-mails profissionais, SSL e DNS. O objetivo é que o site profissional entre no ar já com tudo configurado corretamente, pronto para ser indexado pelo Google e receber campanhas de tráfego pago.'
         },
         {
-            question: 'Depois da entrega, eu preciso sempre voltar para fazer materiais com vocês?',
-            answer: 'Não. A ideia é que você tenha uma identidade visual completa e um guia simples de uso. Assim, sua equipe ou outros parceiros conseguem aplicar a identidade visual sem depender da agência para cada material do dia a dia.'
+            question: 'O site já sai com SEO on-page e pronto para campanhas de tráfego pago',
+            answer: 'Sim. A criação de sites profissionais na BeChange inclui SEO on-page desde a base: estrutura de headings, URLs amigáveis, meta titles, meta descriptions, performance técnica e preparo para conteúdos futuros. Também entregamos as páginas otimizadas para serem usadas como landing pages em campanhas de Google Ads, Meta Ads e outras mídias, com foco em conversão e rastreamento de leads.'
+        },
+        {
+            question: 'Vocês oferecem manutenção, suporte e melhorias após a criação do site',
+            answer: 'Depois da publicação, oferecemos suporte inicial para ajustes finos e correções. Se a sua empresa precisa de acompanhamento contínuo, é possível contratar planos de manutenção e evolução do site: criação de novas páginas, otimização de conversão, melhorias de SEO e suporte recorrente para a presença digital.'
+        },
+        {
+            question: 'Posso começar com uma landing page profissional e depois evoluir para um site institucional completo',
+            answer: 'Sim. Muitos clientes começam com uma landing page profissional para validar uma oferta, campanha ou serviço específico. Quando os resultados aparecem, o projeto evolui para um site institucional completo, blog, áreas restritas ou loja virtual. Toda a criação é pensada para ser escalável, mantendo a mesma linha de identidade visual e estratégia definidas com a BeChange.'
         }
     ];
 
@@ -188,20 +196,39 @@ const AboutCriacaoDeSites = () => {
                     </h2>
                 </div>
 
-                <h3 className="mil-up mil-center mil-mb-30">Agência de criação de sites institucionais e landing pages profissionais</h3>
-                <p className="mil-up mil-section-description" style={{ marginBottom: '30px' }}>
-                    A BeChange é uma agência especializada em criação de sites institucionais e landing pages profissionais para empresas, profissionais liberais e negócios digitais. O foco não é só entregar um layout bonito, mas sim um site que comunique bem, gere confiança e converta visitas em oportunidades reais.
-                </p>
+                <div className="mil-process-steps mil-mb-60">
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaBuilding /></div>
+                        <div className="mil-step-content">
+                            <h3>Agência de criação de sites institucionais e landing pages profissionais</h3>
+                            <p>A BeChange é uma agência especializada em criação de sites institucionais e landing pages profissionais para empresas, profissionais liberais e negócios digitais. O foco não é só entregar um layout bonito, mas sim um site que comunique bem, gere confiança e converta visitas em oportunidades reais.</p>
+                        </div>
+                    </div>
 
-                <h3 className="mil-up mil-center mil-mb-30">Site alinhado à identidade visual e ao posicionamento da sua marca</h3>
-                <p className="mil-up mil-section-description" style={{ marginBottom: '30px' }}>
-                    Seu site precisa parecer e se comportar como a sua marca. Integramos posicionamento, identidade visual, tom de voz e estratégia de comunicação para que o site transmita profissionalismo em cada detalhe. Isso vale para cores, tipografia, ícones, fotos, linguagem e estrutura de conteúdo.
-                </p>
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaShieldAlt /></div>
+                        <div className="mil-step-content">
+                            <h3>Infraestrutura completa e Zero Dor de Cabeça Técnica</h3>
+                            <p>Sabemos que a parte técnica pode ser um obstáculo. Por isso, a BeChange atua como seu braço direito de tecnologia. Nós cuidamos de tudo para você: prestamos assessoria completa na compra do domínio, orientamos a contratação do melhor servidor e realizamos toda a configuração da infraestrutura. Entregamos seu projeto configurado e pronto para rodar, para que você não precise se preocupar com setups complexos.</p>
+                        </div>
+                    </div>
 
-                <h3 className="mil-up mil-center mil-mb-30">Site profissional pensado como máquina de gerar oportunidades 24h por dia</h3>
-                <p className="mil-up mil-section-description" style={{ marginBottom: '0' }}>
-                    Tratamos o site como uma máquina de gerar leads que trabalha para você o tempo todo. Estruturamos páginas, blocos e chamadas para guiar o visitante desde o primeiro contato até o pedido de orçamento, o agendamento, o cadastro ou a compra. Sempre com foco em conversão e mensuração de resultados.
-                </p>
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaPalette /></div>
+                        <div className="mil-step-content">
+                            <h3>Site alinhado à identidade visual e ao posicionamento da sua marca</h3>
+                            <p>Seu site precisa parecer e se comportar como a sua marca. Integramos posicionamento, identidade visual, tom de voz e estratégia de comunicação para que o site transmita profissionalismo em cada detalhe. Isso vale para cores, tipografia, ícones, fotos, linguagem e estrutura de conteúdo.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaChartLine /></div>
+                        <div className="mil-step-content">
+                            <h3>Site profissional pensado como máquina de gerar oportunidades 24h por dia</h3>
+                            <p>Tratamos o site como uma máquina de gerar leads que trabalha para você o tempo todo. Estruturamos páginas, blocos e chamadas para guiar o visitante desde o primeiro contato até o pedido de orçamento, o agendamento, o cadastro ou a compra. Sempre com foco em conversão e mensuração de resultados.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {/* Tipos de sites que criamos Section */}
@@ -505,30 +532,192 @@ const AboutCriacaoDeSites = () => {
                     </h2>
                 </div>
 
-                <h3 className="mil-up mil-center mil-mb-30">Profissionais liberais — médicos, dentistas, advogados, terapeutas</h3>
+                <div className="mil-process-steps mil-mb-60">
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaStethoscope /></div>
+                        <div className="mil-step-content">
+                            <h3>Profissionais liberais — médicos, dentistas, advogados, terapeutas</h3>
+                            <p>Profissionais que precisam de um site sério, claro e confiável para apresentar serviços, especialidades, bio e canais de contato, sem depender apenas de redes sociais.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaBuilding /></div>
+                        <div className="mil-step-content">
+                            <h3>Pequenas e médias empresas que precisam de presença digital profissional</h3>
+                            <p>Negócios que já existem fisicamente ou por indicação, mas ainda não têm um site à altura da qualidade do serviço que entregam.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaRocket /></div>
+                        <div className="mil-step-content">
+                            <h3>Negócios digitais, infoprodutores e projetos de lançamento</h3>
+                            <p>Projetos que precisam de landing pages, páginas de vendas e áreas de conteúdo para distribuir materiais, capturar leads e vender produtos digitais.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaChartLine /></div>
+                        <div className="mil-step-content">
+                            <h3>Empresas que precisam reformular um site antigo que não converte</h3>
+                            <p>Empresas com site desatualizado, confuso ou difícil de editar, que desejam uma nova estrutura com foco em resultado.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaFlag /></div>
+                        <div className="mil-step-content">
+                            <h3>Marcas que querem posicionamento forte e previsível em 2025</h3>
+                            <p>Negócios que entenderam que presença profissional na internet não é luxo, é base para crescer com previsibilidade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Quanto custa criar um site Section */}
+            <div className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
+                <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
+                <div className="mil-center mil-up mil-mb-30">
+                    <h2 id="quanto-custa" style={{ whiteSpace: 'normal' }}>
+                        Quanto custa criar um <br className="mil-mobile-br" />
+                        site profissional
+                    </h2>
+                </div>
+
+                <h3 className="mil-up mil-center mil-mb-30">Faixas de investimento para site institucional profissional</h3>
                 <p className="mil-up mil-section-description" style={{ marginBottom: '30px' }}>
-                    Profissionais que precisam de um site sério, claro e confiável para apresentar serviços, especialidades, bio e canais de contato, sem depender apenas de redes sociais.
+                    O investimento em um site institucional profissional varia conforme número de páginas, complexidade de conteúdo, integrações necessárias e nível de personalização. Trabalhamos com faixas de valor claras, alinhadas ao escopo definido na proposta.
                 </p>
 
-                <h3 className="mil-up mil-center mil-mb-30">Pequenas e médias empresas que precisam de presença digital profissional</h3>
+                <h3 className="mil-up mil-center mil-mb-30">Fatores que influenciam o preço de um site profissional</h3>
                 <p className="mil-up mil-section-description" style={{ marginBottom: '30px' }}>
-                    Negócios que já existem fisicamente ou por indicação, mas ainda não têm um site à altura da qualidade do serviço que entregam.
+                    Alguns fatores que impactam o valor final — escopo de páginas, produção de conteúdo ou uso de conteúdo enviado, integrações específicas, área restrita, blog ativo, loja virtual, idiomas adicionais e nível de suporte desejado.
                 </p>
 
-                <h3 className="mil-up mil-center mil-mb-30">Negócios digitais, infoprodutores e projetos de lançamento</h3>
-                <p className="mil-up mil-section-description" style={{ marginBottom: '30px' }}>
-                    Projetos que precisam de landing pages, páginas de vendas e áreas de conteúdo para distribuir materiais, capturar leads e vender produtos digitais.
-                </p>
-
-                <h3 className="mil-up mil-center mil-mb-30">Empresas que precisam reformular um site antigo que não converte</h3>
-                <p className="mil-up mil-section-description" style={{ marginBottom: '30px' }}>
-                    Empresas com site desatualizado, confuso ou difícil de editar, que desejam uma nova estrutura com foco em resultado.
-                </p>
-
-                <h3 className="mil-up mil-center mil-mb-30">Marcas que querem posicionamento forte e previsível em 2025</h3>
+                <h3 className="mil-up mil-center mil-mb-30">Como funciona a proposta de criação de site na BeChange</h3>
                 <p className="mil-up mil-section-description" style={{ marginBottom: '0' }}>
-                    Negócios que entenderam que presença profissional na internet não é luxo, é base para crescer com previsibilidade.
+                    Após o briefing e a definição de escopo, você recebe uma proposta clara, com o que está incluso, prazos, etapas e formas de pagamento. Sem letras pequenas.
                 </p>
+            </div>
+
+            {/* BeChange x outras formas Section */}
+            <div className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
+                <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
+                <div className="mil-center mil-up mil-mb-30">
+                    <h2 id="bechange-vs-outros" style={{ whiteSpace: 'normal' }}>
+                        BeChange x outras formas <br className="mil-mobile-br" />
+                        de criar site
+                    </h2>
+                </div>
+
+                <div className="mil-process-steps mil-mb-60">
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaUserTie /></div>
+                        <div className="mil-step-content">
+                            <h3>BeChange x freelancer — continuidade, processo e suporte</h3>
+                            <p>Freelancers podem entregar bons projetos, mas muitas vezes não oferecem processo estruturado, documentação e suporte contínuo. Na BeChange, você tem uma equipe e um método, não apenas uma pessoa.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaBullseye /></div>
+                        <div className="mil-step-content">
+                            <h3>BeChange x agência genérica — foco em estratégia, SEO e conversão</h3>
+                            <p>Enquanto muitas agências produzem apenas o visual, nossa entrega parte da estratégia, passa por conteúdo, UX, SEO e termina no site pronto para receber tráfego. O foco não é só estética, é performance.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaLayerGroup /></div>
+                        <div className="mil-step-content">
+                            <h3>BeChange x fazer sozinho em Wix, Elementor ou construtor pronto</h3>
+                            <p>Construtores prontos são úteis para testes, mas exigem tempo, conhecimento técnico e visão de marketing. Se o seu foco é tocar o negócio, faz sentido delegar o site para quem vive isso no dia a dia.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaBriefcase /></div>
+                        <div className="mil-step-content">
+                            <h3>Por que ter uma agência parceira pensando em longo prazo</h3>
+                            <p>Trabalhar com uma agência parceira permite evoluir o site, criar novas páginas, lançar campanhas e ajustar o posicionamento sem ter que recomeçar do zero a cada ano.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* O que é um site institucional Section */}
+            <div className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
+                <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
+                <div className="mil-center mil-up mil-mb-30">
+                    <h2 id="o-que-e-site-institucional" style={{ whiteSpace: 'normal' }}>
+                        O que é um site institucional <br className="mil-mobile-br" />
+                        e o que é uma landing page
+                    </h2>
+                </div>
+
+                <div className="mil-process-steps mil-mb-60">
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaBuilding /></div>
+                        <div className="mil-step-content">
+                            <h3>O que é um site institucional para empresas e marcas</h3>
+                            <p>Site institucional é a base da presença digital da empresa. Apresenta quem você é, o que faz, como faz, para quem faz, além de mostrar provas de qualidade e canais de contato.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaRocket /></div>
+                        <div className="mil-step-content">
+                            <h3>O que é uma landing page de alta conversão</h3>
+                            <p>Landing page é uma página única, criada com um único objetivo — gerar cadastro, vender um produto, captar inscrições ou agendar uma conversa. Tudo nela é construído para levar a essa ação.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaShoppingCart /></div>
+                        <div className="mil-step-content">
+                            <h3>Site institucional, landing page ou loja virtual — como escolher para o seu negócio</h3>
+                            <p>A escolha depende do momento da empresa e dos objetivos. Em alguns casos, começar por uma landing page faz sentido. Em outros, o site institucional completo é o caminho mais adequado. Quando o foco é venda de produtos, a loja virtual entra na estratégia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Por que ter um site profissional em 2025 Section */}
+            <div className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
+                <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
+                <div className="mil-center mil-up mil-mb-30">
+                    <h2 id="por-que-site-2025" style={{ whiteSpace: 'normal' }}>
+                        Por que ter um site <br className="mil-mobile-br" />
+                        profissional em 2025
+                    </h2>
+                </div>
+
+                <div className="mil-process-steps mil-mb-60">
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaGlobeAmericas /></div>
+                        <div className="mil-step-content">
+                            <h3>Site profissional como centro da sua presença digital</h3>
+                            <p>Em um cenário de múltiplos canais, o site é o ponto central onde tudo se organiza. É o lugar seguro e estável que não depende do algoritmo de nenhuma rede.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaChartLine /></div>
+                        <div className="mil-step-content">
+                            <h3>Site profissional e redes sociais trabalhando juntos</h3>
+                            <p>Redes sociais atraem atenção e geram engajamento. O site organiza, aprofunda e converte essa atenção em negócios. Um canal não substitui o outro, eles se complementam.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaSearch /></div>
+                        <div className="mil-step-content">
+                            <h3>Como um site bem feito reduz dependência de indicações e improviso</h3>
+                            <p>Com um site profissional, você passa a ser encontrado por quem está ativamente procurando o que você faz, reduzindo a dependência exclusiva de indicações e de ações pontuais.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {/* FAQ Section */}
@@ -537,7 +726,7 @@ const AboutCriacaoDeSites = () => {
                 <div className="mil-center mil-up mil-mb-30">
                     <h2 id="faq" style={{ whiteSpace: 'normal' }}>
                         Perguntas frequentes sobre <br className="mil-desktop-br" />
-                        criação de identidade visual
+                        criação de sites profissionais
                     </h2>
                 </div>
             </div>
@@ -568,19 +757,16 @@ const AboutCriacaoDeSites = () => {
                 <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
                 <div className="mil-center mil-up mil-mb-30">
                     <h2 style={{ whiteSpace: 'normal' }}>
-                        Pronto para criar a identidade visual <br className="mil-desktop-br" />
-                        profissional da sua empresa?
+                        Pronto para criar o site profissional <br className="mil-desktop-br" />
+                        da sua empresa?
                     </h2>
                 </div>
                 <p className="mil-up mil-section-description mil-mb-30">
-                    Se você quer que sua empresa pareça mais profissional, transmita confiança e se destaque no mercado, o próximo passo é fazer a criação de identidade visual do jeito certo.
+                    Se você quer um site institucional ou uma landing page profissional que comprove o nível do seu trabalho, transmita profissionalismo e segurança em cada detalhe e siga as boas práticas de SEO, performance e conversão para se destacar no Google, o próximo passo é conversar com a BeChange.
                 </p>
                 <div className="mil-center mil-up" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
-                    <Link href="https://api.whatsapp.com/send?phone=5511912005640&text=Ol%C3%A1!%20Gostaria%20de%20receber%20um%20or%C3%A7amento%20para%20cria%C3%A7%C3%A3o%20de%20identidade%20visual%20profissional." className="mil-btn mil-sm-btn mil-rounded" target="_blank" rel="noopener noreferrer">
-                        <span>Solicitar proposta de identidade visual</span>
-                    </Link>
-                    <Link href="#portfolio" className="mil-link">
-                        <span>Ver portfólio de identidades visuais</span>
+                    <Link href="https://api.whatsapp.com/send?phone=5511912005640&text=Ol%C3%A1!%20Gostaria%20de%20receber%20um%20or%C3%A7amento%20para%20cria%C3%A7%C3%A3o%20de%20site%20profissional." className="mil-btn mil-sm-btn mil-rounded" target="_blank" rel="noopener noreferrer">
+                        <span>Solicitar proposta de criação de site</span>
                     </Link>
                 </div>
             </div>
