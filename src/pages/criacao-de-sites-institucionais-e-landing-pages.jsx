@@ -154,7 +154,6 @@ const CriacaoDeSites = (props) => {
             <HeroCriacaoDeSites />
             <AboutCriacaoDeSites />
             <ServicesSection />
-            <RecognitionSection />
             <PortfolioSection />
             <ContactSection />
         </Layouts>

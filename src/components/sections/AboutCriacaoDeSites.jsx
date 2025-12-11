@@ -2,6 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { FaQuoteLeft, FaPaintBrush, FaPalette, FaFont, FaStar, FaLayerGroup, FaBook, FaFileAlt, FaRocket, FaChevronDown, FaAward, FaCheckCircle, FaPlus, FaSearch, FaBox, FaUserTie, FaBuilding, FaChartLine, FaStethoscope, FaShieldAlt, FaFlag, FaBriefcase, FaUserCog, FaBullseye, FaGlobeAmericas, FaCertificate, FaQuestionCircle, FaShoppingCart } from "react-icons/fa";
 import ExportedImage from "@components/common/ExportedImage";
+import RecognitionSection from "@components/sections/Recognition";
 
 const AboutCriacaoDeSites = () => {
     const [expandedIndex, setExpandedIndex] = useState(null);
@@ -230,6 +231,9 @@ const AboutCriacaoDeSites = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Depoimentos Section - posicionada após Criação de sites profissionais BeChange */}
+            <RecognitionSection />
 
             {/* Tipos de sites que criamos Section */}
             <div className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
