@@ -2,7 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/criacao-de-sites-institucionais-e-landing-pages": "pages/criacao-de-sites-institucionais-e-landing-pages.js",
+  "/404": "pages/404.html",
+  "/obrigado": "pages/obrigado.html",
   "/": "pages/index.js",
-  "/404": "pages/404.js"
+  "/identidade-visual": "pages/identidade-visual.js",
+  "/criacao-de-sites-institucionais-e-landing-pages": "pages/criacao-de-sites-institucionais-e-landing-pages.js"
 }

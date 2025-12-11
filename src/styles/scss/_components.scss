@@ -1022,6 +1022,11 @@ about
             flex-wrap: nowrap;
             justify-content: flex-start;
 
+            // GPU Acceleration - Performance Optimization
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+
             // Show all items on mobile for marquee
             .mil-logo-item:nth-child(n+5) {
                 display: flex;
@@ -1039,11 +1044,20 @@ about
 
 @keyframes marquee {
     0% {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 
     100% {
-        transform: translateX(-50%); // Move by half the width (since we duplicated 4x, moving 50% covers 2 full sets)
+        transform: translate3d(-50%, 0, 0); // Move by half the width (since we duplicated 4x, moving 50% covers 2 full sets)
+    }
+}
+
+// Respeitar preferência de usuários que não querem animação
+@media (prefers-reduced-motion: reduce) {
+    .mil-marquee-track {
+        animation: none !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
     }
 }
 
