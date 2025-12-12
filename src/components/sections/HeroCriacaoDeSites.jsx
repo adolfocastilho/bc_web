@@ -40,20 +40,7 @@ const HeroCriacaoDeSites = () => {
         };
     }, []);
 
-    // Responsive font sizes
-    const titleFontSize = {
-        mobile: '32px',
-        tablet: '48px',
-        smallLaptop: '64px',
-        desktop: '80px'
-    }[viewportSize];
 
-    const lineHeight = {
-        mobile: '1.2',
-        tablet: '1.15',
-        smallLaptop: '1.1',
-        desktop: '1.1'
-    }[viewportSize];
 
     return (
         <>

@@ -40,20 +40,7 @@ const HeroIdentidadeVisual = () => {
         };
     }, []);
 
-    // Responsive font sizes
-    const titleFontSize = {
-        mobile: '32px',
-        tablet: '48px',
-        smallLaptop: '64px',
-        desktop: '80px'
-    }[viewportSize];
 
-    const lineHeight = {
-        mobile: '1.2',
-        tablet: '1.15',
-        smallLaptop: '1.1',
-        desktop: '1.1'
-    }[viewportSize];
 
     return (
         <>
@@ -87,10 +74,19 @@ const HeroIdentidadeVisual = () => {
                             margin: 0
                         }}
                     >
-                        Criação de<br />
-                        Identidade Visual<br />
-                        Profissional para<br />
-                        Empresas
+                        {viewportSize === 'mobile' ? (
+                            <>
+                                Criação de<br />
+                                Identidade Visual<br />
+                                Profissional
+                            </>
+                        ) : (
+                            <>
+                                Criação de<br />
+                                Identidade Visual<br />
+                                Profissional para Empresas
+                            </>
+                        )}
                     </h1>
 
                     <p className="mil-upper mil-dark mil-up" style={{ textAlign: 'center', maxWidth: '700px' }}>

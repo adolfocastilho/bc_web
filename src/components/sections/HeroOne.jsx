@@ -109,20 +109,11 @@ const HeroOne = () => {
                     <div className="mil-up" style={{
                         width: '100%',
                         maxWidth: '1000px',
-                        padding: isMobile ? '0 15px' : '0',
-                        height: isMobile ? '72px' : { tablet: '100px', smallLaptop: '120px', desktop: '138px' }[viewportSize],
-                        minHeight: isMobile ? '52px' : { tablet: '72px', smallLaptop: '80px', desktop: '92px' }[viewportSize],
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}>
-                        <h1 style={{
-                            fontSize: isMobile ? '47px' : { tablet: '64px', smallLaptop: '76px', desktop: '92px' }[viewportSize],
-                            fontWeight: 600,
-                            textAlign: 'center',
-                            color: 'rgba(32, 33, 36, 1)',
-                            margin: 0
-                        }}>
+                        <h1 className="mil-hero-title-home">
                             <span
                                 className="mil-fade-text"
                                 style={{

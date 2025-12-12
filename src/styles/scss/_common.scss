@@ -128,23 +128,50 @@ h6,
 }
 
 // Hero title for identidade-visual page - uses CSS for responsive to avoid CLS
+// NOTA: Este título tem 3 linhas de texto, então precisa ser menor que o da home
 .mil-hero-title-identidade {
-    font-size: 80px;
-    line-height: 1.1;
+    font-size: clamp(26px, 3.5vw, 52px); // Reduzido para caber 3 linhas
+    line-height: 1.15;
     padding: 0;
 
-    @media screen and (max-width: 1199px) {
-        font-size: 64px;
+    @media screen and (max-width: 1799px) and (min-width: 1200px) {
+        font-size: clamp(32px, 3.5vw, 46px); // Reduzido para MacBooks
     }
 
-    @media screen and (max-width: 1023px) {
-        font-size: 48px;
-        line-height: 1.15;
+    @media screen and (max-width: 1199px) {
+        font-size: clamp(28px, 4.5vw, 42px);
     }
 
     @media screen and (max-width: 767px) {
-        font-size: 32px;
+        font-size: 26px;
         line-height: 1.2;
+        padding: 0 15px;
+    }
+}
+
+// Hero title for index page - fluid scaling with clamp()
+.mil-hero-title-home {
+    // clamp(min, preferred, max) - escala fluidamente entre min e max
+    font-size: clamp(47px, 5.5vw, 92px);
+    font-weight: 600;
+    text-align: center;
+    color: rgba(32, 33, 36, 1);
+    margin: 0;
+    line-height: 1.1;
+
+    // Ajuste para laptops médios (1200-1600px) - evita texto cortado no MacBook
+    @media screen and (max-width: 1799px) and (min-width: 1200px) {
+        font-size: clamp(56px, 5vw, 76px);
+    }
+
+    // Tablets grandes e laptops pequenos
+    @media screen and (max-width: 1199px) {
+        font-size: clamp(48px, 6vw, 68px);
+    }
+
+    // Mobile
+    @media screen and (max-width: 767px) {
+        font-size: 42px;
         padding: 0 15px;
     }
 }
