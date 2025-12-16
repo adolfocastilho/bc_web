@@ -5,7 +5,7 @@
     ]
   },
   "app": {
-    "/Users/adolfo/Desktop/bc_web/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[1].oneOf[3].use[1]!/Users/adolfo/Desktop/bc_web/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[1].oneOf[3].use[2]!/Users/adolfo/Desktop/bc_web/node_modules/next/font/google/target.css?{\"path\":\"src/pages/_app.js\",\"import\":\"Outfit\",\"arguments\":[{\"subsets\":[\"latin\"],\"variable\":\"--font-outfit\",\"display\":\"swap\"}],\"variableName\":\"outfit\"}": [
+    "/Users/adolfo/Desktop/bc_web/node_modules/next/font/google/target.css?{\"path\":\"src/pages/_app.js\",\"import\":\"Outfit\",\"arguments\":[{\"subsets\":[\"latin\"],\"variable\":\"--font-outfit\",\"display\":\"swap\"}],\"variableName\":\"outfit\"}": [
       "static/media/7b0b24f36b1a6d0b-s.p.woff2"
     ]
   },

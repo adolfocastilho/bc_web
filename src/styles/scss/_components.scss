@@ -242,19 +242,47 @@ frame
         display: none;
     }
 
+    // Em telas menores, reduz o padding inferior para empurrar ícones mais para baixo
+    @media screen and (max-height: 800px) {
+        padding: 90px 0 50px 0;
+    }
+
+    @media screen and (max-height: 700px) {
+        padding: 90px 0 30px 0;
+    }
+
     & .mil-page-name {
         width: 600px;
         transform: rotate(-90deg) translateX(-240px);
         text-align: right;
         color: $panel-text-color;
         white-space: nowrap;
+        font-size: 12px;
+        letter-spacing: 2px;
+        font-weight: 600;
+
+        // Em telas com altura menor, compactar texto reduzindo letter-spacing e font-weight
+        @media screen and (max-height: 800px) {
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        @media screen and (max-height: 750px) {
+            letter-spacing: 0.5px;
+            font-weight: 400;
+        }
+
+        @media screen and (max-height: 700px) {
+            letter-spacing: 0px;
+            font-weight: 400;
+        }
     }
 
     & .mil-social-icons {
         display: flex;
         flex-direction: column;
 
-        & li {
+        li {
             list-style-type: none;
             margin-bottom: 10px;
 
@@ -262,8 +290,8 @@ frame
                 margin-bottom: 0;
             }
 
-            & a {
-                font-size: 16åpx;
+            a {
+                font-size: 16px;
                 color: $panel-text-color;
                 transition: $t-sm;
 
@@ -802,11 +830,11 @@ content banner
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: clamp(15px, 2vw, 30px); // Espaçamento fluido entre elementos
+    gap: clamp(15px, 2vw, 30px);
 
     & .mil-banner-top {
         position: relative;
-        height: clamp(80px, 9vw, 130px); // Escalamento fluido
+        height: clamp(80px, 9vw, 130px);
         width: 1px;
         background-color: $gs-10;
 
@@ -823,7 +851,6 @@ content banner
     }
 
     @media screen and (max-width: 992px) {
-
         width: 100%;
 
         & .mil-banner-top {
@@ -831,11 +858,28 @@ content banner
         }
     }
 
+    // Desktop com altura menor (MacBook Air, etc) - reduz proporcionalmente
+    @media screen and (max-height: 800px) and (min-width: 993px) {
+        gap: 15px;
+
+        & .mil-banner-top {
+            height: 60px;
+        }
+    }
+
+    @media screen and (max-height: 700px) and (min-width: 993px) {
+        gap: 10px;
+
+        & .mil-banner-top {
+            height: 40px;
+        }
+    }
+
     @media screen and (max-height: 750px) {
-        min-height: 100vh; // Changed from height: auto to ensure scroll circle is visible
+        min-height: 100vh;
 
         & .mil-banner-title {
-            padding: 20px 0; // Reduced from 30px to give more space for scroll circle
+            padding: 20px 0;
 
             & h1 {
                 @media screen and (max-width: 768px) {
@@ -848,12 +892,20 @@ content banner
     }
 
     & .mil-hero-icon {
-        // Escalamento fluido - ainda menor no MacBook
         width: clamp(60px, 8vw, 140px);
         height: auto;
 
         @media screen and (max-width: 992px) {
             display: none;
+        }
+
+        // Desktop com altura menor - reduz ícone
+        @media screen and (max-height: 800px) and (min-width: 993px) {
+            width: clamp(50px, 7vw, 100px);
+        }
+
+        @media screen and (max-height: 700px) and (min-width: 993px) {
+            width: clamp(40px, 6vw, 80px);
         }
     }
 }
@@ -907,10 +959,18 @@ about
     border-top-right-radius: 200px;
     border-top-left-radius: 200px;
 
-    // Commented out to prevent hiding the scroll element
-    // @media screen and (max-height: 750px) {
-    //     display: none;
-    // }
+    // Desktop com altura menor - reduz oval-frame
+    @media screen and (max-height: 800px) and (min-width: 993px) {
+        width: clamp(100px, 10vw, 140px);
+        height: clamp(130px, 13vw, 180px);
+        padding-top: 10px;
+    }
+
+    @media screen and (max-height: 700px) and (min-width: 993px) {
+        width: clamp(80px, 8vw, 110px);
+        height: clamp(100px, 10vw, 140px);
+        padding-top: 8px;
+    }
 }
 
 .mil-oval-frame-2 {
@@ -928,11 +988,35 @@ about
         border-radius: 50%;
     }
 
+    // Desktop com altura menor - reduz oval-frame-2 (mesmo tamanho que oval-frame)
+    @media screen and (max-height: 800px) and (min-width: 993px) {
+        width: clamp(100px, 10vw, 140px);
+        height: clamp(100px, 10vw, 140px);
+        padding-bottom: 10px;
+    }
+
+    @media screen and (max-height: 700px) and (min-width: 993px) {
+        width: clamp(80px, 8vw, 110px);
+        height: clamp(80px, 8vw, 110px);
+        padding-bottom: 8px;
+    }
+
     & img {
         margin-top: auto;
         width: clamp(85px, 8.5vw, 120px);
         height: clamp(85px, 8.5vw, 120px);
         border-radius: 50%;
+
+        // Desktop com altura menor - reduz imagem
+        @media screen and (max-height: 800px) and (min-width: 993px) {
+            width: clamp(70px, 7vw, 95px);
+            height: clamp(70px, 7vw, 95px);
+        }
+
+        @media screen and (max-height: 700px) and (min-width: 993px) {
+            width: clamp(55px, 5.5vw, 75px);
+            height: clamp(55px, 5.5vw, 75px);
+        }
     }
 }
 
@@ -1103,6 +1187,17 @@ circle text
     width: clamp(90px, 9vw, 130px);
     height: clamp(90px, 9vw, 130px);
 
+    // Desktop com altura menor - reduz circle-text
+    @media screen and (max-height: 800px) and (min-width: 993px) {
+        width: clamp(70px, 7vw, 100px);
+        height: clamp(70px, 7vw, 100px);
+    }
+
+    @media screen and (max-height: 700px) and (min-width: 993px) {
+        width: clamp(55px, 5.5vw, 75px);
+        height: clamp(55px, 5.5vw, 75px);
+    }
+
     & .mil-ct-svg {
         transform: scale(2);
         width: clamp(100px, 10vw, 140px);
@@ -1114,6 +1209,17 @@ circle text
             font-size: clamp(10px, 0.8vw, 12px);
             font-weight: 500;
             transition: $t-md;
+        }
+
+        // Desktop com altura menor - reduz SVG
+        @media screen and (max-height: 800px) and (min-width: 993px) {
+            width: clamp(80px, 8vw, 110px);
+            height: clamp(80px, 8vw, 110px);
+        }
+
+        @media screen and (max-height: 700px) and (min-width: 993px) {
+            width: clamp(60px, 6vw, 85px);
+            height: clamp(60px, 6vw, 85px);
         }
     }
 
@@ -1144,6 +1250,19 @@ circle text
 
                 transform: rotate(90deg);
             }
+        }
+
+        // Desktop com altura menor - reduz botão
+        @media screen and (max-height: 800px) and (min-width: 993px) {
+            height: clamp(45px, 4.5vw, 60px);
+            width: clamp(45px, 4.5vw, 60px);
+            border-width: clamp(8px, 0.8vw, 12px);
+        }
+
+        @media screen and (max-height: 700px) and (min-width: 993px) {
+            height: clamp(35px, 3.5vw, 50px);
+            width: clamp(35px, 3.5vw, 50px);
+            border-width: clamp(6px, 0.6vw, 10px);
         }
     }
 }
