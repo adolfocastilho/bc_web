@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import { FaQuoteLeft, FaPaintBrush, FaPalette, FaFont, FaStar, FaLayerGroup, FaBook, FaFileAlt, FaRocket, FaChevronDown, FaAward, FaCheckCircle, FaPlus, FaSearch, FaBox, FaUserTie, FaBuilding, FaChartLine, FaStethoscope, FaShieldAlt, FaFlag, FaBriefcase, FaUserCog, FaBullseye, FaGlobeAmericas, FaCertificate, FaQuestionCircle, FaShoppingCart, FaPlane, FaCar, FaKey, FaTooth, FaMedkit, FaTimes, FaExternalLinkAlt, FaEye } from "react-icons/fa";
+import { FaQuoteLeft, FaPaintBrush, FaPalette, FaFont, FaStar, FaLayerGroup, FaBook, FaFileAlt, FaRocket, FaChevronDown, FaAward, FaCheckCircle, FaPlus, FaSearch, FaBox, FaUserTie, FaBuilding, FaChartLine, FaStethoscope, FaShieldAlt, FaFlag, FaBriefcase, FaUserCog, FaBullseye, FaGlobeAmericas, FaCertificate, FaQuestionCircle, FaShoppingCart, FaPlane, FaCar, FaKey, FaTooth, FaMedkit, FaTimes, FaExternalLinkAlt, FaEye, FaCoffee } from "react-icons/fa";
 import ExportedImage from "@components/common/ExportedImage";
 import RecognitionSection from "@components/sections/Recognition";
 
@@ -772,6 +772,38 @@ const AboutCriacaoDeSites = () => {
                             </button>
                             <div className={`mil-accordion-content ${expandedCaseIndex === 6 ? 'mil-show' : ''}`}>
                                 <p>Criamos o site institucional da Clínica Donum, focado em apresentação de serviços de saúde, credibilidade profissional e facilidade de agendamento. O conteúdo foi estruturado para SEO local, com navegação simples, CTAs claros e excelente experiência no mobile, transformando o site em um canal ativo de geração de contatos e consultas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Cafecto */}
+                    <div className={`mil-process-step mil-up mil-accordion-item ${expandedCaseIndex === 7 ? 'mil-expanded' : ''}`}>
+                        <div className="mil-step-number" onClick={() => toggleCase(7)} style={{ cursor: 'pointer' }}><FaCoffee /></div>
+                        <div className="mil-step-content">
+                            <button
+                                className="mil-accordion-header"
+                                onClick={() => toggleCase(7)}
+                                aria-expanded={expandedCaseIndex === 7}
+                            >
+                                <h3>Cafecto</h3>
+                                <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 7 ? 'mil-rotated' : ''}`} />
+                            </button>
+                            <p className="mil-accordion-summary" onClick={() => toggleCase(7)} style={{ cursor: 'pointer' }}>Criação de site institucional para cafeteria, com foco em posicionamento de marca, experiência e presença local.</p>
+                            <button
+                                type="button"
+                                className="mil-project-access-btn"
+                                onClick={() => openModal(
+                                    '/img/portfolio/sites/projetos/desktop-criacao-de-site-bechange-cafecto.webp',
+                                    'Cafecto',
+                                    'https://cafecto.com.br/',
+                                    '/img/portfolio/sites/projetos/mobile-criacao-de-site-bechange-cafecto.webp'
+                                )}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <FaEye style={{ marginRight: '8px' }} /> Acessar projeto
+                            </button>
+                            <div className={`mil-accordion-content ${expandedCaseIndex === 7 ? 'mil-show' : ''}`}>
+                                <p>Desenvolvemos o site institucional da Cafecto, cafeteria focada em cafés artesanais, brunch e experiência de consumo no ambiente físico. O projeto foi estruturado para transmitir a identidade da marca, apresentar cardápio e conceito de forma clara e atrativa, além de facilitar o contato e a visita presencial. Trabalhamos organização de conteúdo, SEO local, performance e navegação mobile first, reforçando a percepção profissional da marca e apoiando ações de divulgação digital.</p>
                             </div>
                         </div>
                     </div>
