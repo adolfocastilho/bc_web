@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import { FaQuoteLeft, FaPaintBrush, FaPalette, FaFont, FaStar, FaLayerGroup, FaBook, FaFileAlt, FaRocket, FaChevronDown, FaAward, FaCheckCircle, FaPlus, FaSearch, FaBox, FaUserTie, FaBuilding, FaChartLine, FaStethoscope, FaShieldAlt, FaFlag, FaBriefcase, FaUserCog, FaBullseye, FaGlobeAmericas, FaCertificate, FaQuestionCircle, FaShoppingCart, FaPlane, FaCar, FaKey, FaTooth, FaMedkit, FaTimes, FaExternalLinkAlt } from "react-icons/fa";
+import { FaQuoteLeft, FaPaintBrush, FaPalette, FaFont, FaStar, FaLayerGroup, FaBook, FaFileAlt, FaRocket, FaChevronDown, FaAward, FaCheckCircle, FaPlus, FaSearch, FaBox, FaUserTie, FaBuilding, FaChartLine, FaStethoscope, FaShieldAlt, FaFlag, FaBriefcase, FaUserCog, FaBullseye, FaGlobeAmericas, FaCertificate, FaQuestionCircle, FaShoppingCart, FaPlane, FaCar, FaKey, FaTooth, FaMedkit, FaTimes, FaExternalLinkAlt, FaEye } from "react-icons/fa";
 import ExportedImage from "@components/common/ExportedImage";
 import RecognitionSection from "@components/sections/Recognition";
 
@@ -566,16 +566,16 @@ const AboutCriacaoDeSites = () => {
                             <p className="mil-accordion-summary" onClick={() => toggleCase(0)} style={{ cursor: 'pointer' }}>Criação de site institucional para empresa de consultoria regulatória, com foco em SEO, autoridade técnica e geração de leads B2B.</p>
                             <button
                                 type="button"
-                                className="mil-accordion-link"
+                                className="mil-project-access-btn"
                                 onClick={() => openModal(
                                     '/img/portfolio/sites/projetos/desktop-criacao-de-site-bechange-pharmove.webp',
                                     'Pharmove',
                                     'https://pharmove.com.br/',
-                                    '/img/portfolio/sites/projetos/criacao-de-site-bechange-pharmove.webp'
+                                    '/img/portfolio/sites/projetos/mobile-criacao-de-site-bechange-pharmove.webp'
                                 )}
                                 style={{ cursor: 'pointer' }}
                             >
-                                Acessar projeto →
+                                <FaEye style={{ marginRight: '8px' }} /> Acessar projeto
                             </button>
                             <div className={`mil-accordion-content ${expandedCaseIndex === 0 ? 'mil-show' : ''}`}>
                                 <p>Criamos o site institucional da Pharmove, empresa especializada em consultoria, importação, registro, nacionalização e logística de produtos regulados no Brasil. A estrutura do site foi pensada para transmitir autoridade técnica, apresentar serviços regulatórios de forma clara e facilitar o contato comercial. Aplicamos SEO on page, organização de conteúdo e CTAs estratégicos para transformar visitas qualificadas em oportunidades reais de negócio.</p>
@@ -597,7 +597,19 @@ const AboutCriacaoDeSites = () => {
                                 <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 1 ? 'mil-rotated' : ''}`} />
                             </button>
                             <p className="mil-accordion-summary" onClick={() => toggleCase(1)} style={{ cursor: 'pointer' }}>Desenvolvimento de site médico profissional voltado a posicionamento, confiança e agendamento de consultas.</p>
-                            <a href="https://alexanderjsaliba.med.br/" target="_blank" rel="noopener noreferrer" className="mil-accordion-link">Acessar projeto →</a>
+                            <button
+                                type="button"
+                                className="mil-project-access-btn"
+                                onClick={() => openModal(
+                                    '/img/portfolio/sites/projetos/desktop-criacao-de-site-bechange-saliba.webp',
+                                    'Dr. Alexander J. Saliba',
+                                    'https://alexanderjsaliba.med.br/',
+                                    '/img/portfolio/sites/projetos/mobile-criacao-de-site-bechange-saliba.webp'
+                                )}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <FaEye style={{ marginRight: '8px' }} /> Acessar projeto
+                            </button>
                             <div className={`mil-accordion-content ${expandedCaseIndex === 1 ? 'mil-show' : ''}`}>
                                 <p>Desenvolvemos o site profissional do Dr. Alexander J. Saliba, médico especialista em homeopatia, com foco em reforçar credibilidade, explicar tratamentos e facilitar o agendamento de consultas. O site foi estruturado para funcionar bem no Google e no mobile, com SEO técnico, conteúdo educativo e chamadas claras para contato, apoiando tanto buscas orgânicas quanto campanhas de tráfego pago.</p>
                             </div>
@@ -617,7 +629,19 @@ const AboutCriacaoDeSites = () => {
                                 <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 2 ? 'mil-rotated' : ''}`} />
                             </button>
                             <p className="mil-accordion-summary" onClick={() => toggleCase(2)} style={{ cursor: 'pointer' }}>Site institucional para empresa de serviços com drones, estruturado para SEO e conversão em pedidos de orçamento.</p>
-                            <a href="https://vbcdrones.com.br/" target="_blank" rel="noopener noreferrer" className="mil-accordion-link">Acessar projeto →</a>
+                            <button
+                                type="button"
+                                className="mil-project-access-btn"
+                                onClick={() => openModal(
+                                    '/img/portfolio/sites/projetos/desktop-criacao-de-site-bechange-vbc-drones.webp',
+                                    'VBC Drones',
+                                    'https://vbcdrones.com.br/',
+                                    '/img/portfolio/sites/projetos/mobile-criacao-de-site-bechange-vbc-drones.webp'
+                                )}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <FaEye style={{ marginRight: '8px' }} /> Acessar projeto
+                            </button>
                             <div className={`mil-accordion-content ${expandedCaseIndex === 2 ? 'mil-show' : ''}`}>
                                 <p>Criamos um site institucional para a VBC Drones, empresa que atua com serviços profissionais de drones para inspeções, mapeamentos e aplicações técnicas. O conteúdo foi organizado por tipo de serviço, com páginas explicativas e foco em solicitação de orçamento. A estrutura de SEO e performance foi pensada para capturar buscas de alta intenção e sustentar campanhas de Google Ads com melhor taxa de conversão.</p>
                             </div>
@@ -637,7 +661,19 @@ const AboutCriacaoDeSites = () => {
                                 <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 3 ? 'mil-rotated' : ''}`} />
                             </button>
                             <p className="mil-accordion-summary" onClick={() => toggleCase(3)} style={{ cursor: 'pointer' }}>Projeto de site institucional para empresa de tecnologia médica, com apresentação de soluções e suporte comercial.</p>
-                            <a href="https://www.animedbrasil.com.br/" target="_blank" rel="noopener noreferrer" className="mil-accordion-link">Acessar projeto →</a>
+                            <button
+                                type="button"
+                                className="mil-project-access-btn"
+                                onClick={() => openModal(
+                                    '/img/portfolio/sites/projetos/desktop-criacao-de-site-bechange-Animed.webp',
+                                    'AnimeD Brasil',
+                                    'https://www.animedbrasil.com.br/',
+                                    '/img/portfolio/sites/projetos/mobile-criacao-de-site-bechange-Animed.webp'
+                                )}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <FaEye style={{ marginRight: '8px' }} /> Acessar projeto
+                            </button>
                             <div className={`mil-accordion-content ${expandedCaseIndex === 3 ? 'mil-show' : ''}`}>
                                 <p>Desenvolvemos o site institucional da AnimeD Brasil, empresa voltada à tecnologia médica e soluções ortopédicas. O projeto priorizou apresentação clara do portfólio, missão, diferenciais e informações técnicas para médicos e parceiros. A navegação foi organizada para facilitar entendimento rápido e contato, com base sólida de SEO on page para fortalecer presença digital no setor médico.</p>
                             </div>
@@ -657,7 +693,19 @@ const AboutCriacaoDeSites = () => {
                                 <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 4 ? 'mil-rotated' : ''}`} />
                             </button>
                             <p className="mil-accordion-summary" onClick={() => toggleCase(4)} style={{ cursor: 'pointer' }}>Criação de site para locadora de veículos premium, com foco em performance, SEO e conversão via WhatsApp.</p>
-                            <a href="https://locapremium.com.br/" target="_blank" rel="noopener noreferrer" className="mil-accordion-link">Acessar projeto →</a>
+                            <button
+                                type="button"
+                                className="mil-project-access-btn"
+                                onClick={() => openModal(
+                                    '/img/portfolio/sites/projetos/desktop-criacao-de-site-bechange-locapremium.webp',
+                                    'Loca Premium',
+                                    'https://locapremium.com.br/',
+                                    '/img/portfolio/sites/projetos/mobile-criacao-de-site-bechange-locapremium.webp'
+                                )}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <FaEye style={{ marginRight: '8px' }} /> Acessar projeto
+                            </button>
                             <div className={`mil-accordion-content ${expandedCaseIndex === 4 ? 'mil-show' : ''}`}>
                                 <p>Criamos o site da Loca Premium, empresa especializada em locação de veículos premium. A estrutura foi desenhada para apresentar frota, serviços e diferenciais, com foco total em conversão via WhatsApp e formulário. O site foi otimizado para mobile, velocidade e SEO, capturando buscas comerciais relacionadas a aluguel de carros premium e apoiando campanhas de tráfego pago.</p>
                             </div>
@@ -677,7 +725,19 @@ const AboutCriacaoDeSites = () => {
                                 <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 5 ? 'mil-rotated' : ''}`} />
                             </button>
                             <p className="mil-accordion-summary" onClick={() => toggleCase(5)} style={{ cursor: 'pointer' }}>Desenvolvimento de plataforma digital para conexão entre profissionais de segurança eletrônica e clientes.</p>
-                            <a href="https://senhorportao.com.br/" target="_blank" rel="noopener noreferrer" className="mil-accordion-link">Acessar projeto →</a>
+                            <button
+                                type="button"
+                                className="mil-project-access-btn"
+                                onClick={() => openModal(
+                                    '/img/portfolio/sites/projetos/desktop-criacao-de-site-bechange-senhor-portao.webp',
+                                    'Senhor Portão',
+                                    'https://senhorportao.com.br/',
+                                    '/img/portfolio/sites/projetos/mobile-criacao-de-site-bechange-senhor-portao.webp'
+                                )}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <FaEye style={{ marginRight: '8px' }} /> Acessar projeto
+                            </button>
                             <div className={`mil-accordion-content ${expandedCaseIndex === 5 ? 'mil-show' : ''}`}>
                                 <p>Desenvolvemos o site da Senhor Portão, plataforma que conecta profissionais de segurança eletrônica a clientes. O projeto teve foco em conversão para cadastro, explicação clara da proposta da plataforma e apresentação dos benefícios para profissionais e usuários finais. A estrutura foi pensada para SEO e campanhas, com CTAs bem distribuídos e páginas orientadas à ação.</p>
                             </div>
@@ -697,7 +757,19 @@ const AboutCriacaoDeSites = () => {
                                 <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 6 ? 'mil-rotated' : ''}`} />
                             </button>
                             <p className="mil-accordion-summary" onClick={() => toggleCase(6)} style={{ cursor: 'pointer' }}>Site institucional para clínica de saúde, com foco em SEO local, experiência do usuário e agendamentos.</p>
-                            <a href="https://clinicadonum.com.br/" target="_blank" rel="noopener noreferrer" className="mil-accordion-link">Acessar projeto →</a>
+                            <button
+                                type="button"
+                                className="mil-project-access-btn"
+                                onClick={() => openModal(
+                                    '/img/portfolio/sites/projetos/desktop-criacao-de-site-bechange-clinica-donum.webp',
+                                    'Clínica Donum',
+                                    'https://clinicadonum.com.br/',
+                                    '/img/portfolio/sites/projetos/mobile-criacao-de-site-bechange-clinica-donum.webp'
+                                )}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <FaEye style={{ marginRight: '8px' }} /> Acessar projeto
+                            </button>
                             <div className={`mil-accordion-content ${expandedCaseIndex === 6 ? 'mil-show' : ''}`}>
                                 <p>Criamos o site institucional da Clínica Donum, focado em apresentação de serviços de saúde, credibilidade profissional e facilidade de agendamento. O conteúdo foi estruturado para SEO local, com navegação simples, CTAs claros e excelente experiência no mobile, transformando o site em um canal ativo de geração de contatos e consultas.</p>
                             </div>
