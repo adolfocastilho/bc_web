@@ -2313,6 +2313,166 @@ accordion
 
 /* -------------------------------------------
 
+process-step accordion (for client cases)
+
+------------------------------------------- */
+.mil-process-step.mil-accordion-item {
+    .mil-step-content {
+        .mil-accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            margin-bottom: 10px;
+
+            h3 {
+                margin: 0;
+                text-align: left;
+            }
+
+            .mil-accordion-icon {
+                flex-shrink: 0;
+                transition: transform 0.3s ease;
+                color: $accent;
+                font-size: 14px;
+                margin-left: 15px;
+
+                &.mil-rotated {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .mil-accordion-summary {
+            margin-bottom: 10px;
+            color: $dt-50;
+        }
+
+        .mil-accordion-link {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 500;
+            color: $accent;
+            text-decoration: none;
+            transition: color 0.2s ease, transform 0.2s ease;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            pointer-events: auto;
+
+            &:hover {
+                color: $dark;
+                transform: translateX(5px);
+            }
+        }
+
+        .mil-accordion-content {
+            height: 0 !important;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease, height 0.3s ease;
+            opacity: 0;
+            margin-top: 0;
+
+            &.mil-show {
+                height: auto !important;
+                max-height: 500px !important;
+                opacity: 1 !important;
+                margin-top: 15px;
+                overflow: visible;
+            }
+
+            p {
+                color: $dt-50;
+                margin: 0;
+                padding-top: 15px;
+                border-top: 1px solid $gs-10;
+            }
+        }
+    }
+
+    &.mil-expanded {
+        .mil-step-number {
+            background-color: $accent;
+            color: $light;
+        }
+    }
+}
+
+/* -------------------------------------------
+
+Project Preview Modal
+
+------------------------------------------- */
+.mil-modal-close-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10000000;
+    border: none;
+    transition: all 0.2s ease;
+
+    // Desktop: white background, black X
+    background: #fff;
+    color: #000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    // Mobile: black background, yellow X
+    @media screen and (max-width: 768px) {
+        background: #000;
+        color: $accent;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.mil-modal-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    // Desktop: max 1080px width
+    @media screen and (min-width: 769px) {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    // Mobile: full width
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    picture {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+/* -------------------------------------------
+
 footer
 
 ------------------------------------------- */

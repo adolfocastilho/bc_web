@@ -13,21 +13,35 @@ const DefaultHeader = ({ extraClass }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
+      let bestMatch = null;
+      let smallestHeight = Infinity;
 
       appData.header.menu.forEach((item) => {
         if (item.link.startsWith('#')) {
           const section = document.querySelector(item.link);
           if (section) {
-            if (section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
-              setActiveLink(item.link);
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            // Check if scroll position is within this section
+            if (sectionTop <= scrollPosition && (sectionTop + sectionHeight) > scrollPosition) {
+              // Prefer the smallest (most specific) section
+              if (sectionHeight < smallestHeight) {
+                smallestHeight = sectionHeight;
+                bestMatch = item.link;
+              }
             }
           }
         } else if (item.link === '/') {
-          if (window.scrollY < 100) {
-            setActiveLink('/');
+          if (window.scrollY < 100 && !bestMatch) {
+            bestMatch = '/';
           }
         }
       });
+
+      if (bestMatch) {
+        setActiveLink(bestMatch);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -65,25 +79,23 @@ const DefaultHeader = ({ extraClass }) => {
               {navItems.map((item, key) => (
                 <li className={item.classes} key={`header-menu-item-${key}`}>
                   <a href={item.link} onClick={(e) => {
-                    // Custom scroll for anchor links
+                    // For anchor links, use native browser scroll behavior
                     if (item.link.startsWith('#')) {
                       e.preventDefault();
                       const section = document.querySelector(item.link);
                       if (section) {
-                        // Find the section title (mil-section-title) inside the section
-                        const sectionTitle = section.querySelector('.mil-section-title');
-                        const targetElement = sectionTitle || section;
-
-                        // Calculate position: 90px header + 50px offset above title
+                        // Use native scrollIntoView with offset
                         const headerHeight = 90;
-                        const offsetAboveTitle = 50;
-                        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                        const offsetPosition = elementPosition - headerHeight - offsetAboveTitle;
+                        const elementPosition = section.getBoundingClientRect().top + window.scrollY;
+                        const offsetPosition = elementPosition - headerHeight;
 
                         window.scrollTo({
                           top: offsetPosition,
                           behavior: 'smooth'
                         });
+
+                        // Update URL hash without triggering scroll
+                        history.pushState(null, '', item.link);
                       }
                     }
 

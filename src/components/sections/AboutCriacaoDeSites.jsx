@@ -1,12 +1,57 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
-import { FaQuoteLeft, FaPaintBrush, FaPalette, FaFont, FaStar, FaLayerGroup, FaBook, FaFileAlt, FaRocket, FaChevronDown, FaAward, FaCheckCircle, FaPlus, FaSearch, FaBox, FaUserTie, FaBuilding, FaChartLine, FaStethoscope, FaShieldAlt, FaFlag, FaBriefcase, FaUserCog, FaBullseye, FaGlobeAmericas, FaCertificate, FaQuestionCircle, FaShoppingCart } from "react-icons/fa";
+import { FaQuoteLeft, FaPaintBrush, FaPalette, FaFont, FaStar, FaLayerGroup, FaBook, FaFileAlt, FaRocket, FaChevronDown, FaAward, FaCheckCircle, FaPlus, FaSearch, FaBox, FaUserTie, FaBuilding, FaChartLine, FaStethoscope, FaShieldAlt, FaFlag, FaBriefcase, FaUserCog, FaBullseye, FaGlobeAmericas, FaCertificate, FaQuestionCircle, FaShoppingCart, FaPlane, FaCar, FaKey, FaTooth, FaMedkit, FaTimes, FaExternalLinkAlt } from "react-icons/fa";
 import ExportedImage from "@components/common/ExportedImage";
 import RecognitionSection from "@components/sections/Recognition";
 
 const AboutCriacaoDeSites = () => {
     const [expandedIndex, setExpandedIndex] = useState(null);
     const [expandedFaqIndex, setExpandedFaqIndex] = useState(null);
+    const [expandedCaseIndex, setExpandedCaseIndex] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modalData, setModalData] = useState({ image: '', title: '', url: '' });
+    const [mounted, setMounted] = useState(false);
+
+    // Client-side mounting for Portal
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    // ESC key handler
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === 'Escape' && modalOpen) {
+                closeModal();
+            }
+        };
+
+        if (modalOpen) {
+            document.addEventListener('keydown', handleEscape);
+            document.body.style.overflow = 'hidden';
+        }
+
+        return () => {
+            document.removeEventListener('keydown', handleEscape);
+            if (!modalOpen) {
+                document.body.style.overflow = 'auto';
+            }
+        };
+    }, [modalOpen]);
+
+    const toggleCase = (index) => {
+        setExpandedCaseIndex(expandedCaseIndex === index ? null : index);
+    };
+
+    const openModal = (image, title, url, imageMobile = null) => {
+        setModalData({ image, title, url, imageMobile: imageMobile || image });
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+        document.body.style.overflow = 'auto';
+    };
 
     const features = [
         {
@@ -128,7 +173,7 @@ const AboutCriacaoDeSites = () => {
                         Seu site não pode ser só um cartão de visitas online. Fazemos criação de sites profissionais, institucionais e landing pages com SEO desde a base, velocidade e conversão, preparados para tráfego pago. Alinhamos conteúdo, design e integrações para sua empresa atrair visitantes certos, gerar leads qualificados e fortalecer a presença digital de forma constante e mensurável.
                     </p>
                     <div className="mil-up mil-mb-30 mil-mt-60">
-                        <Link href="#portfolio" className="mil-btn mil-sm-btn mil-rounded">
+                        <Link href="#casos-de-sucesso" className="mil-btn mil-sm-btn mil-rounded">
                             <span>Ver Portfólio</span>
                         </Link>
                     </div>
@@ -448,7 +493,7 @@ const AboutCriacaoDeSites = () => {
                     <div className="mil-process-step mil-up">
                         <div className="mil-step-number">1</div>
                         <div className="mil-step-content">
-                            <h3>Fase 1 — briefing estratégico e entendimento do seu negócio</h3>
+                            <h3>Briefing estratégico e entendimento do seu negócio</h3>
                             <p>Iniciamos com uma conversa estruturada para entender o seu negócio, público alvo, serviços, diferenciais e objetivos com o site.</p>
                         </div>
                     </div>
@@ -456,7 +501,7 @@ const AboutCriacaoDeSites = () => {
                     <div className="mil-process-step mil-up">
                         <div className="mil-step-number">2</div>
                         <div className="mil-step-content">
-                            <h3>Fase 2 — definição do escopo, páginas e arquitetura de navegação</h3>
+                            <h3>Definição do escopo, páginas e arquitetura de navegação</h3>
                             <p>Com base no briefing, definimos o que será entregue — páginas, seções, funcionalidades, integrações e prazos. Dessa etapa sai o escopo claro do projeto.</p>
                         </div>
                     </div>
@@ -464,7 +509,7 @@ const AboutCriacaoDeSites = () => {
                     <div className="mil-process-step mil-up">
                         <div className="mil-step-number">3</div>
                         <div className="mil-step-content">
-                            <h3>Fase 3 — design das principais telas e aprovação visual</h3>
+                            <h3>Design das principais telas e aprovação visual</h3>
                             <p>Criamos o layout das páginas principais e apresentamos para ajustes. Essa fase garante que você aprove o visual antes de avançar para desenvolvimento.</p>
                         </div>
                     </div>
@@ -472,7 +517,7 @@ const AboutCriacaoDeSites = () => {
                     <div className="mil-process-step mil-up">
                         <div className="mil-step-number">4</div>
                         <div className="mil-step-content">
-                            <h3>Fase 4 — desenvolvimento, integrações e SEO on-page</h3>
+                            <h3>Desenvolvimento, integrações e SEO on-page</h3>
                             <p>Com o design aprovado, partimos para o desenvolvimento, configurações técnicas, integrações e implementação de SEO on-page.</p>
                         </div>
                     </div>
@@ -480,7 +525,7 @@ const AboutCriacaoDeSites = () => {
                     <div className="mil-process-step mil-up">
                         <div className="mil-step-number">5</div>
                         <div className="mil-step-content">
-                            <h3>Fase 5 — testes em dispositivos reais, ajustes e publicação</h3>
+                            <h3>Testes em dispositivos reais, ajustes e publicação</h3>
                             <p>Testamos o site em diferentes navegadores e dispositivos, corrigimos eventuais detalhes e, com tudo validado, fazemos o lançamento oficial.</p>
                         </div>
                     </div>
@@ -488,42 +533,177 @@ const AboutCriacaoDeSites = () => {
                     <div className="mil-process-step mil-up">
                         <div className="mil-step-number">6</div>
                         <div className="mil-step-content">
-                            <h3>Fase 6 — treinamento da equipe, manual e suporte inicial</h3>
+                            <h3>Treinamento da equipe, manual e suporte inicial</h3>
                             <p>Após o lançamento, treinamos a sua equipe, entregamos o manual de uso e acompanhamos o site nos primeiros momentos para garantir estabilidade.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Empresas que criaram seus sites Section */}
-            <div className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
+            {/* Empresas que criaram seus sites Section - Accordion */}
+            <div id="portfolio" className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
                 <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
                 <div className="mil-center mil-up mil-mb-30">
-                    <h2 id="casos-de-sucesso" style={{ whiteSpace: 'normal' }}>
-                        Empresas que criaram seus sites <br className="mil-mobile-br" />
-                        com a BeChange
+                    <h2 id="casos-de-sucesso" style={{ whiteSpace: 'normal', scrollMarginTop: '120px' }}>
+                        Algumas empresas que criaram seus sites <br className="mil-mobile-br" />
+                        e sistemas com a BeChange
                     </h2>
                 </div>
 
-                <h3 className="mil-up mil-center mil-mb-30">Caso 1 — clínica e consultório que aumentou os agendamentos</h3>
-                <p className="mil-up mil-section-description" style={{ marginBottom: '30px' }}>
-                    Site institucional para clínica da área de saúde, com foco em agendamento de consultas. Resultado esperado e comunicável neste espaço — aumento de agendamentos e melhoria na qualidade dos contatos recebidos.
-                </p>
+                <div className="mil-process-steps mil-mb-60">
+                    {/* Pharmove */}
+                    <div className={`mil-process-step mil-up mil-accordion-item ${expandedCaseIndex === 0 ? 'mil-expanded' : ''}`}>
+                        <div className="mil-step-number" onClick={() => toggleCase(0)} style={{ cursor: 'pointer' }}><FaMedkit /></div>
+                        <div className="mil-step-content">
+                            <button
+                                className="mil-accordion-header"
+                                onClick={() => toggleCase(0)}
+                                aria-expanded={expandedCaseIndex === 0}
+                            >
+                                <h3>Pharmove</h3>
+                                <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 0 ? 'mil-rotated' : ''}`} />
+                            </button>
+                            <p className="mil-accordion-summary" onClick={() => toggleCase(0)} style={{ cursor: 'pointer' }}>Criação de site institucional para empresa de consultoria regulatória, com foco em SEO, autoridade técnica e geração de leads B2B.</p>
+                            <button
+                                type="button"
+                                className="mil-accordion-link"
+                                onClick={() => openModal(
+                                    '/img/portfolio/sites/projetos/desktop-criacao-de-site-bechange-pharmove.webp',
+                                    'Pharmove',
+                                    'https://pharmove.com.br/',
+                                    '/img/portfolio/sites/projetos/criacao-de-site-bechange-pharmove.webp'
+                                )}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                Acessar projeto →
+                            </button>
+                            <div className={`mil-accordion-content ${expandedCaseIndex === 0 ? 'mil-show' : ''}`}>
+                                <p>Criamos o site institucional da Pharmove, empresa especializada em consultoria, importação, registro, nacionalização e logística de produtos regulados no Brasil. A estrutura do site foi pensada para transmitir autoridade técnica, apresentar serviços regulatórios de forma clara e facilitar o contato comercial. Aplicamos SEO on page, organização de conteúdo e CTAs estratégicos para transformar visitas qualificadas em oportunidades reais de negócio.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <h3 className="mil-up mil-center mil-mb-30">Caso 2 — empresa de serviços que passou a gerar leads todos os meses</h3>
-                <p className="mil-up mil-section-description" style={{ marginBottom: '30px' }}>
-                    Empresa de serviços B2B com site antigo que não gerava retorno. Após reformulação com foco em oferta clara, provas sociais e formulários estratégicos, o site passou a gerar leads qualificados todos os meses.
-                </p>
 
-                <h3 className="mil-up mil-center mil-mb-30">Caso 3 — negócio digital com landing pages para lançamentos</h3>
-                <p className="mil-up mil-section-description" style={{ marginBottom: '30px' }}>
-                    Negócio digital com lançamentos recorrentes, que precisava de landing pages consistentes e alinhadas à marca. Estruturamos páginas de captura e vendas para rodar campanhas de tráfego pago com previsibilidade maior.
-                </p>
+                    {/* Dr. Alexander J. Saliba */}
+                    <div className={`mil-process-step mil-up mil-accordion-item ${expandedCaseIndex === 1 ? 'mil-expanded' : ''}`}>
+                        <div className="mil-step-number" onClick={() => toggleCase(1)} style={{ cursor: 'pointer' }}><FaStethoscope /></div>
+                        <div className="mil-step-content">
+                            <button
+                                className="mil-accordion-header"
+                                onClick={() => toggleCase(1)}
+                                aria-expanded={expandedCaseIndex === 1}
+                            >
+                                <h3>Dr. Alexander J. Saliba</h3>
+                                <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 1 ? 'mil-rotated' : ''}`} />
+                            </button>
+                            <p className="mil-accordion-summary" onClick={() => toggleCase(1)} style={{ cursor: 'pointer' }}>Desenvolvimento de site médico profissional voltado a posicionamento, confiança e agendamento de consultas.</p>
+                            <a href="https://alexanderjsaliba.med.br/" target="_blank" rel="noopener noreferrer" className="mil-accordion-link">Acessar projeto →</a>
+                            <div className={`mil-accordion-content ${expandedCaseIndex === 1 ? 'mil-show' : ''}`}>
+                                <p>Desenvolvemos o site profissional do Dr. Alexander J. Saliba, médico especialista em homeopatia, com foco em reforçar credibilidade, explicar tratamentos e facilitar o agendamento de consultas. O site foi estruturado para funcionar bem no Google e no mobile, com SEO técnico, conteúdo educativo e chamadas claras para contato, apoiando tanto buscas orgânicas quanto campanhas de tráfego pago.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <h3 className="mil-up mil-center mil-mb-30">Ver mais projetos no portfólio BeChange</h3>
-                <p className="mil-up mil-section-description" style={{ marginBottom: '0' }}>
-                    Bloco com link para o portfólio completo da BeChange, com projetos de identidade visual, sites institucionais, landing pages e materiais digitais.
-                </p>
+                    {/* VBC Drones */}
+                    <div className={`mil-process-step mil-up mil-accordion-item ${expandedCaseIndex === 2 ? 'mil-expanded' : ''}`}>
+                        <div className="mil-step-number" onClick={() => toggleCase(2)} style={{ cursor: 'pointer' }}><FaPlane /></div>
+                        <div className="mil-step-content">
+                            <button
+                                className="mil-accordion-header"
+                                onClick={() => toggleCase(2)}
+                                aria-expanded={expandedCaseIndex === 2}
+                            >
+                                <h3>VBC Drones</h3>
+                                <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 2 ? 'mil-rotated' : ''}`} />
+                            </button>
+                            <p className="mil-accordion-summary" onClick={() => toggleCase(2)} style={{ cursor: 'pointer' }}>Site institucional para empresa de serviços com drones, estruturado para SEO e conversão em pedidos de orçamento.</p>
+                            <a href="https://vbcdrones.com.br/" target="_blank" rel="noopener noreferrer" className="mil-accordion-link">Acessar projeto →</a>
+                            <div className={`mil-accordion-content ${expandedCaseIndex === 2 ? 'mil-show' : ''}`}>
+                                <p>Criamos um site institucional para a VBC Drones, empresa que atua com serviços profissionais de drones para inspeções, mapeamentos e aplicações técnicas. O conteúdo foi organizado por tipo de serviço, com páginas explicativas e foco em solicitação de orçamento. A estrutura de SEO e performance foi pensada para capturar buscas de alta intenção e sustentar campanhas de Google Ads com melhor taxa de conversão.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* AnimeD Brasil */}
+                    <div className={`mil-process-step mil-up mil-accordion-item ${expandedCaseIndex === 3 ? 'mil-expanded' : ''}`}>
+                        <div className="mil-step-number" onClick={() => toggleCase(3)} style={{ cursor: 'pointer' }}><FaMedkit /></div>
+                        <div className="mil-step-content">
+                            <button
+                                className="mil-accordion-header"
+                                onClick={() => toggleCase(3)}
+                                aria-expanded={expandedCaseIndex === 3}
+                            >
+                                <h3>AnimeD Brasil</h3>
+                                <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 3 ? 'mil-rotated' : ''}`} />
+                            </button>
+                            <p className="mil-accordion-summary" onClick={() => toggleCase(3)} style={{ cursor: 'pointer' }}>Projeto de site institucional para empresa de tecnologia médica, com apresentação de soluções e suporte comercial.</p>
+                            <a href="https://www.animedbrasil.com.br/" target="_blank" rel="noopener noreferrer" className="mil-accordion-link">Acessar projeto →</a>
+                            <div className={`mil-accordion-content ${expandedCaseIndex === 3 ? 'mil-show' : ''}`}>
+                                <p>Desenvolvemos o site institucional da AnimeD Brasil, empresa voltada à tecnologia médica e soluções ortopédicas. O projeto priorizou apresentação clara do portfólio, missão, diferenciais e informações técnicas para médicos e parceiros. A navegação foi organizada para facilitar entendimento rápido e contato, com base sólida de SEO on page para fortalecer presença digital no setor médico.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Loca Premium */}
+                    <div className={`mil-process-step mil-up mil-accordion-item ${expandedCaseIndex === 4 ? 'mil-expanded' : ''}`}>
+                        <div className="mil-step-number" onClick={() => toggleCase(4)} style={{ cursor: 'pointer' }}><FaCar /></div>
+                        <div className="mil-step-content">
+                            <button
+                                className="mil-accordion-header"
+                                onClick={() => toggleCase(4)}
+                                aria-expanded={expandedCaseIndex === 4}
+                            >
+                                <h3>Loca Premium</h3>
+                                <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 4 ? 'mil-rotated' : ''}`} />
+                            </button>
+                            <p className="mil-accordion-summary" onClick={() => toggleCase(4)} style={{ cursor: 'pointer' }}>Criação de site para locadora de veículos premium, com foco em performance, SEO e conversão via WhatsApp.</p>
+                            <a href="https://locapremium.com.br/" target="_blank" rel="noopener noreferrer" className="mil-accordion-link">Acessar projeto →</a>
+                            <div className={`mil-accordion-content ${expandedCaseIndex === 4 ? 'mil-show' : ''}`}>
+                                <p>Criamos o site da Loca Premium, empresa especializada em locação de veículos premium. A estrutura foi desenhada para apresentar frota, serviços e diferenciais, com foco total em conversão via WhatsApp e formulário. O site foi otimizado para mobile, velocidade e SEO, capturando buscas comerciais relacionadas a aluguel de carros premium e apoiando campanhas de tráfego pago.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Senhor Portão */}
+                    <div className={`mil-process-step mil-up mil-accordion-item ${expandedCaseIndex === 5 ? 'mil-expanded' : ''}`}>
+                        <div className="mil-step-number" onClick={() => toggleCase(5)} style={{ cursor: 'pointer' }}><FaKey /></div>
+                        <div className="mil-step-content">
+                            <button
+                                className="mil-accordion-header"
+                                onClick={() => toggleCase(5)}
+                                aria-expanded={expandedCaseIndex === 5}
+                            >
+                                <h3>Senhor Portão</h3>
+                                <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 5 ? 'mil-rotated' : ''}`} />
+                            </button>
+                            <p className="mil-accordion-summary" onClick={() => toggleCase(5)} style={{ cursor: 'pointer' }}>Desenvolvimento de plataforma digital para conexão entre profissionais de segurança eletrônica e clientes.</p>
+                            <a href="https://senhorportao.com.br/" target="_blank" rel="noopener noreferrer" className="mil-accordion-link">Acessar projeto →</a>
+                            <div className={`mil-accordion-content ${expandedCaseIndex === 5 ? 'mil-show' : ''}`}>
+                                <p>Desenvolvemos o site da Senhor Portão, plataforma que conecta profissionais de segurança eletrônica a clientes. O projeto teve foco em conversão para cadastro, explicação clara da proposta da plataforma e apresentação dos benefícios para profissionais e usuários finais. A estrutura foi pensada para SEO e campanhas, com CTAs bem distribuídos e páginas orientadas à ação.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Clínica Donum */}
+                    <div className={`mil-process-step mil-up mil-accordion-item ${expandedCaseIndex === 6 ? 'mil-expanded' : ''}`}>
+                        <div className="mil-step-number" onClick={() => toggleCase(6)} style={{ cursor: 'pointer' }}><FaTooth /></div>
+                        <div className="mil-step-content">
+                            <button
+                                className="mil-accordion-header"
+                                onClick={() => toggleCase(6)}
+                                aria-expanded={expandedCaseIndex === 6}
+                            >
+                                <h3>Clínica Donum</h3>
+                                <FaChevronDown className={`mil-accordion-icon ${expandedCaseIndex === 6 ? 'mil-rotated' : ''}`} />
+                            </button>
+                            <p className="mil-accordion-summary" onClick={() => toggleCase(6)} style={{ cursor: 'pointer' }}>Site institucional para clínica de saúde, com foco em SEO local, experiência do usuário e agendamentos.</p>
+                            <a href="https://clinicadonum.com.br/" target="_blank" rel="noopener noreferrer" className="mil-accordion-link">Acessar projeto →</a>
+                            <div className={`mil-accordion-content ${expandedCaseIndex === 6 ? 'mil-show' : ''}`}>
+                                <p>Criamos o site institucional da Clínica Donum, focado em apresentação de serviços de saúde, credibilidade profissional e facilidade de agendamento. O conteúdo foi estruturado para SEO local, com navegação simples, CTAs claros e excelente experiência no mobile, transformando o site em um canal ativo de geração de contatos e consultas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {/* Para quem é a criação de sites Section */}
@@ -774,6 +954,71 @@ const AboutCriacaoDeSites = () => {
                     </Link>
                 </div>
             </div>
+
+            {/* Project Preview Modal - Using React Portal for proper z-index */}
+            {mounted && modalOpen && createPortal(
+                <div
+                    className="mil-project-modal-root"
+                    style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100vw',
+                        height: '100vh',
+                        backgroundColor: 'rgba(0, 0, 0, 0.95)',
+                        zIndex: 99999999,
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        justifyContent: 'center',
+                        overflowY: 'auto',
+                        padding: 0,
+                        boxSizing: 'border-box'
+                    }}
+                    onClick={closeModal}
+                >
+                    {/* Close Button - CSS handles responsive colors */}
+                    <button
+                        type="button"
+                        className="mil-modal-close-btn"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            closeModal();
+                        }}
+                        aria-label="Fechar"
+                    >
+                        <FaTimes />
+                    </button>
+
+                    {/* Image Container - max 800px on desktop, full width on mobile */}
+                    <div
+                        className="mil-modal-image-container"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Responsive Image - uses picture element for different sources */}
+                        {modalData.image && (
+                            <picture>
+                                {/* Mobile version (lighter quality) */}
+                                <source
+                                    media="(max-width: 768px)"
+                                    srcSet={modalData.imageMobile || modalData.image}
+                                />
+                                {/* Desktop version (higher quality) */}
+                                <img
+                                    src={modalData.image}
+                                    alt={`Screenshot do site ${modalData.title}`}
+                                    loading="lazy"
+                                    style={{
+                                        width: '100%',
+                                        height: 'auto',
+                                        display: 'block'
+                                    }}
+                                />
+                            </picture>
+                        )}
+                    </div>
+                </div>,
+                document.body
+            )}
         </section>
     );
 };
