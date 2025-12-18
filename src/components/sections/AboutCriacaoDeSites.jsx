@@ -333,213 +333,6 @@ const AboutCriacaoDeSites = () => {
                 </div>
             </div>
 
-            {/* Elementos que um site profissional precisa ter Section */}
-            <div className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
-                <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
-                <div className="mil-center mil-up mil-mb-30">
-                    <h2 id="elementos-site-profissional" style={{ whiteSpace: 'normal' }}>
-                        Elementos que um site profissional <br className="mil-mobile-br" />
-                        precisa ter
-                    </h2>
-                </div>
-
-                <div className="mil-process-steps mil-mb-60">
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">1</div>
-                        <div className="mil-step-content">
-                            <h3>Estrutura de conteúdo clara e focada em conversão</h3>
-                            <p>Começamos pela mensagem certa. Estruturamos o conteúdo para que o visitante entenda rapidamente o que você faz, para quem faz e qual problema resolve. Trabalhamos títulos fortes, subtítulos, bullets, prova social e chamadas para ação, sempre com foco em conversão e na jornada do usuário.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">2</div>
-                        <div className="mil-step-content">
-                            <h3>Layout responsivo em desktop, tablet e mobile</h3>
-                            <p>Todo o layout é pensado desde o início para funcionar bem em diferentes tamanhos de tela. Trabalhamos com grid responsivo, tipografia legível e espaçamento confortável, garantindo que a navegação seja agradável tanto no computador quanto no celular.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">3</div>
-                        <div className="mil-step-content">
-                            <h3>Criação de site com SEO desde a base técnica</h3>
-                            <p>SEO não é um item extra. Estruturamos o site com boas práticas de SEO on-page já na criação: headings organizados, URLs amigáveis, meta tags otimizadas, uso correto de palavras chave, sitemap, robots e estrutura pronta para conteúdos futuros.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">4</div>
-                        <div className="mil-step-content">
-                            <h3>Performance e velocidade otimizadas para campanhas</h3>
-                            <p>O site é desenvolvido com foco em velocidade. Otimizamos imagens, scripts e recursos para reduzir o tempo de carregamento, o que melhora tanto a experiência do usuário quanto o desempenho em campanhas de tráfego pago e posições no Google.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">5</div>
-                        <div className="mil-step-content">
-                            <h3>Segurança, certificados e boas práticas de desenvolvimento</h3>
-                            <p>Configuramos HTTPS, certificados de segurança e boas práticas de desenvolvimento para reduzir riscos e transmitir confiança ao usuário. Isso é fundamental para formulários, dados sensíveis e e-commerce.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">6</div>
-                        <div className="mil-step-content">
-                            <h3>Integrações com WhatsApp, formulários, CRM e automações</h3>
-                            <p>Conectamos o site às ferramentas que você já usa ou pretende usar: WhatsApp, e-mail marketing, CRM, plataformas de automação, sistemas de agendamento e outras integrações necessárias para o seu modelo de negócio.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">7</div>
-                        <div className="mil-step-content">
-                            <h3>UX, acessibilidade e experiência do usuário em primeiro lugar</h3>
-                            <p>Trabalhamos com foco em UX, garantindo navegação intuitiva, hierarquia clara de informação, botões bem posicionados e leitura confortável. Também consideramos boas práticas de acessibilidade para tornar o site mais inclusivo.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* O que está incluso na criação de sites Section */}
-            <div className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
-                <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
-                <div className="mil-center mil-up mil-mb-30">
-                    <h2 id="o-que-esta-incluso" style={{ whiteSpace: 'normal' }}>
-                        O que está incluso na criação <br className="mil-mobile-br" />
-                        de sites BeChange
-                    </h2>
-                </div>
-
-                <div className="mil-process-steps mil-mb-60">
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number"><FaSearch /></div>
-                        <div className="mil-step-content">
-                            <h3>Diagnóstico inicial da presença digital da sua empresa</h3>
-                            <p>Antes de qualquer tela, fazemos um diagnóstico da sua presença atual: site existente, redes sociais, materiais de venda, marca e posicionamento. Assim, o novo site nasce alinhado com a realidade do seu negócio.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number"><FaLayerGroup /></div>
-                        <div className="mil-step-content">
-                            <h3>Arquitetura de informação e mapa de páginas do site</h3>
-                            <p>Montamos a estrutura do site em um mapa claro, definindo quais páginas serão criadas, como se conectam e qual o objetivo de cada uma. Essa etapa evita retrabalho e deixa o projeto organizado desde o início.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number"><FaPalette /></div>
-                        <div className="mil-step-content">
-                            <h3>Design exclusivo alinhado à identidade visual da marca</h3>
-                            <p>Criamos layouts personalizados, alinhados à sua identidade visual e ao posicionamento desejado. Nada de temas genéricos sem personalidade. O objetivo é que o site pareça realmente da sua empresa, e não igual a todo mundo.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number"><FaRocket /></div>
-                        <div className="mil-step-content">
-                            <h3>Desenvolvimento em plataforma profissional e escalável</h3>
-                            <p>Desenvolvemos o site em ambiente profissional, com estrutura escalável e organizada, facilitando futuras evoluções, integrações e manutenções.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number"><FaChartLine /></div>
-                        <div className="mil-step-content">
-                            <h3>Configurações completas de SEO on-page e rastreamentos</h3>
-                            <p>Já entregamos o site com SEO on-page configurado e com a base pronta para ferramentas de análise e rastreamento, como Google Analytics, Google Tag Manager, pixels de anúncios e eventos de conversão.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number"><FaShieldAlt /></div>
-                        <div className="mil-step-content">
-                            <h3>Páginas legais e LGPD — política de privacidade, termos e cookies</h3>
-                            <p>Incluímos as páginas legais essenciais — política de privacidade, termos de uso e aviso de cookies — ajustadas para o contexto da sua empresa, ajudando a adequar o site às exigências da LGPD.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number"><FaBook /></div>
-                        <div className="mil-step-content">
-                            <h3>Treinamento, manual de uso e autonomia para a sua equipe</h3>
-                            <p>Você não fica refém de ninguém para atualizar o próprio site. Entregamos um manual simples e treinamento para que a sua equipe possa trocar textos, imagens e pequenos conteúdos com segurança.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number"><FaUserCog /></div>
-                        <div className="mil-step-content">
-                            <h3>Suporte pós lançamento com acompanhamento inicial</h3>
-                            <p>Após o lançamento, acompanhamos o comportamento do site em um período inicial e oferecemos suporte para pequenos ajustes, garantindo que tudo funcione como planejado.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Como funciona o processo Section */}
-            <div className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
-                <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
-                <div className="mil-center mil-up mil-mb-30">
-                    <h2 id="como-funciona-processo" style={{ whiteSpace: 'normal' }}>
-                        Como funciona o processo de <br className="mil-mobile-br" />
-                        criação de sites BeChange
-                    </h2>
-                </div>
-
-                <div className="mil-process-steps mil-mb-60">
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">1</div>
-                        <div className="mil-step-content">
-                            <h3>Briefing estratégico e entendimento do seu negócio</h3>
-                            <p>Iniciamos com uma conversa estruturada para entender o seu negócio, público alvo, serviços, diferenciais e objetivos com o site.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">2</div>
-                        <div className="mil-step-content">
-                            <h3>Definição do escopo, páginas e arquitetura de navegação</h3>
-                            <p>Com base no briefing, definimos o que será entregue — páginas, seções, funcionalidades, integrações e prazos. Dessa etapa sai o escopo claro do projeto.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">3</div>
-                        <div className="mil-step-content">
-                            <h3>Design das principais telas e aprovação visual</h3>
-                            <p>Criamos o layout das páginas principais e apresentamos para ajustes. Essa fase garante que você aprove o visual antes de avançar para desenvolvimento.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">4</div>
-                        <div className="mil-step-content">
-                            <h3>Desenvolvimento, integrações e SEO on-page</h3>
-                            <p>Com o design aprovado, partimos para o desenvolvimento, configurações técnicas, integrações e implementação de SEO on-page.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">5</div>
-                        <div className="mil-step-content">
-                            <h3>Testes em dispositivos reais, ajustes e publicação</h3>
-                            <p>Testamos o site em diferentes navegadores e dispositivos, corrigimos eventuais detalhes e, com tudo validado, fazemos o lançamento oficial.</p>
-                        </div>
-                    </div>
-
-                    <div className="mil-process-step mil-up">
-                        <div className="mil-step-number">6</div>
-                        <div className="mil-step-content">
-                            <h3>Treinamento da equipe, manual e suporte inicial</h3>
-                            <p>Após o lançamento, treinamos a sua equipe, entregamos o manual de uso e acompanhamos o site nos primeiros momentos para garantir estabilidade.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             {/* Empresas que criaram seus sites Section - Accordion */}
             <div id="portfolio" className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
                 <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
@@ -805,6 +598,213 @@ const AboutCriacaoDeSites = () => {
                             <div className={`mil-accordion-content ${expandedCaseIndex === 7 ? 'mil-show' : ''}`}>
                                 <p>Desenvolvemos o site institucional da Cafecto, cafeteria focada em cafés artesanais, brunch e experiência de consumo no ambiente físico. O projeto foi estruturado para transmitir a identidade da marca, apresentar cardápio e conceito de forma clara e atrativa, além de facilitar o contato e a visita presencial. Trabalhamos organização de conteúdo, SEO local, performance e navegação mobile first, reforçando a percepção profissional da marca e apoiando ações de divulgação digital.</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Elementos que um site profissional precisa ter Section */}
+            <div className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
+                <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
+                <div className="mil-center mil-up mil-mb-30">
+                    <h2 id="elementos-site-profissional" style={{ whiteSpace: 'normal' }}>
+                        Elementos que um site profissional <br className="mil-mobile-br" />
+                        precisa ter
+                    </h2>
+                </div>
+
+                <div className="mil-process-steps mil-mb-60">
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">1</div>
+                        <div className="mil-step-content">
+                            <h3>Estrutura de conteúdo clara e focada em conversão</h3>
+                            <p>Começamos pela mensagem certa. Estruturamos o conteúdo para que o visitante entenda rapidamente o que você faz, para quem faz e qual problema resolve. Trabalhamos títulos fortes, subtítulos, bullets, prova social e chamadas para ação, sempre com foco em conversão e na jornada do usuário.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">2</div>
+                        <div className="mil-step-content">
+                            <h3>Layout responsivo em desktop, tablet e mobile</h3>
+                            <p>Todo o layout é pensado desde o início para funcionar bem em diferentes tamanhos de tela. Trabalhamos com grid responsivo, tipografia legível e espaçamento confortável, garantindo que a navegação seja agradável tanto no computador quanto no celular.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">3</div>
+                        <div className="mil-step-content">
+                            <h3>Criação de site com SEO desde a base técnica</h3>
+                            <p>SEO não é um item extra. Estruturamos o site com boas práticas de SEO on-page já na criação: headings organizados, URLs amigáveis, meta tags otimizadas, uso correto de palavras chave, sitemap, robots e estrutura pronta para conteúdos futuros.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">4</div>
+                        <div className="mil-step-content">
+                            <h3>Performance e velocidade otimizadas para campanhas</h3>
+                            <p>O site é desenvolvido com foco em velocidade. Otimizamos imagens, scripts e recursos para reduzir o tempo de carregamento, o que melhora tanto a experiência do usuário quanto o desempenho em campanhas de tráfego pago e posições no Google.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">5</div>
+                        <div className="mil-step-content">
+                            <h3>Segurança, certificados e boas práticas de desenvolvimento</h3>
+                            <p>Configuramos HTTPS, certificados de segurança e boas práticas de desenvolvimento para reduzir riscos e transmitir confiança ao usuário. Isso é fundamental para formulários, dados sensíveis e e-commerce.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">6</div>
+                        <div className="mil-step-content">
+                            <h3>Integrações com WhatsApp, formulários, CRM e automações</h3>
+                            <p>Conectamos o site às ferramentas que você já usa ou pretende usar: WhatsApp, e-mail marketing, CRM, plataformas de automação, sistemas de agendamento e outras integrações necessárias para o seu modelo de negócio.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">7</div>
+                        <div className="mil-step-content">
+                            <h3>UX, acessibilidade e experiência do usuário em primeiro lugar</h3>
+                            <p>Trabalhamos com foco em UX, garantindo navegação intuitiva, hierarquia clara de informação, botões bem posicionados e leitura confortável. Também consideramos boas práticas de acessibilidade para tornar o site mais inclusivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* O que está incluso na criação de sites Section */}
+            <div className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
+                <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
+                <div className="mil-center mil-up mil-mb-30">
+                    <h2 id="o-que-esta-incluso" style={{ whiteSpace: 'normal' }}>
+                        O que está incluso na criação <br className="mil-mobile-br" />
+                        de sites BeChange
+                    </h2>
+                </div>
+
+                <div className="mil-process-steps mil-mb-60">
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaSearch /></div>
+                        <div className="mil-step-content">
+                            <h3>Diagnóstico inicial da presença digital da sua empresa</h3>
+                            <p>Antes de qualquer tela, fazemos um diagnóstico da sua presença atual: site existente, redes sociais, materiais de venda, marca e posicionamento. Assim, o novo site nasce alinhado com a realidade do seu negócio.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaLayerGroup /></div>
+                        <div className="mil-step-content">
+                            <h3>Arquitetura de informação e mapa de páginas do site</h3>
+                            <p>Montamos a estrutura do site em um mapa claro, definindo quais páginas serão criadas, como se conectam e qual o objetivo de cada uma. Essa etapa evita retrabalho e deixa o projeto organizado desde o início.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaPalette /></div>
+                        <div className="mil-step-content">
+                            <h3>Design exclusivo alinhado à identidade visual da marca</h3>
+                            <p>Criamos layouts personalizados, alinhados à sua identidade visual e ao posicionamento desejado. Nada de temas genéricos sem personalidade. O objetivo é que o site pareça realmente da sua empresa, e não igual a todo mundo.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaRocket /></div>
+                        <div className="mil-step-content">
+                            <h3>Desenvolvimento em plataforma profissional e escalável</h3>
+                            <p>Desenvolvemos o site em ambiente profissional, com estrutura escalável e organizada, facilitando futuras evoluções, integrações e manutenções.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaChartLine /></div>
+                        <div className="mil-step-content">
+                            <h3>Configurações completas de SEO on-page e rastreamentos</h3>
+                            <p>Já entregamos o site com SEO on-page configurado e com a base pronta para ferramentas de análise e rastreamento, como Google Analytics, Google Tag Manager, pixels de anúncios e eventos de conversão.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaShieldAlt /></div>
+                        <div className="mil-step-content">
+                            <h3>Páginas legais e LGPD — política de privacidade, termos e cookies</h3>
+                            <p>Incluímos as páginas legais essenciais — política de privacidade, termos de uso e aviso de cookies — ajustadas para o contexto da sua empresa, ajudando a adequar o site às exigências da LGPD.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaBook /></div>
+                        <div className="mil-step-content">
+                            <h3>Treinamento, manual de uso e autonomia para a sua equipe</h3>
+                            <p>Você não fica refém de ninguém para atualizar o próprio site. Entregamos um manual simples e treinamento para que a sua equipe possa trocar textos, imagens e pequenos conteúdos com segurança.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number"><FaUserCog /></div>
+                        <div className="mil-step-content">
+                            <h3>Suporte pós lançamento com acompanhamento inicial</h3>
+                            <p>Após o lançamento, acompanhamos o comportamento do site em um período inicial e oferecemos suporte para pequenos ajustes, garantindo que tudo funcione como planejado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Como funciona o processo Section */}
+            <div className="mil-p-90-30" style={{ paddingTop: '0', paddingBottom: '60px' }}>
+                <div className="mil-divider mil-up" style={{ marginBottom: '60px' }}></div>
+                <div className="mil-center mil-up mil-mb-30">
+                    <h2 id="como-funciona-processo" style={{ whiteSpace: 'normal' }}>
+                        Como funciona o processo de <br className="mil-mobile-br" />
+                        criação de sites BeChange
+                    </h2>
+                </div>
+
+                <div className="mil-process-steps mil-mb-60">
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">1</div>
+                        <div className="mil-step-content">
+                            <h3>Briefing estratégico e entendimento do seu negócio</h3>
+                            <p>Iniciamos com uma conversa estruturada para entender o seu negócio, público alvo, serviços, diferenciais e objetivos com o site.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">2</div>
+                        <div className="mil-step-content">
+                            <h3>Definição do escopo, páginas e arquitetura de navegação</h3>
+                            <p>Com base no briefing, definimos o que será entregue — páginas, seções, funcionalidades, integrações e prazos. Dessa etapa sai o escopo claro do projeto.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">3</div>
+                        <div className="mil-step-content">
+                            <h3>Design das principais telas e aprovação visual</h3>
+                            <p>Criamos o layout das páginas principais e apresentamos para ajustes. Essa fase garante que você aprove o visual antes de avançar para desenvolvimento.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">4</div>
+                        <div className="mil-step-content">
+                            <h3>Desenvolvimento, integrações e SEO on-page</h3>
+                            <p>Com o design aprovado, partimos para o desenvolvimento, configurações técnicas, integrações e implementação de SEO on-page.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">5</div>
+                        <div className="mil-step-content">
+                            <h3>Testes em dispositivos reais, ajustes e publicação</h3>
+                            <p>Testamos o site em diferentes navegadores e dispositivos, corrigimos eventuais detalhes e, com tudo validado, fazemos o lançamento oficial.</p>
+                        </div>
+                    </div>
+
+                    <div className="mil-process-step mil-up">
+                        <div className="mil-step-number">6</div>
+                        <div className="mil-step-content">
+                            <h3>Treinamento da equipe, manual e suporte inicial</h3>
+                            <p>Após o lançamento, treinamos a sua equipe, entregamos o manual de uso e acompanhamos o site nos primeiros momentos para garantir estabilidade.</p>
                         </div>
                     </div>
                 </div>
