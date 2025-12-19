@@ -34,16 +34,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
-    ],
-    "/criacao-de-sites-institucionais-e-landing-pages": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/criacao-de-sites-institucionais-e-landing-pages.js"
-    ],
-    "/identidade-visual": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/identidade-visual.js"
     ]
   },
   "ampFirstPages": []

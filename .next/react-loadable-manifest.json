@@ -1,8 +1,4 @@
 {
-  "../components/sections/AboutCriacaoDeSites.jsx -> @components/sections/Recognition": {
-    "id": "../components/sections/AboutCriacaoDeSites.jsx -> @components/sections/Recognition",
-    "files": []
-  },
   "../components/sections/Contact.jsx -> ../common/ContactForm": {
     "id": "../components/sections/Contact.jsx -> ../common/ContactForm",
     "files": [
@@ -55,6 +51,30 @@
     "id": "../layouts/Layouts.js -> ../common/utilits",
     "files": [
       "static/chunks/src_common_utilits_js.js"
+    ]
+  },
+  "index.jsx -> @components/sections/Contact": {
+    "id": "index.jsx -> @components/sections/Contact",
+    "files": [
+      "static/chunks/src_components_sections_Contact_jsx.js"
+    ]
+  },
+  "index.jsx -> @components/sections/Portfolio": {
+    "id": "index.jsx -> @components/sections/Portfolio",
+    "files": [
+      "static/chunks/src_components_sections_Portfolio_jsx.js"
+    ]
+  },
+  "index.jsx -> @components/sections/Recognition": {
+    "id": "index.jsx -> @components/sections/Recognition",
+    "files": [
+      "static/chunks/src_components_sections_Recognition_jsx.js"
+    ]
+  },
+  "index.jsx -> @components/sections/Services": {
+    "id": "index.jsx -> @components/sections/Services",
+    "files": [
+      "static/chunks/src_components_sections_Services_jsx.js"
     ]
   }
 }

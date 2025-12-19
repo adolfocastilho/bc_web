@@ -5,12 +5,29 @@ import Head from "next/head";
 
 import { getSortedPostsData } from "@library/posts";
 
+// Seções acima do fold - carregam imediatamente (críticas para LCP)
 import HeroOneSection from "@components/sections/HeroOne";
 import AboutSection from "@components/sections/About";
-import ServicesSection from "@components/sections/Services";
-import RecognitionSection from "@components/sections/Recognition";
-import PortfolioSection from "@components/sections/Portfolio";
-import ContactSection from "@/src/components/sections/Contact";
+
+// Skeleton loader para seções lazy-loaded
+import SkeletonLoader from "@components/common/SkeletonLoader";
+
+// Seções abaixo do fold - carregam sob demanda (otimização de First Load JS)
+const ServicesSection = dynamic(() => import("@components/sections/Services"), {
+  loading: () => <SkeletonLoader height="600px" />,
+});
+
+const RecognitionSection = dynamic(() => import("@components/sections/Recognition"), {
+  loading: () => <SkeletonLoader height="400px" />,
+});
+
+const PortfolioSection = dynamic(() => import("@components/sections/Portfolio"), {
+  loading: () => <SkeletonLoader height="600px" />,
+});
+
+const ContactSection = dynamic(() => import("@components/sections/Contact"), {
+  loading: () => <SkeletonLoader height="300px" />,
+});
 
 import RecognitionData from "@data/sections/recognition.json";
 
@@ -81,8 +98,8 @@ const Home1 = (props) => {
         {/* Canonical */}
         <link rel="canonical" href="https://bechange.com.br/" />
 
-        {/* Preload hero image for better LCP */}
-        <link rel="preload" as="image" href="/img/hero/1.jpg" />
+        {/* Preload hero image for better LCP - fetchpriority high */}
+        <link rel="preload" as="image" href="/img/hero/1.jpg" fetchPriority="high" />
 
         <script
           type="application/ld+json"

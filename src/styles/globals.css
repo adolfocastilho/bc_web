@@ -7,6 +7,18 @@
     /* Estimated height to prevent layout shift */
 }
 
+/* Desktop: Seções abaixo do fold renderizam preguiçosamente */
+@media (min-width: 768px) {
+
+    #servicos,
+    #depoimentos,
+    #portfolio,
+    #contato {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 600px;
+    }
+}
+
 /* Reduce paint operations on heavy animations - DESKTOP ONLY */
 @media (min-width: 768px) {
     .mil-up {
