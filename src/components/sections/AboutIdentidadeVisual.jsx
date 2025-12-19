@@ -1,7 +1,37 @@
 import { useState } from "react";
 import Link from "next/link";
-import { FaQuoteLeft, FaPaintBrush, FaPalette, FaFont, FaStar, FaLayerGroup, FaBook, FaFileAlt, FaRocket, FaChevronDown, FaAward, FaCheckCircle, FaPlus, FaSearch, FaBox, FaUserTie, FaBuilding, FaChartLine, FaStethoscope, FaShieldAlt, FaFlag, FaBriefcase, FaUserCog, FaBullseye, FaGlobeAmericas, FaCertificate, FaQuestionCircle } from "react-icons/fa";
+
+// Importações apenas dos ícones utilizados (otimização de bundle)
+import {
+    FaQuoteLeft,
+    FaPaintBrush,
+    FaPalette,
+    FaFont,
+    FaStar,
+    FaLayerGroup,
+    FaBook,
+    FaFileAlt,
+    FaChevronDown,
+    FaAward,
+    FaCheckCircle,
+    FaPlus,
+    FaSearch,
+    FaBox,
+    FaUserTie,
+    FaBuilding,
+    FaChartLine,
+    FaStethoscope,
+    FaShieldAlt,
+    FaFlag,
+    FaBriefcase,
+    FaUserCog,
+    FaBullseye,
+    FaGlobeAmericas,
+    FaCertificate
+} from "react-icons/fa";
+
 import ExportedImage from "@components/common/ExportedImage";
+
 
 const AboutIdentidadeVisual = () => {
     const [expandedIndex, setExpandedIndex] = useState(null);
