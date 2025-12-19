@@ -1,9 +1,47 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import { FaQuoteLeft, FaPaintBrush, FaPalette, FaFont, FaStar, FaLayerGroup, FaBook, FaFileAlt, FaRocket, FaChevronDown, FaAward, FaCheckCircle, FaPlus, FaSearch, FaBox, FaUserTie, FaBuilding, FaChartLine, FaStethoscope, FaShieldAlt, FaFlag, FaBriefcase, FaUserCog, FaBullseye, FaGlobeAmericas, FaCertificate, FaQuestionCircle, FaShoppingCart, FaPlane, FaCar, FaKey, FaTooth, FaMedkit, FaTimes, FaExternalLinkAlt, FaEye, FaCoffee } from "react-icons/fa";
+import dynamic from "next/dynamic";
+
+// Importações apenas dos ícones utilizados (tree-shaking automático do Next.js)
+import {
+    FaQuoteLeft,
+    FaChevronDown,
+    FaSearch,
+    FaBuilding,
+    FaChartLine,
+    FaStethoscope,
+    FaShieldAlt,
+    FaFlag,
+    FaBriefcase,
+    FaUserCog,
+    FaBullseye,
+    FaGlobeAmericas,
+    FaShoppingCart,
+    FaPlane,
+    FaCar,
+    FaKey,
+    FaTooth,
+    FaMedkit,
+    FaTimes,
+    FaEye,
+    FaCoffee,
+    FaRocket,
+    FaPalette,
+    FaLayerGroup,
+    FaBook,
+    FaUserTie
+} from "react-icons/fa";
+
 import ExportedImage from "@components/common/ExportedImage";
-import RecognitionSection from "@components/sections/Recognition";
+import SkeletonLoader from "@components/common/SkeletonLoader";
+
+// Dynamic import para RecognitionSection (carrega sob demanda)
+const RecognitionSection = dynamic(
+    () => import("@components/sections/Recognition"),
+    { ssr: false, loading: () => <SkeletonLoader height="400px" /> }
+);
+
 
 const AboutCriacaoDeSites = () => {
     const [expandedIndex, setExpandedIndex] = useState(null);
@@ -53,53 +91,7 @@ const AboutCriacaoDeSites = () => {
         document.body.style.overflow = 'auto';
     };
 
-    const features = [
-        {
-            icon: FaPaintBrush,
-            title: 'Logotipo Profissional',
-            description: 'Criamos logotipos profissionais que comunicam valor e fortalecem a presença da sua marca no mercado. Cada logo nasce alinhado ao posicionamento da empresa para transmitir confiança desde o primeiro contato.'
-        },
-        {
-            icon: FaPalette,
-            title: 'Paleta de Cores',
-            description: 'Desenvolvemos paletas de cores consistentes que garantem identidade visual forte em todos os pontos de contato. As combinações são pensadas para reforçar personalidade, clareza e reconhecimento imediato.'
-        },
-        {
-            icon: FaFont,
-            title: 'Tipografia',
-            description: 'Selecionamos tipografias profissionais que elevam a percepção da marca e organizam a comunicação com clareza. A escolha das fontes segue critérios técnicos de leitura, impacto e coerência visual.'
-        },
-        {
-            icon: FaStar,
-            title: 'Grafismos e Elementos',
-            description: 'Criamos grafismos exclusivos que ampliam o sistema de identidade visual da sua empresa. Esses elementos ajudam a diferenciar a marca e manter consistência em materiais digitais e impressos.'
-        },
-        {
-            icon: FaAward,
-            title: 'Ícones e Selo',
-            description: 'Desenvolvemos ícones e selos profissionais que reforçam autoridade e deixam a comunicação mais clara. Cada símbolo segue o mesmo estilo do sistema visual para manter unidade em todo o design.'
-        },
-        {
-            icon: FaLayerGroup,
-            title: 'Pattern / Texturas',
-            description: 'Aplicamos patterns e texturas que dão personalidade e criam presença marcante em aplicações de marca. Esses recursos fortalecem o reconhecimento visual e tornam sua identidade mais memorável.'
-        },
-        {
-            icon: FaFileAlt,
-            title: 'Aplicações',
-            description: 'Produzimos aplicações práticas para redes sociais, site, papelaria e apresentações. A identidade visual é entregue pronta para uso, garantindo consistência e economia de tempo para a empresa.'
-        },
-        {
-            icon: FaBook,
-            title: 'Manual de Marca',
-            description: 'Entregamos um manual de marca completo com orientações claras para uso correto da identidade visual. O documento garante autonomia para sua equipe e evita erros que prejudiquem a imagem da empresa.'
-        },
-        {
-            icon: FaCheckCircle,
-            title: 'Identidade Visual Completa',
-            description: 'Criamos identidade visual completa para empresas que precisam de comunicação profissional e consistente. Todo o sistema visual é pensado para transmitir credibilidade e ajudar seu negócio a se destacar.'
-        }
-    ];
+    // Array features removido - código morto que não era utilizado
 
     const toggleExpand = (index) => {
         setExpandedIndex(expandedIndex === index ? null : index);
