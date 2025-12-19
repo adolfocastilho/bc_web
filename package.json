@@ -27,16 +27,18 @@
     "typed.js": "^2.1.0"
   },
   "browserslist": [
-    "last 2 Chrome versions",
-    "last 2 Firefox versions",
-    "last 2 Safari versions",
-    "last 2 Edge versions",
-    "not IE 11",
-    "not op_mini all"
+    "Chrome >= 90",
+    "Firefox >= 90",
+    "Safari >= 14",
+    "Edge >= 90",
+    "not dead"
   ],
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^6.0.0",
     "@next/bundle-analyzer": "^16.0.6",
     "critters": "^0.0.23",
-    "postcss": "^8.5.6"
+    "postcss": "^8.5.6",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^10.1.5"
   }
 }
