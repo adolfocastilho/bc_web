@@ -18,7 +18,7 @@ class MyDocument extends Document {
           {/* public assets end */}
           {/* public assets end */}
           {/* public assets end */}
-          <link rel="icon" href="/img/icons/icone_bechange.svg" type="image/svg+xml" />
+          <link rel="icon" href="/img/icons/favicon_bechange.svg" type="image/svg+xml" />
         </Head>
         <body>
           <Main />

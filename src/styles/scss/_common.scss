@@ -286,6 +286,14 @@ a {
     }
 }
 
+// Compact hero description for mobile - fits text in 3 lines instead of 4
+.mil-hero-description-compact {
+    @media screen and (max-width: 767px) {
+        letter-spacing: 0.5px !important;
+        word-spacing: -1px;
+    }
+}
+
 /* -------------------------------------------
 
 button
@@ -315,6 +323,11 @@ button
     &.mil-sm-btn {
         height: 70px;
         padding: 0 50px;
+
+        @media screen and (max-width: 767px) {
+            padding: 0 30px;
+            max-width: calc(100vw - 30px);
+        }
     }
 
     &:hover {

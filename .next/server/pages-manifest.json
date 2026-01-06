@@ -1,10 +1,6 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/404": "pages/404.html",
-  "/obrigado": "pages/obrigado.html",
-  "/identidade-visual": "pages/identidade-visual.js",
-  "/": "pages/index.js",
-  "/criacao-de-sites-institucionais-e-landing-pages": "pages/criacao-de-sites-institucionais-e-landing-pages.js"
+  "/_document": "pages/_document.js",
+  "/edicao-de-video-e-motion": "pages/edicao-de-video-e-motion.js"
 }
