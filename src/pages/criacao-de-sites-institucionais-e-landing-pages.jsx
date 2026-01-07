@@ -18,12 +18,12 @@ const CriacaoDeSites = (props) => {
         "@type": "Service",
         "name": "Criação de Sites Institucionais e Landing Pages - BeCHANGE",
         "description": "Criação de Sites Institucionais e Landing Pages para empresas e profissionais que querem se destacar no mercado.",
-        "url": "https://bechange.com.br/criacao-de-sites-institucionais-e-landing-pages",
+        "url": "https://www.bechange.com.br/criacao-de-sites-institucionais-e-landing-pages",
         "provider": {
             "@type": "LocalBusiness",
             "name": "BeCHANGE",
-            "image": "https://bechange.com.br/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
-            "url": "https://bechange.com.br",
+            "image": "https://www.bechange.com.br/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
+            "url": "https://www.bechange.com.br",
             "sameAs": [
                 "https://www.instagram.com/bechangecomunicacao/",
                 "https://www.linkedin.com/company/bechangecomunicacao/",
@@ -124,20 +124,20 @@ const CriacaoDeSites = (props) => {
 
                 {/* Open Graph / Facebook */}
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://bechange.com.br/criacao-de-sites-institucionais-e-landing-pages" />
+                <meta property="og:url" content="https://www.bechange.com.br/criacao-de-sites-institucionais-e-landing-pages" />
                 <meta property="og:title" content="Criação de Sites Institucionais e Landing Pages | BeCHANGE" />
                 <meta property="og:description" content="Criação de Sites Institucionais e Landing Pages para empresas e profissionais. Design profissional, responsivo e otimizado para conversão. Orçamento personalizado." />
-                <meta property="og:image" content="https://bechange.com.br/img/hero/1.jpg" />
+                <meta property="og:image" content="https://www.bechange.com.br/img/hero/1.jpg" />
 
                 {/* Twitter */}
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="https://bechange.com.br/criacao-de-sites-institucionais-e-landing-pages" />
+                <meta property="twitter:url" content="https://www.bechange.com.br/criacao-de-sites-institucionais-e-landing-pages" />
                 <meta property="twitter:title" content="Criação de Sites Institucionais e Landing Pages | BeCHANGE" />
                 <meta property="twitter:description" content="Criação de Sites Institucionais e Landing Pages para empresas e profissionais. Design profissional, responsivo e otimizado para conversão. Orçamento personalizado." />
-                <meta property="twitter:image" content="https://bechange.com.br/img/hero/1.jpg" />
+                <meta property="twitter:image" content="https://www.bechange.com.br/img/hero/1.jpg" />
 
                 {/* Canonical */}
-                <link rel="canonical" href="https://bechange.com.br/criacao-de-sites-institucionais-e-landing-pages" />
+                <link rel="canonical" href="https://www.bechange.com.br/criacao-de-sites-institucionais-e-landing-pages" />
 
                 {/* Preload hero image for better LCP */}
                 <link rel="preload" as="image" href="/img/hero/1.jpg" />

@@ -18,12 +18,12 @@ const IdentidadeVisual = (props) => {
         "@type": "Service",
         "name": "Identidade Visual - BeCHANGE",
         "description": "Criação de Identidade Visual Estratégica para empresas e profissionais que querem se destacar no mercado.",
-        "url": "https://bechange.com.br/identidade-visual",
+        "url": "https://www.bechange.com.br/identidade-visual",
         "provider": {
             "@type": "LocalBusiness",
             "name": "BeCHANGE",
-            "image": "https://bechange.com.br/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
-            "url": "https://bechange.com.br",
+            "image": "https://www.bechange.com.br/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
+            "url": "https://www.bechange.com.br",
             "sameAs": [
                 "https://www.instagram.com/bechangecomunicacao/",
                 "https://www.linkedin.com/company/bechangecomunicacao/",
@@ -124,20 +124,20 @@ const IdentidadeVisual = (props) => {
 
                 {/* Open Graph / Facebook */}
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://bechange.com.br/identidade-visual" />
+                <meta property="og:url" content="https://www.bechange.com.br/identidade-visual" />
                 <meta property="og:title" content="Identidade Visual Profissional | BeCHANGE" />
                 <meta property="og:description" content="Criação de Identidade Visual Profissional para empresas e profissionais. Logo, paleta de cores, tipografia e manual de marca completo. Orçamento personalizado." />
-                <meta property="og:image" content="https://bechange.com.br/img/hero/1.jpg" />
+                <meta property="og:image" content="https://www.bechange.com.br/img/hero/1.jpg" />
 
                 {/* Twitter */}
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="https://bechange.com.br/identidade-visual" />
+                <meta property="twitter:url" content="https://www.bechange.com.br/identidade-visual" />
                 <meta property="twitter:title" content="Identidade Visual Profissional | BeCHANGE" />
                 <meta property="twitter:description" content="Criação de Identidade Visual Profissional para empresas e profissionais. Logo, paleta de cores, tipografia e manual de marca completo. Orçamento personalizado." />
-                <meta property="twitter:image" content="https://bechange.com.br/img/hero/1.jpg" />
+                <meta property="twitter:image" content="https://www.bechange.com.br/img/hero/1.jpg" />
 
                 {/* Canonical */}
-                <link rel="canonical" href="https://bechange.com.br/identidade-visual" />
+                <link rel="canonical" href="https://www.bechange.com.br/identidade-visual" />
 
                 {/* Preload hero image for better LCP */}
                 <link rel="preload" as="image" href="/img/hero/1.jpg" />

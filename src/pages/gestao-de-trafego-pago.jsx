@@ -18,12 +18,12 @@ const GestaoDeTrafegoPago = (props) => {
         "@type": "Service",
         "name": "Gestão de Tráfego Pago Profissional | Google Ads e Meta Ads | BeChange",
         "description": "Gestão de tráfego pago focada em ROI e conversão. Especialistas em Google Ads, Facebook e Instagram Ads. Transforme investimento em vendas reais com estratégia e mensuração profissional.",
-        "url": "https://bechange.com.br/gestao-de-trafego-pago",
+        "url": "https://www.bechange.com.br/gestao-de-trafego-pago",
         "provider": {
             "@type": "LocalBusiness",
             "name": "BeCHANGE",
-            "image": "https://bechange.com.br/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
-            "url": "https://bechange.com.br",
+            "image": "https://www.bechange.com.br/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
+            "url": "https://www.bechange.com.br",
             "sameAs": [
                 "https://www.instagram.com/bechangecomunicacao/",
                 "https://www.linkedin.com/company/bechangecomunicacao/",
@@ -140,20 +140,20 @@ const GestaoDeTrafegoPago = (props) => {
 
                 {/* Open Graph / Facebook */}
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://bechange.com.br/gestao-de-trafego-pago" />
+                <meta property="og:url" content="https://www.bechange.com.br/gestao-de-trafego-pago" />
                 <meta property="og:title" content="Gestão de Tráfego Pago Profissional | Google Ads e Meta Ads | BeChange" />
                 <meta property="og:description" content="Gestão de tráfego pago focada em ROI e conversão. Especialistas em Google Ads, Facebook e Instagram Ads. Transforme investimento em vendas reais com estratégia e mensuração profissional." />
-                <meta property="og:image" content="https://bechange.com.br/img/hero/1.jpg" />
+                <meta property="og:image" content="https://www.bechange.com.br/img/hero/1.jpg" />
 
                 {/* Twitter */}
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="https://bechange.com.br/gestao-de-trafego-pago" />
+                <meta property="twitter:url" content="https://www.bechange.com.br/gestao-de-trafego-pago" />
                 <meta property="twitter:title" content="Gestão de Tráfego Pago Profissional | Google Ads e Meta Ads | BeChange" />
                 <meta property="twitter:description" content="Gestão de tráfego pago focada em ROI e conversão. Especialistas em Google Ads, Facebook e Instagram Ads. Transforme investimento em vendas reais com estratégia e mensuração profissional." />
-                <meta property="twitter:image" content="https://bechange.com.br/img/hero/1.jpg" />
+                <meta property="twitter:image" content="https://www.bechange.com.br/img/hero/1.jpg" />
 
                 {/* Canonical */}
-                <link rel="canonical" href="https://bechange.com.br/gestao-de-trafego-pago" />
+                <link rel="canonical" href="https://www.bechange.com.br/gestao-de-trafego-pago" />
 
                 {/* Preload hero image for better LCP */}
                 <link rel="preload" as="image" href="/img/hero/1.jpg" />

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ANIMATION } from "@common/constants";
 import ExportedImage from "@components/common/ExportedImage";
 
-const HeroAgentesIA = () => {
+const HeroSistemas = () => {
     const [rotation, setRotation] = useState(0);
     const [viewportSize, setViewportSize] = useState('desktop');
 
@@ -72,13 +72,13 @@ const HeroAgentesIA = () => {
                             margin: 0
                         }}
                     >
-                        Agentes de IA<br />
-                        que vendem e<br />
-                        atendem 24h
+                        Sistemas,<br />
+                        Apps Web<br />
+                        e Manutenção
                     </h1>
 
                     <p className="mil-upper mil-dark mil-up" style={{ textAlign: 'center', maxWidth: '700px' }}>
-                        Automação de processos e atendimento com inteligência artificial e linguagem humana.
+                        Desenvolvimento de sistemas e web apps sob medida para organizar processos, automatizar rotinas e garantir controle total da operação.
                     </p>
                 </div>
                 <div className="mil-up mil-oval-frame">
@@ -122,4 +122,4 @@ const HeroAgentesIA = () => {
         </>
     );
 }
-export default HeroAgentesIA;
+export default HeroSistemas;

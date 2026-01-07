@@ -43,13 +43,34 @@ const ServicesSection = () => {
                                         {item.title}
                                     </span>
                                 </h3>
-                                <p className="mil-up mil-mb-5">{item.text}</p>
+                                <p className="mil-up mil-mb-15">{item.text}</p>
                                 {item.link && item.link !== "/services/service-1" && item.link !== "/services/service-2" && item.link !== "/services/service-3" && item.link !== "/services/service-4" && item.link !== "/services/service-5" && item.link !== "/services/service-6" ? (
-                                    <Link href={item.link} className="mil-up mil-mb-30 mil-link" style={{ display: "block", fontWeight: "bold" }}>
+                                    <Link href={item.link} className="mil-up mil-mb-30 mil-link mil-details-btn" style={{
+                                        display: "inline-block",
+                                        fontWeight: "600",
+                                        backgroundColor: "#f8f8f8",
+                                        padding: "10px 19px",
+                                        borderRadius: "50px",
+                                        letterSpacing: "1px",
+                                        fontSize: "11px",
+                                        textTransform: "uppercase",
+                                        transition: "all 0.3s ease"
+                                    }}>
                                         {item.linkText || "Saiba mais..."}
                                     </Link>
                                 ) : (
-                                    <span className="mil-up mil-mb-30" style={{ display: "block", fontWeight: "bold", color: "inherit", cursor: 'default' }}>{item.linkText || "Saiba mais..."}</span>
+                                    <span className="mil-up mil-mb-30" style={{
+                                        display: "inline-block",
+                                        fontWeight: "600",
+                                        color: "#999",
+                                        cursor: 'default',
+                                        backgroundColor: "#f8f8f8",
+                                        padding: "10px 19px",
+                                        borderRadius: "50px",
+                                        letterSpacing: "1px",
+                                        fontSize: "11px",
+                                        textTransform: "uppercase"
+                                    }}>{item.linkText || "Saiba mais..."}</span>
                                 )}
                             </div>
                         </div>

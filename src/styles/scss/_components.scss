@@ -2498,7 +2498,7 @@ footer
 ------------------------------------------- */
 footer {
     position: relative;
-    height: 90px;
+    height: 110px;
     width: 100%;
     background-color: $dark;
     display: flex;
@@ -2508,7 +2508,7 @@ footer {
     &:before,
     &:after {
         content: '';
-        height: 100px;
+        height: 120px;
         width: 500px;
         background-color: $dark;
         position: absolute;
@@ -2558,6 +2558,11 @@ footer {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
+        .mil-footer-text {
+            align-items: center !important;
+            text-align: center;
+        }
     }
 }
 

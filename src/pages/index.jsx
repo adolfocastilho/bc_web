@@ -36,9 +36,9 @@ const Home1 = (props) => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "BeCHANGE",
-    "image": "https://bechange.com.br/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
+    "image": "https://www.bechange.com.br/img/person/adolfo-castilho-garcia-bechange_avatar.webp",
     "description": "Agência de Criação de Sites Profissionais e Identidade Visual Estratégica",
-    "url": "https://bechange.com.br",
+    "url": "https://www.bechange.com.br",
     "sameAs": [
       "https://www.instagram.com/bechangecomunicacao/",
       "https://www.linkedin.com/company/bechangecomunicacao/",
@@ -83,20 +83,20 @@ const Home1 = (props) => {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://bechange.com.br/" />
+        <meta property="og:url" content="https://www.bechange.com.br/" />
         <meta property="og:title" content="BecHANGE - Agência de Criação de Sites, Identidade Visual e Sistemas" />
         <meta property="og:description" content="Agência de Design e Tecnologia especialista em Identidade Visual, Criação de Sites Profissionais e Estratégias Digitais." />
-        <meta property="og:image" content="https://bechange.com.br/img/hero/1.jpg" />
+        <meta property="og:image" content="https://www.bechange.com.br/img/hero/1.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://bechange.com.br/" />
+        <meta property="twitter:url" content="https://www.bechange.com.br/" />
         <meta property="twitter:title" content="BecHANGE - Agência de Criação de Sites, Identidade Visual e Sistemas" />
         <meta property="twitter:description" content="Agência de Design e Tecnologia especialista em Identidade Visual, Criação de Sites Profissionais e Estratégias Digitais." />
-        <meta property="twitter:image" content="https://bechange.com.br/img/hero/1.jpg" />
+        <meta property="twitter:image" content="https://www.bechange.com.br/img/hero/1.jpg" />
 
         {/* Canonical */}
-        <link rel="canonical" href="https://bechange.com.br/" />
+        <link rel="canonical" href="https://www.bechange.com.br/" />
 
         {/* Preload hero image for better LCP - fetchpriority high */}
         <link rel="preload" as="image" href="/img/hero/1.jpg" fetchPriority="high" />
