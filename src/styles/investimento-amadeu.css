@@ -1,0 +1,1025 @@
+/* =============================================
+   PROPOSTA COMERCIAL — INVESTIMENTO AMADEU
+   Light Theme · Premium · WCAG AA Fonts
+   ============================================= */
+
+/* ---------- Reset & Base ---------- */
+/* Hide global layout elements on the proposal page */
+body:has(.proposta-page) .mil-left-panel,
+body:has(.proposta-page) .mil-right-panel,
+body:has(.proposta-page) .mil-header,
+body:has(.proposta-page) .mil-footer,
+body:has(.proposta-page) .mil-preloader,
+body:has(.proposta-page) .mil-back-top,
+body:has(.proposta-page) .mil-sidebar,
+body:has(.proposta-page) .mil-curtain,
+body:has(.proposta-page) .mil-frame,
+body:has(.proposta-page) .left-panel,
+body:has(.proposta-page) .right-panel,
+body:has(.proposta-page) footer:not(.proposta-footer),
+body:has(.proposta-page) header:not(.proposta-hero),
+body:has(.proposta-page) .preloader,
+body:has(.proposta-page) .back-top {
+  display: none !important;
+}
+
+body:has(.proposta-page) {
+  background: #ffffff !important;
+}
+
+.proposta-page {
+  --accent: #fbc015;
+  --accent-hover: #e5ad0e;
+  --accent-dark: #324395;
+  --accent-glow: rgba(251, 192, 21, 0.18);
+  --accent-soft: rgba(251, 192, 21, 0.08);
+  --bg-primary: #ffffff;
+  --bg-subtle: #fafafa;
+  --bg-card: #f7f7f9;
+  --bg-card-hover: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-accent: rgba(251, 192, 21, 0.35);
+  --text-primary: #1a1a2e;
+  --text-secondary: #3d3d50;
+  --text-muted: #6b6b7b;
+  --success: #0d9668;
+  --info: #4f46e5;
+  --radius: 16px;
+  --radius-sm: 10px;
+
+  margin: 0;
+  padding: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-outfit), 'Outfit', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+}
+
+.proposta-page *,
+.proposta-page *::before,
+.proposta-page *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Animated background ---------- */
+.proposta-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.proposta-bg__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.06;
+  animation: orbFloat 20s ease-in-out infinite alternate;
+}
+
+.proposta-bg__orb--1 {
+  width: 600px;
+  height: 600px;
+  background: var(--accent);
+  top: -10%;
+  left: -10%;
+}
+
+.proposta-bg__orb--2 {
+  width: 500px;
+  height: 500px;
+  background: #6366f1;
+  bottom: -15%;
+  right: -10%;
+  animation-delay: -7s;
+  animation-duration: 25s;
+}
+
+.proposta-bg__orb--3 {
+  width: 300px;
+  height: 300px;
+  background: var(--accent);
+  top: 50%;
+  left: 60%;
+  animation-delay: -14s;
+  animation-duration: 30s;
+}
+
+@keyframes orbFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(40px, -30px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+
+  100% {
+    transform: translate(30px, -10px) scale(1.02);
+  }
+}
+
+/* ---------- Container ---------- */
+.proposta-container {
+  position: relative;
+  z-index: 2;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---------- Scroll Fade Animation ---------- */
+.proposta-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.proposta-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.proposta-fade--delay-1 {
+  transition-delay: 0.1s;
+}
+
+.proposta-fade--delay-2 {
+  transition-delay: 0.2s;
+}
+
+.proposta-fade--delay-3 {
+  transition-delay: 0.3s;
+}
+
+.proposta-fade--delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* ---------- Hero ---------- */
+.proposta-hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.proposta-hero__logo {
+  display: block;
+  margin: 0 auto 36px;
+  width: 180px;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .proposta-hero__logo {
+    width: 60%;
+    max-width: 220px;
+  }
+}
+
+.proposta-hero__title {
+  font-size: clamp(38px, 5.5vw, 60px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 20px;
+  letter-spacing: -1px;
+  color: var(--text-primary);
+}
+
+.proposta-hero__title span {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.proposta-hero__subtitle {
+  font-size: 22px;
+  color: var(--text-secondary);
+  margin: 0 0 8px;
+  font-weight: 400;
+}
+
+.proposta-hero__brand {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-top: 24px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.proposta-hero__brand strong {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+/* ---------- Authority / Bio Section ---------- */
+.proposta-authority {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.proposta-authority__inner {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.proposta-authority__avatar {
+  flex-shrink: 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 4px 24px var(--accent-glow);
+}
+
+.proposta-authority__content {
+  flex: 1;
+}
+
+.proposta-authority__label {
+  font-size: 14px;
+  color: var(--accent-dark);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.proposta-authority__name {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--text-primary);
+}
+
+.proposta-authority__role {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+.proposta-authority__bio {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0 0 12px;
+}
+
+.proposta-authority__credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.proposta-authority__credential {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+  .proposta-authority__inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .proposta-authority__credentials {
+    justify-content: center;
+  }
+}
+
+/* ---------- Section ---------- */
+.proposta-section {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.proposta-section:last-child {
+  border-bottom: none;
+}
+
+/* ---------- Alternating Section Backgrounds ---------- */
+.proposta-authority,
+.proposta-page main .proposta-section:nth-child(even),
+.proposta-footer {
+  position: relative;
+}
+
+.proposta-authority::before,
+.proposta-page main .proposta-section:nth-child(even)::before,
+.proposta-page .proposta-footer::before {
+  content: '' !important;
+  display: block !important;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background: #f5f5f7;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.proposta-section__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.proposta-section__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(50, 67, 149, 0.08);
+  border: 1px solid rgba(50, 67, 149, 0.2);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.proposta-section__icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--accent-dark);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.proposta-section__title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.3px;
+  color: var(--text-primary);
+}
+
+.proposta-section__number {
+  font-size: 15px;
+  color: var(--accent-dark);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.proposta-section__desc {
+  color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0 0 32px;
+}
+
+/* ---------- Glass Card ---------- */
+.proposta-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 36px;
+  margin-bottom: 20px;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proposta-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.proposta-card--accent {
+  border-color: var(--border-accent);
+  background: rgba(251, 192, 21, 0.04);
+}
+
+.proposta-card--accent:hover {
+  border-color: rgba(251, 192, 21, 0.5);
+  background: rgba(251, 192, 21, 0.06);
+  box-shadow: 0 8px 30px rgba(251, 192, 21, 0.1);
+}
+
+.proposta-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.proposta-card__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.proposta-card__subtitle {
+  font-size: 17px;
+  color: var(--text-secondary);
+  margin: 4px 0 0;
+  font-weight: 400;
+}
+
+/* ---------- Price Tag ---------- */
+.proposta-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--accent-dark);
+}
+
+.proposta-price__currency {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.proposta-price__cents {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.proposta-price--small {
+  font-size: 26px;
+}
+
+.proposta-price--small .proposta-price__currency,
+.proposta-price--small .proposta-price__cents {
+  font-size: 17px;
+}
+
+.proposta-price--struck {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+/* ---------- Checklist ---------- */
+.proposta-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.proposta-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.proposta-checklist li svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--success);
+  fill: none;
+  stroke-width: 2.2;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.proposta-checklist li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ---------- Tags & Badges ---------- */
+.proposta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.proposta-tag--recommended {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: var(--text-primary);
+  box-shadow: 0 2px 12px var(--accent-glow);
+}
+
+.proposta-tag--discount {
+  background: rgba(13, 150, 104, 0.08);
+  border: 1px solid rgba(13, 150, 104, 0.2);
+  color: var(--success);
+}
+
+.proposta-tag--info {
+  background: rgba(79, 70, 229, 0.06);
+  border: 1px solid rgba(79, 70, 229, 0.15);
+  color: var(--info);
+}
+
+/* ---------- Meta info (prazo, revisões) ---------- */
+.proposta-meta {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.proposta-meta__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.proposta-meta__item svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-muted);
+  fill: none;
+  stroke-width: 2;
+}
+
+/* ---------- Options Grid ---------- */
+.proposta-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .proposta-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Cenário Cards ---------- */
+.proposta-cenario {
+  position: relative;
+  overflow: hidden;
+}
+
+.proposta-cenario--recommended {
+  border-color: var(--border-accent);
+}
+
+.proposta-cenario--recommended::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+}
+
+/* ---------- Payment Options ---------- */
+.proposta-payments {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 700px) {
+  .proposta-payments {
+    grid-template-columns: 1fr;
+  }
+}
+
+.proposta-payment {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all 0.3s ease;
+}
+
+.proposta-payment:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.proposta-payment--highlight {
+  border-color: var(--border-accent);
+  background: rgba(251, 192, 21, 0.04);
+}
+
+.proposta-payment--highlight:hover {
+  border-color: rgba(251, 192, 21, 0.5);
+}
+
+.proposta-payment__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.proposta-payment--highlight .proposta-payment__number {
+  background: var(--accent);
+  color: var(--text-primary);
+}
+
+.proposta-payment:not(.proposta-payment--highlight) .proposta-payment__number {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text-secondary);
+}
+
+.proposta-payment__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--text-primary);
+}
+
+.proposta-payment__desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+
+.proposta-payment__values {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.85;
+}
+
+.proposta-payment__values strong {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+/* ---------- Summary Table ---------- */
+.proposta-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+
+.proposta-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.proposta-table th {
+  background: rgba(50, 67, 149, 0.06);
+  padding: 16px 18px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.proposta-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.proposta-table tr:last-child td {
+  border-bottom: none;
+}
+
+.proposta-table tr:hover td {
+  background: rgba(50, 67, 149, 0.03);
+}
+
+.proposta-table .highlight-row td {
+  background: rgba(50, 67, 149, 0.08);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ---------- Button ---------- */
+.proposta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--accent-dark);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proposta-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: #ffffff;
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.proposta-btn:hover {
+  background: #283578;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(50, 67, 149, 0.25);
+}
+
+/* ---------- Divider ---------- */
+.proposta-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0;
+  color: var(--text-muted);
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.proposta-divider::before,
+.proposta-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+/* ---------- Savings ---------- */
+.proposta-savings {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 14px 20px;
+  background: rgba(13, 150, 104, 0.06);
+  border: 1px solid rgba(13, 150, 104, 0.15);
+  border-radius: var(--radius-sm);
+  font-size: 17px;
+  color: var(--success);
+  font-weight: 600;
+}
+
+.proposta-savings svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--success);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+/* ---------- Total row ---------- */
+.proposta-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-top: 12px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.proposta-total__label {
+  font-size: 16px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+/* Override global footer styles from _components.scss */
+.proposta-page .proposta-footer,
+.proposta-page footer {
+  background: transparent !important;
+  height: auto !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 2;
+  padding: 64px 0 48px;
+  margin: 0 !important;
+}
+
+.proposta-page .proposta-footer::before,
+.proposta-page .proposta-footer::after,
+.proposta-page footer::before,
+.proposta-page footer::after {
+  display: none !important;
+  content: none !important;
+}
+
+.proposta-footer__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.proposta-footer__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proposta-footer__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.proposta-footer__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: rgba(50, 67, 149, 0.08);
+  border: 1px solid rgba(50, 67, 149, 0.2);
+  border-radius: 14px;
+  margin: 0 auto 16px;
+}
+
+.proposta-footer__card-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--accent-dark);
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.proposta-footer__card-label {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin: 0 0 4px;
+  font-weight: 500;
+}
+
+.proposta-footer__card-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.proposta-footer__card-value strong {
+  color: var(--accent-dark);
+}
+
+@media (max-width: 600px) {
+  .proposta-footer__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Scope item row ---------- */
+.proposta-scope-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.proposta-scope-item:last-child {
+  border-bottom: none;
+}
+
+.proposta-scope-item__label {
+  font-size: 17px;
+  color: var(--text-secondary);
+}
+
+.proposta-scope-item__value {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ---------- Note box ---------- */
+.proposta-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px 24px;
+  background: rgba(79, 70, 229, 0.04);
+  border: 1px solid rgba(79, 70, 229, 0.1);
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-top: 16px;
+}
+
+.proposta-note svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--info);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ---------- Watermark ---------- */
+.proposta-watermark {
+  text-align: center;
+  padding: 28px 0;
+  font-size: 15px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+}
+
+.proposta-watermark a {
+  color: var(--accent-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .proposta-hero {
+    padding: 60px 0 40px;
+  }
+
+  .proposta-section {
+    padding: 48px 0;
+  }
+
+  .proposta-card {
+    padding: 24px 20px;
+  }
+
+  .proposta-card__header {
+    flex-direction: column;
+  }
+
+  .proposta-meta {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .proposta-price {
+    font-size: 28px;
+  }
+
+  .proposta-price--small {
+    font-size: 22px;
+  }
+
+  .proposta-section__title {
+    font-size: 24px;
+  }
+
+  .proposta-card__title {
+    font-size: 22px;
+  }
+}

@@ -149,6 +149,27 @@ h6,
     }
 }
 
+// Hero title for LP pages - smaller on mobile to fit screen
+.mil-hero-title-lp {
+    font-size: clamp(26px, 3.5vw, 52px);
+    line-height: 1.15;
+    padding: 0;
+
+    @media screen and (max-width: 1799px) and (min-width: 1200px) {
+        font-size: clamp(32px, 3.5vw, 46px);
+    }
+
+    @media screen and (max-width: 1199px) {
+        font-size: clamp(28px, 4.5vw, 42px);
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 28px;
+        line-height: 1.2;
+        padding: 0 20px;
+    }
+}
+
 // Hero title for index page - fluid scaling with clamp()
 .mil-hero-title-home {
     // clamp(min, preferred, max) - escala fluidamente entre min e max

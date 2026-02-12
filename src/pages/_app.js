@@ -6,6 +6,7 @@ import { Outfit } from "next/font/google";
 //import '../styles/scss/style-dark.scss';
 import '../styles/scss/style-light.scss';
 import "../styles/globals.css";
+import "../styles/investimento-amadeu.css";
 
 import "../../public/css/plugins/bootstrap-grid.css";
 import "../../public/css/plugins/swiper.min.css";

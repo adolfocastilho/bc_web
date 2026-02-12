@@ -291,7 +291,7 @@ frame
             }
 
             a {
-                font-size: 16px;
+                font-size: 17px;
                 color: $panel-text-color;
                 transition: $t-sm;
 
@@ -1343,6 +1343,34 @@ skills
 iconbox
 
 ------------------------------------------- */
+
+/* Services grid alignment fix */
+.mil-services-grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    >[class*="col-"] {
+        display: flex;
+    }
+}
+
+.mil-service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 30px;
+
+    .mil-service-text {
+        flex-grow: 1;
+    }
+
+    .mil-details-btn {
+        margin-top: auto;
+        margin-bottom: 20px;
+    }
+
+}
 
 .mil-icon-box {
     display: flex;

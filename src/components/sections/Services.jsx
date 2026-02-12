@@ -23,10 +23,10 @@ const ServicesSection = () => {
 
             {/* services */}
             <div style={{ padding: 0 }}>
-                <div className="row justify-content-between align-items-center">
+                <div className="row justify-content-between mil-services-grid">
                     {Data.items.map((item, key) => (
                         <div key={`services-item-${key}`} className="col-lg-4">
-                            <div className="mil-icon-box mil-center mil-mb-30">
+                            <div className="mil-icon-box mil-center mil-mb-30 mil-service-card">
                                 {/* ... inside the map loop */}
                                 <div className="mil-service-slider mil-mb-30" style={{
                                     width: '100%',
@@ -43,7 +43,9 @@ const ServicesSection = () => {
                                         {item.title}
                                     </span>
                                 </h3>
-                                <p className="mil-up mil-mb-15">{item.text}</p>
+                                <div className="mil-service-text">
+                                    <p className="mil-up mil-mb-15">{item.text}</p>
+                                </div>
                                 {item.link && item.link !== "/services/service-1" && item.link !== "/services/service-2" && item.link !== "/services/service-3" && item.link !== "/services/service-4" && item.link !== "/services/service-5" && item.link !== "/services/service-6" ? (
                                     <Link href={item.link} className="mil-up mil-mb-30 mil-link mil-details-btn" style={{
                                         display: "inline-block",
@@ -59,7 +61,7 @@ const ServicesSection = () => {
                                         {item.linkText || "Saiba mais..."}
                                     </Link>
                                 ) : (
-                                    <span className="mil-up mil-mb-30" style={{
+                                    <span className="mil-up mil-mb-30 mil-details-btn" style={{
                                         display: "inline-block",
                                         fontWeight: "600",
                                         color: "#999",
